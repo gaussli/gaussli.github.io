@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>[SpringBoot]FirstSpringBootApplication | Gaussli&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="SpringBoot,基础">
+    
+    <meta name="description" content="pom.xml基础说明12345678910111213141516171819202122232425262728293031323334353637383940414243444546&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;project xmlns=&amp;quot;http://maven.apach">
+<meta name="keywords" content="SpringBoot,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[SpringBoot]FirstSpringBootApplication">
+<meta property="og:url" content="http://gaussli.com/2018/07/31/springboot-firstspringbootapplication/index.html">
+<meta property="og:site_name" content="Gaussli&#39;s Blog">
+<meta property="og:description" content="pom.xml基础说明12345678910111213141516171819202122232425262728293031323334353637383940414243444546&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;project xmlns=&amp;quot;http://maven.apach">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://gaussli.com/placeholder.png">
+<meta property="og:updated_time" content="2020-03-25T20:24:45.265Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[SpringBoot]FirstSpringBootApplication">
+<meta name="twitter:description" content="pom.xml基础说明12345678910111213141516171819202122232425262728293031323334353637383940414243444546&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;project xmlns=&amp;quot;http://maven.apach">
+<meta name="twitter:image" content="http://gaussli.com/placeholder.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Gaussli&#39;s Blog" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-86183531-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Learn More Everyday</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/">Tech</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/android/">Android</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/j2ee/">J2EE</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/mac/">Mac</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/maven/">Maven</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/mysql/">MySQL</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/network/">Network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/springboot/">SpringBoot</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/virtualbox/">VirtualBox</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tech/ios/">iOS</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/travel/">Travel</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/tech/">Tech</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/tech/springboot/">SpringBoot</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-springboot-firstspringbootapplication" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [SpringBoot]FirstSpringBootApplication
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/07/31/springboot-firstspringbootapplication/" class="article-date">
+            <time datetime="2018-07-31T08:51:49.000Z" itemprop="datePublished">2018-07-31</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/springboot/">SpringBoot</a>, <a class="tag-link" href="/tags/基础/">基础</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="pom-xml基础说明"><a href="#pom-xml基础说明" class="headerlink" title="pom.xml基础说明"></a>pom.xml基础说明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;groupId&gt;com.example&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;myproject&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1.0.BUILD-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- One or more &quot;Starter&quot; and other dependercies... --&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- (you don&apos;t need this if you are using a .RELEASE version) --&gt;</span><br><span class="line">    &lt;repositories&gt;</span><br><span class="line">        &lt;repository&gt;</span><br><span class="line">            &lt;id&gt;spring-snapshots&lt;/id&gt;</span><br><span class="line">            &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;</span><br><span class="line">            &lt;snapshots&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/snapshots&gt;</span><br><span class="line">        &lt;/repository&gt;</span><br><span class="line">        &lt;repository&gt;</span><br><span class="line">            &lt;id&gt;spring-milestones&lt;/id&gt;</span><br><span class="line">            &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;</span><br><span class="line">        &lt;/repository&gt;</span><br><span class="line">    &lt;/repositories&gt;</span><br><span class="line">    &lt;pluginRepositories&gt;</span><br><span class="line">        &lt;pluginRepository&gt;</span><br><span class="line">            &lt;id&gt;spring-snapshots&lt;/id&gt;</span><br><span class="line">            &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;</span><br><span class="line">        &lt;/pluginRepository&gt;</span><br><span class="line">        &lt;pluginRepository&gt;</span><br><span class="line">            &lt;id&gt;spring-milestones&lt;/id&gt;</span><br><span class="line">            &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;</span><br><span class="line">        &lt;/pluginRepository&gt;</span><br><span class="line">    &lt;/pluginRepositories&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="简单的-Controller-代码"><a href="#简单的-Controller-代码" class="headerlink" title="简单的 Controller 代码"></a>简单的 Controller 代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import org.springframework.boot.*;</span><br><span class="line">import org.springframework.boot.autoconfigure.*;</span><br><span class="line">import org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line">// @Controler 或 @RestController 让 Spring 识别处理 Web 请求</span><br><span class="line">@RestController</span><br><span class="line">@SpringBootApplication // 或者@EnableAutoConfiguration + @ComponentScan + @Configuration</span><br><span class="line">public class Example &#123;</span><br><span class="line">    // RequestMapping 提供请求的路由信息</span><br><span class="line">    @RequestMapping(&quot;/&quot;)</span><br><span class="line">    String home() &#123;</span><br><span class="line">        return &quot;Hello World!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        SpringApplication.run(Example.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Starters-列表"><a href="#Starters-列表" class="headerlink" title="Starters 列表"></a>Starters 列表</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spring-boot-starter</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-activemq</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-amqp</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-aop</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-artemis</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-batch</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-cache</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-cloud-connectors</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-cassantra</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-cassantra-reactive</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-couchbase</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-couchbase-reactive</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-elasticsearch</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-jpa</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-ldap</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-mangodb</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-mangodb-reactive</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-neo4j</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-redis</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-redis-reactive</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-rest</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-solr</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-freemarker</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-groovy-templates</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-hateoas</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-integration</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-jdbc</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-jersey</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-jooq</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-json</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-jta-atomikos</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-jta-bitronix</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-jta-narayama</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-mail</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-mustache</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-quartz</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-security</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-test</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-thymeleaf</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-validation</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-web</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-web-service</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-webflux</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-websocket</td>
+<td></td>
+</tr>
+<tr>
+<td>- 监控管理 -</td>
+<td>-</td>
+</tr>
+<tr>
+<td>spring-boot-starter-actuator</td>
+<td></td>
+</tr>
+<tr>
+<td>- 技术替换 -</td>
+<td>-</td>
+</tr>
+<tr>
+<td>spring-boot-starter-jetty</td>
+<td>Default: tomcat</td>
+</tr>
+<tr>
+<td>spring-boot-starter-log4j2</td>
+<td>Default: logging</td>
+</tr>
+<tr>
+<td>spring-boot-starter-logging</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>spring-boot-starter-reactor-netty</td>
+<td></td>
+</tr>
+<tr>
+<td>spring-boot-starter-tomcat</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>spring-boot-starter-undertow</td>
+<td>Default: tomcat</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Spring-Banner-txt占位符"><a href="#Spring-Banner-txt占位符" class="headerlink" title="Spring Banner.txt占位符"></a>Spring Banner.txt占位符</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>${application.version}</td>
+<td></td>
+</tr>
+<tr>
+<td>${application.formatted-version}</td>
+<td></td>
+</tr>
+<tr>
+<td>${springboot-version}</td>
+<td></td>
+</tr>
+<tr>
+<td>${springboot-formatted-version}</td>
+<td></td>
+</tr>
+<tr>
+<td>${Ansi.NAME}(or${AnsiColor.NAME})</td>
+<td></td>
+</tr>
+<tr>
+<td>${AnsiBackground.NAME}</td>
+<td></td>
+</tr>
+<tr>
+<td>${AnsiStyle.NAME}</td>
+<td></td>
+</tr>
+<tr>
+<td>${application.title}</td>
+</tr>
+</tbody>
+</table>
+<p>(•̀ᴗ•́)و ̑̑</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://gaussli.com/2018/07/31/springboot-firstspringbootapplication/" data-id="ck87sgtad00en1gynjcf29u5k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="valine-thread"></div>
+
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/gaussli" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/gaussli/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://weibo.com/314515111" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="500px" href="https://500px.me/gaussli" target="_blank" rel="noopener">
+                        <i class="icon fa fa-500px"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/gaussli" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/08/01/linux-vsftpd安装配置/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            [Linux]vsftpd安装配置
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/01/12/mac-brew和brew-cask的区别/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">[Mac]brew和brew-Cask的区别</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/12/j2ee-springmvc中webapplicationcontext的相关配置笔记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/placeholder.png)" alt="[J2EE]SpringMVC中WebApplicationContext的相关配置笔记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tech/">Tech</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/tech/j2ee/">J2EE</a></p>
+                            <p class="item-title"><a href="/2019/08/12/j2ee-springmvc中webapplicationcontext的相关配置笔记/" class="title">[J2EE]SpringMVC中WebApplicationContext的相关配置笔记</a></p>
+                            <p class="item-date"><time datetime="2019-08-12T09:48:50.000Z" itemprop="datePublished">2019-08-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/12/j2ee-spring中bean的生命周期/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/placeholder.png)" alt="[J2EE]Spring中Bean的生命周期" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tech/">Tech</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/tech/j2ee/">J2EE</a></p>
+                            <p class="item-title"><a href="/2019/08/12/j2ee-spring中bean的生命周期/" class="title">[J2EE]Spring中Bean的生命周期</a></p>
+                            <p class="item-date"><time datetime="2019-08-12T09:30:51.000Z" itemprop="datePublished">2019-08-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/12/j2ee-spring框架的一些笔记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/placeholder.png)" alt="[J2EE]Spring框架的一些笔记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tech/">Tech</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/tech/j2ee/">J2EE</a></p>
+                            <p class="item-title"><a href="/2019/08/12/j2ee-spring框架的一些笔记/" class="title">[J2EE]Spring框架的一些笔记</a></p>
+                            <p class="item-date"><time datetime="2019-08-11T21:04:26.000Z" itemprop="datePublished">2019-08-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/10/j2ee-jsp内置对象/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/placeholder.png)" alt="[J2EE]JSP内置对象" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tech/">Tech</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/tech/j2ee/">J2EE</a></p>
+                            <p class="item-title"><a href="/2019/08/10/j2ee-jsp内置对象/" class="title">[J2EE]JSP内置对象</a></p>
+                            <p class="item-date"><time datetime="2019-08-10T11:47:17.000Z" itemprop="datePublished">2019-08-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/10/j2ee-jsp动作元素/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/placeholder.png)" alt="[J2EE]JSP动作元素" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/tech/">Tech</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/tech/j2ee/">J2EE</a></p>
+                            <p class="item-title"><a href="/2019/08/10/j2ee-jsp动作元素/" class="title">[J2EE]JSP动作元素</a></p>
+                            <p class="item-date"><time datetime="2019-08-10T10:16:45.000Z" itemprop="datePublished">2019-08-10</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/tech/">Tech</a><span class="category-list-count">63</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tech/android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/j2ee/">J2EE</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/linux/">Linux</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/mac/">Mac</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/maven/">Maven</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/mysql/">MySQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/network/">Network</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/springboot/">SpringBoot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/virtualbox/">VirtualBox</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/ios/">iOS</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/travel/">Travel</a><span class="category-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/afnetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/bean/" style="font-size: 10px;">Bean</a> <a href="/tags/centos/" style="font-size: 18.33px;">CentOS</a> <a href="/tags/dns/" style="font-size: 10px;">DNS</a> <a href="/tags/druid/" style="font-size: 10px;">Druid</a> <a href="/tags/eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/git/" style="font-size: 10px;">Git</a> <a href="/tags/gitlab/" style="font-size: 10px;">Gitlab</a> <a href="/tags/ip/" style="font-size: 10px;">IP</a> <a href="/tags/java/" style="font-size: 10px;">Java</a> <a href="/tags/kernel/" style="font-size: 10px;">Kernel</a> <a href="/tags/linux/" style="font-size: 10px;">Linux</a> <a href="/tags/mac/" style="font-size: 10px;">Mac</a> <a href="/tags/maven/" style="font-size: 18.33px;">Maven</a> <a href="/tags/mysql/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/nsattributedstring/" style="font-size: 10px;">NSAttributedString</a> <a href="/tags/network/" style="font-size: 11.67px;">Network</a> <a href="/tags/nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/pch/" style="font-size: 10px;">PCH</a> <a href="/tags/provisioningprofiles/" style="font-size: 10px;">ProvisioningProfiles</a> <a href="/tags/ssziparchive/" style="font-size: 10px;">SSZipArchive</a> <a href="/tags/spring/" style="font-size: 11.67px;">Spring</a> <a href="/tags/springboot/" style="font-size: 11.67px;">SpringBoot</a> <a href="/tags/springmvc/" style="font-size: 11.67px;">SpringMVC</a> <a href="/tags/string-framework/" style="font-size: 10px;">String Framework</a> <a href="/tags/subview/" style="font-size: 10px;">Subview</a> <a href="/tags/tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/trash/" style="font-size: 10px;">Trash</a> <a href="/tags/uibutton/" style="font-size: 10px;">UIButton</a> <a href="/tags/uicontrol/" style="font-size: 11.67px;">UIControl</a> <a href="/tags/welcome/" style="font-size: 10px;">Welcome</a> <a href="/tags/windows/" style="font-size: 11.67px;">Windows</a> <a href="/tags/apk/" style="font-size: 10px;">apk</a> <a href="/tags/brew/" style="font-size: 10px;">brew</a> <a href="/tags/brew-cask/" style="font-size: 10px;">brew-cask</a> <a href="/tags/cocoapod/" style="font-size: 11.67px;">cocoapod</a> <a href="/tags/cocoapods/" style="font-size: 11.67px;">cocoapods</a> <a href="/tags/elrepo/" style="font-size: 11.67px;">elrepo</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/fdisk/" style="font-size: 10px;">fdisk</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/groupadd/" style="font-size: 10px;">groupadd</a> <a href="/tags/grub2/" style="font-size: 10px;">grub2</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hook/" style="font-size: 10px;">hook</a> <a href="/tags/hostname/" style="font-size: 10px;">hostname</a> <a href="/tags/jar/" style="font-size: 10px;">jar</a> <a href="/tags/jsp/" style="font-size: 11.67px;">jsp</a> <a href="/tags/libwebp/" style="font-size: 10px;">libwebp</a> <a href="/tags/life-cycle/" style="font-size: 10px;">life cycle</a> <a href="/tags/log4j/" style="font-size: 10px;">log4j</a> <a href="/tags/logger/" style="font-size: 10px;">logger</a> <a href="/tags/lsyncd/" style="font-size: 11.67px;">lsyncd</a> <a href="/tags/mount/" style="font-size: 10px;">mount</a> <a href="/tags/nologin/" style="font-size: 10px;">nologin</a> <a href="/tags/plugins/" style="font-size: 10px;">plugins</a> <a href="/tags/pod/" style="font-size: 11.67px;">pod</a> <a href="/tags/pom/" style="font-size: 11.67px;">pom</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/response/" style="font-size: 10px;">response</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/ss/" style="font-size: 10px;">ss</a> <a href="/tags/ssh/" style="font-size: 13.33px;">ssh</a> <a href="/tags/swizzling/" style="font-size: 10px;">swizzling</a> <a href="/tags/useradd/" style="font-size: 10px;">useradd</a> <a href="/tags/vsftpd/" style="font-size: 10px;">vsftpd</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/xml/" style="font-size: 10px;">xml</a> <a href="/tags/yum/" style="font-size: 11.67px;">yum</a> <a href="/tags/zip压缩/" style="font-size: 10px;">zip压缩</a> <a href="/tags/主从/" style="font-size: 10px;">主从</a> <a href="/tags/九寨沟/" style="font-size: 10px;">九寨沟</a> <a href="/tags/代码/" style="font-size: 10px;">代码</a> <a href="/tags/代码库/" style="font-size: 10px;">代码库</a> <a href="/tags/克隆/" style="font-size: 10px;">克隆</a> <a href="/tags/免密码/" style="font-size: 11.67px;">免密码</a> <a href="/tags/内置对象/" style="font-size: 10px;">内置对象</a> <a href="/tags/分发/" style="font-size: 10px;">分发</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/别名/" style="font-size: 10px;">别名</a> <a href="/tags/加密/" style="font-size: 11.67px;">加密</a> <a href="/tags/加载/" style="font-size: 10px;">加载</a> <a href="/tags/动作元素/" style="font-size: 10px;">动作元素</a> <a href="/tags/同步/" style="font-size: 13.33px;">同步</a> <a href="/tags/命令/" style="font-size: 10px;">命令</a> <a href="/tags/命令行/" style="font-size: 15px;">命令行</a> <a href="/tags/响应/" style="font-size: 10px;">响应</a> <a href="/tags/垃圾/" style="font-size: 10px;">垃圾</a> <a href="/tags/基础/" style="font-size: 10px;">基础</a> <a href="/tags/备份/" style="font-size: 10px;">备份</a> <a href="/tags/复制/" style="font-size: 10px;">复制</a> <a href="/tags/密码/" style="font-size: 10px;">密码</a> <a href="/tags/建站/" style="font-size: 10px;">建站</a> <a href="/tags/成都/" style="font-size: 11.67px;">成都</a> <a href="/tags/打包/" style="font-size: 10px;">打包</a> <a href="/tags/挂载/" style="font-size: 10px;">挂载</a> <a href="/tags/文件/" style="font-size: 13.33px;">文件</a> <a href="/tags/文件系统/" style="font-size: 10px;">文件系统</a> <a href="/tags/无埋点/" style="font-size: 10px;">无埋点</a> <a href="/tags/时区/" style="font-size: 10px;">时区</a> <a href="/tags/时间/" style="font-size: 10px;">时间</a> <a href="/tags/更新内核/" style="font-size: 10px;">更新内核</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/源码安装/" style="font-size: 13.33px;">源码安装</a> <a href="/tags/状态栏/" style="font-size: 10px;">状态栏</a> <a href="/tags/状态行/" style="font-size: 10px;">状态行</a> <a href="/tags/生命周期/" style="font-size: 10px;">生命周期</a> <a href="/tags/用户/" style="font-size: 10px;">用户</a> <a href="/tags/用户行为/" style="font-size: 10px;">用户行为</a> <a href="/tags/登录/" style="font-size: 11.67px;">登录</a> <a href="/tags/目录/" style="font-size: 10px;">目录</a> <a href="/tags/硬盘/" style="font-size: 10px;">硬盘</a> <a href="/tags/禁止密码/" style="font-size: 10px;">禁止密码</a> <a href="/tags/系统清理/" style="font-size: 10px;">系统清理</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/编码/" style="font-size: 10px;">编码</a> <a href="/tags/网络/" style="font-size: 11.67px;">网络</a> <a href="/tags/翻译/" style="font-size: 11.67px;">翻译</a> <a href="/tags/解密/" style="font-size: 10px;">解密</a> <a href="/tags/解码/" style="font-size: 10px;">解码</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/软件安装/" style="font-size: 20px;">软件安装</a> <a href="/tags/软件更新/" style="font-size: 10px;">软件更新</a> <a href="/tags/迁移/" style="font-size: 10px;">迁移</a> <a href="/tags/配置文件/" style="font-size: 11.67px;">配置文件</a> <a href="/tags/重签名/" style="font-size: 10px;">重签名</a> <a href="/tags/错误/" style="font-size: 10px;">错误</a> <a href="/tags/长沙/" style="font-size: 10px;">长沙</a> <a href="/tags/颜色/" style="font-size: 10px;">颜色</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 gaussli</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+        new Valine({
+            el: '#valine-thread' ,
+            notify:false,
+            verify:true,
+            app_id: 'YGSfT5B7NAnGgsgsnulyCRzm-9Nh9j0Va',
+            app_key: 'yMTsdwSzvXxjtpHnypAF81Sg',
+            placeholder: 'Just Let Me Know...',
+            pageSize: '10',
+            avatar: 'identicon',
+            avatar_cdn:  'https://gravatar.loli.net/avatar/'
+        });
+    </script>
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
