@@ -211,6 +211,12 @@ var _hmt = _hmt || [];
     </div>
 
                 
+   <span id="/2019/03/12/network-ip%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB/" class="leancloud-visitors" data-flag-title="[Network]IP地址分类">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">Views: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
 
                 
    <div class="article-counter">
@@ -289,7 +295,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2019/03/12/network-ip%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB/" data-id="ckrktp1ri004761ye5zb86d0j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2019/03/12/network-ip%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB/" data-id="ckrktuysn0047dayehnz64msl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -383,7 +389,8 @@ A类地址第1个字节为网络地址，其他",
     <section id="comments">
     
         
-<div id="comment-container"></div>
+    <!-- Valine -->
+    <div class="vcomments"></div>
 
 
     
@@ -673,19 +680,26 @@ A类地址第1个字节为网络地址，其他",
     </div>
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: '754942f5dad0927547ec',
-        clientSecret: '9e08a8dc2c72733ab11a44bc9ac434207baf8dae',
-        id: '0a90cf7aa67a30c82a257bc21497c8a4',
-        repo: 'gaussli-blog-gittalk',
-        owner: 'gaussli',
-        admin: ["gaussli"]
-    })
-    gitalk.render('comment-container')
-</script>
+    <script src="//unpkg.com/valine"></script>
+    <script>
+        var GUEST = ['nick','mail','link'];
+        var meta = '';
+        meta = meta.split(',').filter(function (item) {
+            return GUEST.indexOf(item)>-1;
+        });
+        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+        new Valine({
+            el: '.vcomments',
+            notify: "false",
+            verify: "true",
+            appId: "Vo9nK1vMXfjReHTzT0b67rkp-gzGzoHsz",
+            appKey: "Dy5Sh8BAOLcD8jUXMmm26kjK",
+            placeholder: "Just Let Me Know...",
+            avatar:"identicon",
+            recordIP:"",
+            visitor: "true"
+        });
+    </script>
 
 
 

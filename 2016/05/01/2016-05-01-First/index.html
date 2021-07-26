@@ -211,6 +211,12 @@ var _hmt = _hmt || [];
     </div>
 
                 
+   <span id="/2016/05/01/2016-05-01-First/" class="leancloud-visitors" data-flag-title="Welcome">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">Views: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
 
                 
    <div class="article-counter">
@@ -251,7 +257,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/05/01/2016-05-01-First/" data-id="ckrktp1pn000161ye1hhfeucc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/05/01/2016-05-01-First/" data-id="ckrktuyr20001daye508q1emy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -344,7 +350,8 @@ var _hmt = _hmt || [];
     <section id="comments">
     
         
-<div id="comment-container"></div>
+    <!-- Valine -->
+    <div class="vcomments"></div>
 
 
     
@@ -628,19 +635,26 @@ var _hmt = _hmt || [];
     </div>
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: '754942f5dad0927547ec',
-        clientSecret: '9e08a8dc2c72733ab11a44bc9ac434207baf8dae',
-        id: 'fe5064a5b3f9d2134d7696fdf1bae41a',
-        repo: 'gaussli-blog-gittalk',
-        owner: 'gaussli',
-        admin: ["gaussli"]
-    })
-    gitalk.render('comment-container')
-</script>
+    <script src="//unpkg.com/valine"></script>
+    <script>
+        var GUEST = ['nick','mail','link'];
+        var meta = '';
+        meta = meta.split(',').filter(function (item) {
+            return GUEST.indexOf(item)>-1;
+        });
+        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+        new Valine({
+            el: '.vcomments',
+            notify: "false",
+            verify: "true",
+            appId: "Vo9nK1vMXfjReHTzT0b67rkp-gzGzoHsz",
+            appKey: "Dy5Sh8BAOLcD8jUXMmm26kjK",
+            placeholder: "Just Let Me Know...",
+            avatar:"identicon",
+            recordIP:"",
+            visitor: "true"
+        });
+    </script>
 
 
 

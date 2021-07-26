@@ -213,6 +213,12 @@ var _hmt = _hmt || [];
     </div>
 
                 
+   <span id="/2019/04/30/mac-cocoapods%E5%87%BA%E7%8E%B0%E7%9A%84%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" class="leancloud-visitors" data-flag-title="[Mac]cocoapods出现的错误总结">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">Views: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
 
                 
    <div class="article-counter">
@@ -251,7 +257,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2019/04/30/mac-cocoapods%E5%87%BA%E7%8E%B0%E7%9A%84%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" data-id="ckrktp1r7003e61yegtjqakc5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2019/04/30/mac-cocoapods%E5%87%BA%E7%8E%B0%E7%9A%84%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93/" data-id="ckrktuyse003edayeguw3113h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -340,7 +346,8 @@ var _hmt = _hmt || [];
     <section id="comments">
     
         
-<div id="comment-container"></div>
+    <!-- Valine -->
+    <div class="vcomments"></div>
 
 
     
@@ -630,19 +637,26 @@ var _hmt = _hmt || [];
     </div>
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: '754942f5dad0927547ec',
-        clientSecret: '9e08a8dc2c72733ab11a44bc9ac434207baf8dae',
-        id: 'ead304f324923411110d4221251acd9f',
-        repo: 'gaussli-blog-gittalk',
-        owner: 'gaussli',
-        admin: ["gaussli"]
-    })
-    gitalk.render('comment-container')
-</script>
+    <script src="//unpkg.com/valine"></script>
+    <script>
+        var GUEST = ['nick','mail','link'];
+        var meta = '';
+        meta = meta.split(',').filter(function (item) {
+            return GUEST.indexOf(item)>-1;
+        });
+        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+        new Valine({
+            el: '.vcomments',
+            notify: "false",
+            verify: "true",
+            appId: "Vo9nK1vMXfjReHTzT0b67rkp-gzGzoHsz",
+            appKey: "Dy5Sh8BAOLcD8jUXMmm26kjK",
+            placeholder: "Just Let Me Know...",
+            avatar:"identicon",
+            recordIP:"",
+            visitor: "true"
+        });
+    </script>
 
 
 

@@ -213,6 +213,12 @@ var _hmt = _hmt || [];
     </div>
 
                 
+   <span id="/2016/06/04/linux-%E7%BF%BB%E8%AF%91-mysql%E5%AE%89%E8%A3%85%EF%BC%88%E9%80%9A%E7%94%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8F%91%E8%A1%8C%E7%89%88%E6%96%B9%E5%BC%8F%EF%BC%89/" class="leancloud-visitors" data-flag-title="[Linux][翻译]MySQL安装（通用二进制发行版方式）">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">Views: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
 
                 
    <div class="article-counter">
@@ -334,7 +340,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/06/04/linux-%E7%BF%BB%E8%AF%91-mysql%E5%AE%89%E8%A3%85%EF%BC%88%E9%80%9A%E7%94%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8F%91%E8%A1%8C%E7%89%88%E6%96%B9%E5%BC%8F%EF%BC%89/" data-id="ckrktp1r2003061yefqkz8ryt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/06/04/linux-%E7%BF%BB%E8%AF%91-mysql%E5%AE%89%E8%A3%85%EF%BC%88%E9%80%9A%E7%94%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8F%91%E8%A1%8C%E7%89%88%E6%96%B9%E5%BC%8F%EF%BC%89/" data-id="ckrktuys90030dayegqfb7r3g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -425,7 +431,8 @@ MySQL 版本：mysql-5.6.31-linux-glibc2.5-x8",
     <section id="comments">
     
         
-<div id="comment-container"></div>
+    <!-- Valine -->
+    <div class="vcomments"></div>
 
 
     
@@ -715,19 +722,26 @@ MySQL 版本：mysql-5.6.31-linux-glibc2.5-x8",
     </div>
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: '754942f5dad0927547ec',
-        clientSecret: '9e08a8dc2c72733ab11a44bc9ac434207baf8dae',
-        id: 'd4b0e821e813910d78833e7c73476b1f',
-        repo: 'gaussli-blog-gittalk',
-        owner: 'gaussli',
-        admin: ["gaussli"]
-    })
-    gitalk.render('comment-container')
-</script>
+    <script src="//unpkg.com/valine"></script>
+    <script>
+        var GUEST = ['nick','mail','link'];
+        var meta = '';
+        meta = meta.split(',').filter(function (item) {
+            return GUEST.indexOf(item)>-1;
+        });
+        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+        new Valine({
+            el: '.vcomments',
+            notify: "false",
+            verify: "true",
+            appId: "Vo9nK1vMXfjReHTzT0b67rkp-gzGzoHsz",
+            appKey: "Dy5Sh8BAOLcD8jUXMmm26kjK",
+            placeholder: "Just Let Me Know...",
+            avatar:"identicon",
+            recordIP:"",
+            visitor: "true"
+        });
+    </script>
 
 
 

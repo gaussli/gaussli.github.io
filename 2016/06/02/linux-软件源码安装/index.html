@@ -211,6 +211,12 @@ var _hmt = _hmt || [];
     </div>
 
                 
+   <span id="/2016/06/02/linux-%E8%BD%AF%E4%BB%B6%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/" class="leancloud-visitors" data-flag-title="[Linux]软件源码安装">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">Views: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
 
                 
    <div class="article-counter">
@@ -252,7 +258,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/06/02/linux-%E8%BD%AF%E4%BB%B6%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/" data-id="ckrktp1r3003361ye6ak5eq2i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/06/02/linux-%E8%BD%AF%E4%BB%B6%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/" data-id="ckrktuysb0034daye26my4i10" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -341,7 +347,8 @@ var _hmt = _hmt || [];
     <section id="comments">
     
         
-<div id="comment-container"></div>
+    <!-- Valine -->
+    <div class="vcomments"></div>
 
 
     
@@ -631,19 +638,26 @@ var _hmt = _hmt || [];
     </div>
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: '754942f5dad0927547ec',
-        clientSecret: '9e08a8dc2c72733ab11a44bc9ac434207baf8dae',
-        id: '222d8711c82eb7829175b891e553c9f3',
-        repo: 'gaussli-blog-gittalk',
-        owner: 'gaussli',
-        admin: ["gaussli"]
-    })
-    gitalk.render('comment-container')
-</script>
+    <script src="//unpkg.com/valine"></script>
+    <script>
+        var GUEST = ['nick','mail','link'];
+        var meta = '';
+        meta = meta.split(',').filter(function (item) {
+            return GUEST.indexOf(item)>-1;
+        });
+        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+        new Valine({
+            el: '.vcomments',
+            notify: "false",
+            verify: "true",
+            appId: "Vo9nK1vMXfjReHTzT0b67rkp-gzGzoHsz",
+            appKey: "Dy5Sh8BAOLcD8jUXMmm26kjK",
+            placeholder: "Just Let Me Know...",
+            avatar:"identicon",
+            recordIP:"",
+            visitor: "true"
+        });
+    </script>
 
 
 
