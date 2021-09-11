@@ -6,7 +6,7 @@
   <link href="http://gaussli.com/atom.xml" rel="self"/>
   
   <link href="http://gaussli.com/"/>
-  <updated>2021-07-26T15:10:04.581Z</updated>
+  <updated>2021-09-11T07:53:56.240Z</updated>
   <id>http://gaussli.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Linux】修改时间为上海时间</title>
+    <link href="http://gaussli.com/2021/09/11/%E3%80%90linux%E3%80%91%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E4%B8%BA%E4%B8%8A%E6%B5%B7%E6%97%B6%E9%97%B4/"/>
+    <id>http://gaussli.com/2021/09/11/%E3%80%90linux%E3%80%91%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E4%B8%BA%E4%B8%8A%E6%B5%B7%E6%97%B6%E9%97%B4/</id>
+    <published>2021-09-11T07:49:27.000Z</published>
+    <updated>2021-09-11T07:53:56.240Z</updated>
+    
+    <content type="html"><![CDATA[<p>CentOS7纯默认安装的时间会是美国东部时间（EDT）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 2021年 09月 11日 星期六 03:42:28 EDT</span></span><br><span class="line">date</span><br></pre></td></tr></table></figure><p>修改为上海时间（CST）（中国标准时间）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/localtime /etc/localtime.bak</span><br><span class="line">ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure><p>再次查看时间</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2021年 09月 11日 星期六 15:44:50 CST</span></span><br><span class="line">date</span><br></pre></td></tr></table></figure><p>(•̀ᴗ•́)و ̑̑</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;CentOS7纯默认安装的时间会是美国东部时间（EDT）&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span </summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://gaussli.com/categories/tech/"/>
+    
+    <category term="Linux" scheme="http://gaussli.com/categories/tech/linux/"/>
+    
+    
+    <category term="时间" scheme="http://gaussli.com/tags/%E6%97%B6%E9%97%B4/"/>
+    
+    <category term="linux" scheme="http://gaussli.com/tags/linux/"/>
+    
+    <category term="localtime" scheme="http://gaussli.com/tags/localtime/"/>
+    
+  </entry>
   
   <entry>
     <title>【容器化】K3S部署安装</title>
@@ -634,36 +665,6 @@
     <category term="jsp" scheme="http://gaussli.com/tags/jsp/"/>
     
     <category term="内置对象" scheme="http://gaussli.com/tags/%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[J2EE]JSP动作元素</title>
-    <link href="http://gaussli.com/2019/08/10/j2ee-jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0/"/>
-    <id>http://gaussli.com/2019/08/10/j2ee-jsp%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0/</id>
-    <published>2019-08-10T10:16:45.000Z</published>
-    <updated>2021-07-26T15:14:37.963Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="JSP的动作元素主要包含7个"><a href="#JSP的动作元素主要包含7个" class="headerlink" title="JSP的动作元素主要包含7个"></a>JSP的动作元素主要包含7个</h2><h4 id="jsp-include"><a href="#jsp-include" class="headerlink" title="jsp:include"></a><a href="jsp:include">jsp:include</a></h4><p>提供一种在JSP中包含页面的方式，既可以包含静态文件，也可以包含动态文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page=&quot;relative URL&quot; flush=&quot;true|false&quot;&gt;</span><br></pre></td></tr></table></figure><ul><li>page属性：指定被包含文件的URL地址，是一个相对路径</li><li>flush属性：指定当缓存区满时，是否将其清空，默认为false</li></ul><h4 id="jsp-forward"><a href="#jsp-forward" class="headerlink" title="jsp:forward"></a><a href="jsp:forward">jsp:forward</a></h4><p>一种用于页面重定向的动作元素，他的作用是停止当前JSP页面的执行，而将客户端请求转交给另一个JSP页面。PS：转发与重定向的区别，转发是在服务端进行的，不会引起客户端的二次请求，因此浏览器的地址栏不会发生任何变化，效率也比重定向要高</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page=&quot;转向页面的URL地址&quot;&gt;</span><br></pre></td></tr></table></figure><ul><li>page属性：用来指定转向页面的URL地址</li></ul><h4 id="jsp-param"><a href="#jsp-param" class="headerlink" title="jsp:param"></a><a href="jsp:param">jsp:param</a></h4><p>一种提供参数的附属动作元素，以“名-值”对的形式为其他动作元素提供附加信息，一般与<a href="jsp:include">jsp:include</a>、<a href="jsp:forward">jsp:forward</a>、<a href="jsp:plugin">jsp:plugin</a>联合使用</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:param name=&quot;参数名字&quot; value=&quot;指定给param的参数值&quot;&gt;</span><br></pre></td></tr></table></figure><p>JSP中通过<code>request.getParameter(&quot;key&quot;)</code>来获取param的值</p><h4 id="jsp-useBean、jsp-setProperty、jsp-getProperty"><a href="#jsp-useBean、jsp-setProperty、jsp-getProperty" class="headerlink" title="jsp:useBean、jsp:setProperty、jsp:getProperty"></a><a href="jsp:useBean">jsp:useBean</a>、<a href="jsp:setProperty">jsp:setProperty</a>、<a href="jsp:getProperty">jsp:getProperty</a></h4><p><a href="jsp:useBean">jsp:useBean</a>用来装载一个将在JSP页面中使用的JavaBean。这个功能很有用，充分发挥了Java组件重用的优势，同时也提高了JSP使用的方便性。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:userBean id=&quot;beanInstanceName&quot; class=&quot;classname&quot; scope=&quot;page|request|session|application&quot;&gt;</span><br></pre></td></tr></table></figure><ul><li>id：指定JavaBean的实例名</li><li>class：指定JavaBean的全限定类名</li><li>scppe：指定引入的JavaBean实例的作用域，默认为当前页</li><li>page：表示该JavaBean实例在当前页面生效</li><li>request：表示该JavaBean实例在本次请求有效</li><li>session：表示该JavaBean实例在本次session内有效</li><li>application：表示该JavaBean实例在本应用内一直有效</li></ul><p><a href="jsp:setProperty">jsp:setProperty</a>在定义了<a href="jsp:useBean">jsp:useBean</a>后，来设置或修改Bean中的属性值</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:setProperty name=&quot;beanInstanceName&quot; property=&quot;propertyName&quot; value=&quot;value&quot;&gt;</span><br></pre></td></tr></table></figure><ul><li>name：指定要进行设置的JavaBean的实例名</li><li>property：指定需要设置的JavaBean实例中的属性名</li><li>value：指定要将property中指定的属性设置为该属性值</li></ul><p><a href="jsp:getProperty">jsp:getProperty</a>在定义了<a href="jsp:useBean">jsp:useBean</a>后，来提出指定Bean属性的值，并将其转换成字符串，然后输出</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:getProperty name=&quot;beanInstaceName&quot; property=&quot;propertyName&quot;&gt;</span><br></pre></td></tr></table></figure><ul><li>name：指定要输出的JavaBean的实例名</li><li>property：指定需要输出的JavaBean实例中的属性名</li></ul><p>PS：<a href="jsp:setProperty">jsp:setProperty</a>和<a href="jsp:getProperty">jsp:getProperty</a>需要在<a href="jsp:useBean">jsp:useBean</a>设置之后使用</p><p>(•̀ᴗ•́)و ̑̑</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;JSP的动作元素主要包含7个&quot;&gt;&lt;a href=&quot;#JSP的动作元素主要包含7个&quot; class=&quot;headerlink&quot; title=&quot;JSP的动作元素主要包含7个&quot;&gt;&lt;/a&gt;JSP的动作元素主要包含7个&lt;/h2&gt;&lt;h4 id=&quot;jsp-include&quot;&gt;&lt;a h</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="http://gaussli.com/categories/tech/"/>
-    
-    <category term="JavaWeb" scheme="http://gaussli.com/categories/tech/javaweb/"/>
-    
-    <category term="J2EE" scheme="http://gaussli.com/categories/tech/javaweb/j2ee/"/>
-    
-    
-    <category term="jsp" scheme="http://gaussli.com/tags/jsp/"/>
-    
-    <category term="动作元素" scheme="http://gaussli.com/tags/%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0/"/>
     
   </entry>
   
