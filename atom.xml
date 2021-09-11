@@ -6,7 +6,7 @@
   <link href="http://gaussli.com/atom.xml" rel="self"/>
   
   <link href="http://gaussli.com/"/>
-  <updated>2021-09-11T07:53:56.240Z</updated>
+  <updated>2021-09-11T08:00:27.915Z</updated>
   <id>http://gaussli.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://gaussli.com/2021/09/11/%E3%80%90linux%E3%80%91%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E4%B8%BA%E4%B8%8A%E6%B5%B7%E6%97%B6%E9%97%B4/"/>
     <id>http://gaussli.com/2021/09/11/%E3%80%90linux%E3%80%91%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E4%B8%BA%E4%B8%8A%E6%B5%B7%E6%97%B6%E9%97%B4/</id>
     <published>2021-09-11T07:49:27.000Z</published>
-    <updated>2021-09-11T07:53:56.240Z</updated>
+    <updated>2021-09-11T08:00:27.915Z</updated>
     
-    <content type="html"><![CDATA[<p>CentOS7纯默认安装的时间会是美国东部时间（EDT）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 2021年 09月 11日 星期六 03:42:28 EDT</span></span><br><span class="line">date</span><br></pre></td></tr></table></figure><p>修改为上海时间（CST）（中国标准时间）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/localtime /etc/localtime.bak</span><br><span class="line">ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure><p>再次查看时间</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2021年 09月 11日 星期六 15:44:50 CST</span></span><br><span class="line">date</span><br></pre></td></tr></table></figure><p>(•̀ᴗ•́)و ̑̑</p>]]></content>
+    <content type="html"><![CDATA[<p>CentOS7纯默认安装的时间会是美国东部时间（EDT）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2021年 09月 11日 星期六 03:42:28 EDT</span></span><br><span class="line">date</span><br></pre></td></tr></table></figure><p>修改为上海时间（CST）（中国标准时间）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/localtime /etc/localtime.bak</span><br><span class="line">ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure><p>再次查看时间</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2021年 09月 11日 星期六 15:44:50 CST</span></span><br><span class="line">date</span><br></pre></td></tr></table></figure><p>(•̀ᴗ•́)و ̑̑</p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;CentOS7纯默认安装的时间会是美国东部时间（EDT）&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span </summary>
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span c</summary>
       
     
     
