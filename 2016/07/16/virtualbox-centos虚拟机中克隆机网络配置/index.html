@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="CentOS,网络,Network,克隆" />
+    <meta name="keywords" content="CentOS,克隆,网络,Network" />
     
     <meta name="description" content="小言所谓的克隆机，就是说VirtualBox中可通过已有的虚拟机可不断克隆出一样的虚拟机。而克隆出来的虚拟机，选择重新初始化所有网卡的MAC地址后，克隆机的网卡会出现两个，一个是原本的eth0，一个是新增的eth1。那么由于之前配置的是eth0（详见virtualbox中centos虚拟机中网络配置），而eth0已经没用了，eth1却没有做配置的，所以是不能上网的。以下就来解决这个问题。 环境 操">
 <meta property="og:type" content="article">
@@ -24,9 +24,9 @@
 <meta property="article:modified_time" content="2021-07-26T06:01:36.000Z">
 <meta property="article:author" content="gaussli">
 <meta property="article:tag" content="CentOS">
+<meta property="article:tag" content="克隆">
 <meta property="article:tag" content="网络">
 <meta property="article:tag" content="Network">
-<meta property="article:tag" content="克隆">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://gaussli.com/placeholder.png">
     
@@ -295,7 +295,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/07/16/virtualbox-centos%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%85%8B%E9%9A%86%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" data-id="ckthb1t50004lb5w4gue10lcj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/07/16/virtualbox-centos%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%85%8B%E9%9A%86%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" data-id="ckthbo2rg004hk7w4d6d9ggko" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -367,7 +367,7 @@ var _hmt = _hmt || [];
         },
         "headline": "[VirtualBox]CentOS虚拟机中克隆机网络配置",
         "image": "http://gaussli.com/placeholder.png",
-        "keywords": "CentOS 网络 Network 克隆",
+        "keywords": "CentOS 克隆 网络 Network",
         "genre": "Tech VirtualBox",
         "datePublished": "2016-07-16",
         "dateCreated": "2016-07-16",
