@@ -12,16 +12,16 @@
     
     <meta name="keywords" content="Kubernetes,二进制,部署,HAProxy,Keepalived" />
     
-    <meta name="description" content="零、目录 【容器化】Kubernetes二进制高可用部署1-准备 【容器化】Kubernetes二进制高可用部署2-ca根证书 【容器化】kubernetes二进制高可用部署3-etcd高可用部署 【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署 Post not found: 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署">
+    <meta name="description" content="零、目录 【容器化】Kubernetes二进制高可用部署1-准备 【容器化】Kubernetes二进制高可用部署2-ca根证书 【容器化】kubernetes二进制高可用部署3-etcd高可用部署 【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署 Post not found:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【容器化】Kubernetes二进制高可用部署5-HA和Keepalived部署">
 <meta property="og:url" content="http://gaussli.com/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B25-ha%E5%92%8Ckeepalived%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
-<meta property="og:description" content="零、目录 【容器化】Kubernetes二进制高可用部署1-准备 【容器化】Kubernetes二进制高可用部署2-ca根证书 【容器化】kubernetes二进制高可用部署3-etcd高可用部署 【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署 Post not found: 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署">
+<meta property="og:description" content="零、目录 【容器化】Kubernetes二进制高可用部署1-准备 【容器化】Kubernetes二进制高可用部署2-ca根证书 【容器化】kubernetes二进制高可用部署3-etcd高可用部署 【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署 Post not found:">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2022-01-15T18:48:53.000Z">
-<meta property="article:modified_time" content="2022-01-15T19:21:15.390Z">
+<meta property="article:modified_time" content="2022-01-15T19:24:38.910Z">
 <meta property="article:author" content="gaussli">
 <meta property="article:tag" content="Kubernetes">
 <meta property="article:tag" content="二进制">
@@ -201,7 +201,7 @@ var _hmt = _hmt || [];
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B25-ha%E5%92%8Ckeepalived%E9%83%A8%E7%BD%B2/" class="article-date">
-     <time datetime="2022-01-15T19:21:15.390Z" itemprop="dateModified">2022-01-16</time>
+     <time datetime="2022-01-15T19:24:38.910Z" itemprop="dateModified">2022-01-16</time>
   </a>
 </div>
 
@@ -248,14 +248,14 @@ var _hmt = _hmt || [];
 <li><a href="/2022/01/15/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B22-ca%E6%A0%B9%E8%AF%81%E4%B9%A6/" title="【容器化】Kubernetes二进制高可用部署2-ca根证书">【容器化】Kubernetes二进制高可用部署2-ca根证书</a></li>
 <li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B23-etcd%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署3-etcd高可用部署">【容器化】kubernetes二进制高可用部署3-etcd高可用部署</a></li>
 <li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B24-kube-apiserver%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署">【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署</a></li>
-<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署</a></li>
+<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B25-ha%E5%92%8Ckeepalived%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署">【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署</a></li>
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署6-kube-controller和kube-scheduler部署</a></li>
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署7-kubelet和kube-proxy部署</a></li>
-<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署8-Calico网络插件部署</a></li>
-<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署8-Flannel网络插件部署</a></li>
-<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署9-Kubernetes测试验证</a></li>
-<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署10-Kubernetes-UI面板</a></li>
-<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署11-Kubernetes指标监控</a></li>
+<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署8-calico网络插件部署</a></li>
+<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署8-flannel网络插件部署</a></li>
+<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署9-kubernetes测试验证</a></li>
+<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署10-kubernetes-ui面板</a></li>
+<li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署11-kubernetes指标监控</a></li>
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署12-fabric8的使用</a></li>
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署13-spring-cloud-starter-kubernetes的使用</a></li>
 </ul>
@@ -371,8 +371,9 @@ var _hmt = _hmt || [];
 【容器化】Kubernetes二进制高可用部署2-ca根证书
 【容器化】kubernetes二进制高可用部署3-etcd高可用部署
 【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署
-Post not found: 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署",
-        "wordCount": 1461
+【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署
+Post not found:",
+        "wordCount": 1459
     }
 </script>
 
