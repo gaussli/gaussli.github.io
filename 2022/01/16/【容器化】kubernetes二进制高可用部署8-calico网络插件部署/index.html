@@ -21,7 +21,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2022-01-15T22:45:53.000Z">
-<meta property="article:modified_time" content="2022-01-16T09:26:59.279Z">
+<meta property="article:modified_time" content="2022-01-16T13:27:04.164Z">
 <meta property="article:author" content="gaussli">
 <meta property="article:tag" content="Kubernetes">
 <meta property="article:tag" content="二进制">
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B28-calico%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="article-date">
-     <time datetime="2022-01-16T09:26:59.279Z" itemprop="dateModified">2022-01-16</time>
+     <time datetime="2022-01-16T13:27:04.164Z" itemprop="dateModified">2022-01-16</time>
   </a>
 </div>
 
@@ -227,10 +227,10 @@ var _hmt = _hmt || [];
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">Words: </span>
-      <span class="post-count">462</span>
+      <span class="post-count">663</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">Read time: </span>
-      <span class="post-count">1 mins. </span>
+      <span class="post-count">2 mins. </span>
    </div>
 
 
@@ -261,8 +261,24 @@ var _hmt = _hmt || [];
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署14-fabric8的使用</a></li>
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署15-spring-cloud-starter-kubernetes的使用</a></li>
 </ul>
-<h1 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h1><p>本文将部署Kubernetes的网络插件Calico</p>
-<h1 id="二、获取Calico-yaml文件"><a href="#二、获取Calico-yaml文件" class="headerlink" title="二、获取Calico.yaml文件"></a>二、获取Calico.yaml文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /usr/<span class="built_in">local</span>/src/calico.yaml https://docs.projectcalico.org/manifests/calico.yaml</span><br></pre></td></tr></table></figure>
+<h1 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h1><p>本文将部署Kubernetes的网络插件Calico。</p>
+<p>文档链接：<br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/about/about-calico">最新版本</a><br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/archive/v3.21/about/about-calico">v3.21版本</a><br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/archive/v3.20/about/about-calico">v3.20版本</a><br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/archive/v3.19/about/about-calico">v3.19版本</a><br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/archive/v3.18/about/about-calico">v3.18版本</a></p>
+<p>版本对应<br>| Calico版本 | Kubernetes版本 |<br>| - | - |<br>| v3.21 | v1.20 v1.21 v1.22 |<br>| v3.20 | v1.19 v1.20 v1.21 |<br>| v3.19 | v1.19 v1.20 v1.21 |<br>| v3.18 | v1.18 v1.19 v1.20 |</p>
+<p>部署节点要求：</p>
+<ul>
+<li>x86-64, arm64, ppc64le, or s390x处理器</li>
+<li>内核3.10或更新，支持系统<ul>
+<li>RedHat Linux 7</li>
+<li>CentOS 7</li>
+<li>CoreOS Container Linux stable</li>
+<li>Ubuntu 16.04</li>
+<li>Debian 8</li>
+</ul>
+</li>
+<li>Calico需要管理<code>cali*</code>的网络设备；如果开启了IPIP模式，则同时会管理<code>tunl*</code>网络设备；如果VXLAN启用，则同时会管理<code>vxlan.calico</code>网络设备</li>
+<li>关闭防火墙及其他iptables管理工具</li>
+</ul>
+<h1 id="二、获取Calico-yaml文件"><a href="#二、获取Calico-yaml文件" class="headerlink" title="二、获取Calico.yaml文件"></a>二、获取Calico.yaml文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 旧版本Calico</span></span><br><span class="line"><span class="comment"># https://docs.projectcalico.org/archive/v3.19/manifests/calico.yaml</span></span><br><span class="line"><span class="comment"># https://docs.projectcalico.org/archive/v3.20/manifests/calico.yaml</span></span><br><span class="line"><span class="comment"># https://docs.projectcalico.org/archive/v3.21/manifests/calico.yaml</span></span><br><span class="line"><span class="comment"># 最新版本Calico</span></span><br><span class="line">wget -O /usr/<span class="built_in">local</span>/src/calico.yaml https://docs.projectcalico.org/manifests/calico.yaml</span><br></pre></td></tr></table></figure>
 <p>或者从下方获取，版本对应为3.21.4<br><a href="calico-yaml.txt">calico.yaml</a></p>
 <h1 id="三、修改参数"><a href="#三、修改参数" class="headerlink" title="三、修改参数"></a>三、修改参数</h1><ul>
 <li>按需修改4223行的<code>CALICO_IPV4POOL_CIDR</code>的值，指定pod的IP范围，该值不能和节点IP以及ClusterIP范围重合。默认值为<code>192.168.0.0/16</code></li>
@@ -281,7 +297,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B28-calico%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E9%83%A8%E7%BD%B2/" data-id="ckyh21vue006e5mw47n2ye8mz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B28-calico%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E9%83%A8%E7%BD%B2/" data-id="ckyham2aw006a3rw40dlh1c43" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -366,7 +382,7 @@ var _hmt = _hmt || [];
 【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署
 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署
 【容器化】kubernetes",
-        "wordCount": 108
+        "wordCount": 177
     }
 </script>
 
