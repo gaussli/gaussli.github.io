@@ -12,16 +12,16 @@
     
     <meta name="keywords" content="Kubernetes,二进制,部署,cni,calico,网络插件" />
     
-    <meta name="description" content="零、目录 【容器化】Kubernetes二进制高可用部署1-准备 【容器化】Kubernetes二进制高可用部署2-ca根证书 【容器化】kubernetes二进制高可用部署3-etcd高可用部署 【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署 【容器化】kubernetes">
+    <meta name="description" content="零、目录 【容器化】Kubernetes二进制高可用部署1-准备 【容器化】Kubernetes二进制高可用部署2-Ca根证书 【容器化】Kubernetes二进制高可用部署3-Etcd高可用部署 【容器化】Kubernetes二进制高可用部署4-Kube-Apiserver高可用部署 【容器化】Kubernetes二进制高可用部署5-HA和Keepalived部署 【容器化】Kubernetes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【容器化】Kubernetes二进制高可用部署8-Calico网络插件部署">
 <meta property="og:url" content="http://gaussli.com/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B28-calico%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
-<meta property="og:description" content="零、目录 【容器化】Kubernetes二进制高可用部署1-准备 【容器化】Kubernetes二进制高可用部署2-ca根证书 【容器化】kubernetes二进制高可用部署3-etcd高可用部署 【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署 【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署 【容器化】kubernetes">
+<meta property="og:description" content="零、目录 【容器化】Kubernetes二进制高可用部署1-准备 【容器化】Kubernetes二进制高可用部署2-Ca根证书 【容器化】Kubernetes二进制高可用部署3-Etcd高可用部署 【容器化】Kubernetes二进制高可用部署4-Kube-Apiserver高可用部署 【容器化】Kubernetes二进制高可用部署5-HA和Keepalived部署 【容器化】Kubernetes">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2022-01-15T22:45:53.000Z">
-<meta property="article:modified_time" content="2022-01-16T13:27:04.164Z">
+<meta property="article:modified_time" content="2022-01-16T13:30:39.991Z">
 <meta property="article:author" content="gaussli">
 <meta property="article:tag" content="Kubernetes">
 <meta property="article:tag" content="二进制">
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B28-calico%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E9%83%A8%E7%BD%B2/" class="article-date">
-     <time datetime="2022-01-16T13:27:04.164Z" itemprop="dateModified">2022-01-16</time>
+     <time datetime="2022-01-16T13:30:39.991Z" itemprop="dateModified">2022-01-16</time>
   </a>
 </div>
 
@@ -246,15 +246,15 @@ var _hmt = _hmt || [];
 
             <h1 id="零、目录"><a href="#零、目录" class="headerlink" title="零、目录"></a>零、目录</h1><ul>
 <li><a href="/2021/09/12/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B21-%E5%87%86%E5%A4%87/" title="【容器化】Kubernetes二进制高可用部署1-准备">【容器化】Kubernetes二进制高可用部署1-准备</a></li>
-<li><a href="/2022/01/15/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B22-ca%E6%A0%B9%E8%AF%81%E4%B9%A6/" title="【容器化】Kubernetes二进制高可用部署2-ca根证书">【容器化】Kubernetes二进制高可用部署2-ca根证书</a></li>
-<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B23-etcd%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署3-etcd高可用部署">【容器化】kubernetes二进制高可用部署3-etcd高可用部署</a></li>
-<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B24-kube-apiserver%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署">【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署</a></li>
-<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B25-ha%E5%92%8Ckeepalived%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署">【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署</a></li>
-<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B26-kube-controller%E5%92%8Ckube-scheduler%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署6-kube-controller和kube-scheduler部署">【容器化】kubernetes二进制高可用部署6-kube-controller和kube-scheduler部署</a></li>
-<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B27-kubelet%E5%92%8Ckube-proxy%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署7-kubelet和kube-proxy部署">【容器化】kubernetes二进制高可用部署7-kubelet和kube-proxy部署</a></li>
+<li><a href="/2022/01/15/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B22-ca%E6%A0%B9%E8%AF%81%E4%B9%A6/" title="【容器化】Kubernetes二进制高可用部署2-Ca根证书">【容器化】Kubernetes二进制高可用部署2-Ca根证书</a></li>
+<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B23-etcd%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" title="【容器化】Kubernetes二进制高可用部署3-Etcd高可用部署">【容器化】Kubernetes二进制高可用部署3-Etcd高可用部署</a></li>
+<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B24-kube-apiserver%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B2/" title="【容器化】Kubernetes二进制高可用部署4-Kube-Apiserver高可用部署">【容器化】Kubernetes二进制高可用部署4-Kube-Apiserver高可用部署</a></li>
+<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B25-ha%E5%92%8Ckeepalived%E9%83%A8%E7%BD%B2/" title="【容器化】Kubernetes二进制高可用部署5-HA和Keepalived部署">【容器化】Kubernetes二进制高可用部署5-HA和Keepalived部署</a></li>
+<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B26-kube-controller%E5%92%8Ckube-scheduler%E9%83%A8%E7%BD%B2/" title="【容器化】Kubernetes二进制高可用部署6-Kube-Controller和kube-Scheduler部署">【容器化】Kubernetes二进制高可用部署6-Kube-Controller和kube-Scheduler部署</a></li>
+<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B27-kubelet%E5%92%8Ckube-proxy%E9%83%A8%E7%BD%B2/" title="【容器化】Kubernetes二进制高可用部署7-Kubelet和kube-Proxy部署">【容器化】Kubernetes二进制高可用部署7-Kubelet和kube-Proxy部署</a></li>
 <li><strong><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B28-calico%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署8-Calico网络插件部署">【容器化】kubernetes二进制高可用部署8-Calico网络插件部署</a></strong></li>
-<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B29-flannel%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署9-Flannel网络插件部署">【容器化】kubernetes二进制高可用部署9-Flannel网络插件部署</a></li>
-<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B210-coredns%E9%83%A8%E7%BD%B2/" title="【容器化】kubernetes二进制高可用部署10-coredns部署">【容器化】kubernetes二进制高可用部署10-coredns部署</a></li>
+<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B29-flannel%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6%E9%83%A8%E7%BD%B2/" title="【容器化】Kubernetes二进制高可用部署9-Flannel网络插件部署">【容器化】Kubernetes二进制高可用部署9-Flannel网络插件部署</a></li>
+<li><a href="/2022/01/16/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%AB%98%E5%8F%AF%E7%94%A8%E9%83%A8%E7%BD%B210-coredns%E9%83%A8%E7%BD%B2/" title="【容器化】Kubernetes二进制高可用部署10-Coredns部署">【容器化】Kubernetes二进制高可用部署10-Coredns部署</a></li>
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署11-kubernetes测试验证</a></li>
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署12-kubernetes-ui面板</a></li>
 <li><a href="#">Post not found: 【容器化】kubernetes二进制高可用部署13-kubernetes指标监控</a></li>
@@ -263,7 +263,31 @@ var _hmt = _hmt || [];
 </ul>
 <h1 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h1><p>本文将部署Kubernetes的网络插件Calico。</p>
 <p>文档链接：<br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/about/about-calico">最新版本</a><br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/archive/v3.21/about/about-calico">v3.21版本</a><br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/archive/v3.20/about/about-calico">v3.20版本</a><br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/archive/v3.19/about/about-calico">v3.19版本</a><br><a target="_blank" rel="noopener" href="https://projectcalico.docs.tigera.io/archive/v3.18/about/about-calico">v3.18版本</a></p>
-<p>版本对应<br>| Calico版本 | Kubernetes版本 |<br>| - | - |<br>| v3.21 | v1.20 v1.21 v1.22 |<br>| v3.20 | v1.19 v1.20 v1.21 |<br>| v3.19 | v1.19 v1.20 v1.21 |<br>| v3.18 | v1.18 v1.19 v1.20 |</p>
+<p>版本对应：</p>
+<table>
+<thead>
+<tr>
+<th>Calico版本</th>
+<th>Kubernetes版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v3.21</td>
+<td>v1.20 v1.21 v1.22</td>
+</tr>
+<tr>
+<td>v3.20</td>
+<td>v1.19 v1.20 v1.21</td>
+</tr>
+<tr>
+<td>v3.19</td>
+<td>v1.19 v1.20 v1.21</td>
+</tr>
+<tr>
+<td>v3.18</td>
+<td>v1.18 v1.19 v1.20</td>
+</tr>
+</tbody></table>
 <p>部署节点要求：</p>
 <ul>
 <li>x86-64, arm64, ppc64le, or s390x处理器</li>
@@ -377,12 +401,12 @@ var _hmt = _hmt || [];
         "url": "http://gaussli.com/2022/01/16/【容器化】kubernetes二进制高可用部署8-calico网络插件部署/",
         "description": "零、目录
 【容器化】Kubernetes二进制高可用部署1-准备
-【容器化】Kubernetes二进制高可用部署2-ca根证书
-【容器化】kubernetes二进制高可用部署3-etcd高可用部署
-【容器化】kubernetes二进制高可用部署4-kube-apiserver高可用部署
-【容器化】kubernetes二进制高可用部署5-HA和Keepalived部署
-【容器化】kubernetes",
-        "wordCount": 177
+【容器化】Kubernetes二进制高可用部署2-Ca根证书
+【容器化】Kubernetes二进制高可用部署3-Etcd高可用部署
+【容器化】Kubernetes二进制高可用部署4-Kube-Apiserver高可用部署
+【容器化】Kubernetes二进制高可用部署5-HA和Keepalived部署
+【容器化】Kubernetes",
+        "wordCount": 153
     }
 </script>
 
