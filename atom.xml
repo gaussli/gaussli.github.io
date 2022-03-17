@@ -6,7 +6,7 @@
   <link href="http://gaussli.com/atom.xml" rel="self"/>
   
   <link href="http://gaussli.com/"/>
-  <updated>2022-03-17T06:57:36.211Z</updated>
+  <updated>2022-03-17T07:02:48.630Z</updated>
   <id>http://gaussli.com/</id>
   
   <author>
@@ -21,19 +21,17 @@
     <link href="http://gaussli.com/2022/03/17/%E3%80%90springcloud%E3%80%91%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     <id>http://gaussli.com/2022/03/17/%E3%80%90springcloud%E3%80%91%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9%E6%80%A7/</id>
     <published>2022-03-17T06:48:26.000Z</published>
-    <updated>2022-03-17T06:57:36.211Z</updated>
+    <updated>2022-03-17T07:02:48.630Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://spring.io/projects/spring-cloud">SpringCloud兼容性官方说明</a></p><table><thead><tr><th>SpringCloud版本</th><th>SpringBoot版本</th></tr></thead><tbody><tr><td>2021.0.x aka Jubilee</td><td>2.6.x</td></tr><tr><td>2020.0.x aka Ilford</td><td>2.4.x,2.5.x(Starting with 2020.0.3)</td></tr><tr><td>Hoxton</td><td>2.2.x,2.3.x(Starting with SR5</td></tr><tr><td>Greenwith</td><td>2.1.x</td></tr><tr><td>Finchley</td><td>2.0.x</td></tr><tr><td>Edgware</td><td>1.5.x</td></tr><tr><td>Dalston</td><td>1.5.x</td></tr></tbody></table><blockquote><p>Spring Cloud Dalston, Edgware, Finchley, and Greenwich have all reached end of life status and are no longer supported.<br>Dalston, Edgware, Finchley 和 Greenwich 版本不再更新支持。</p></blockquote><p>(•̀ᴗ•́)و ̑̑</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://spring.io/projects/spring-cloud">SpringCloud兼容性官方说明（https://spring.io/projects/spring-cloud）</a></p><table><thead><tr><th>SpringCloud版本</th><th>SpringBoot版本</th></tr></thead><tbody><tr><td><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2021.0-Release-Notes">2021.0.x</a> aka Jubilee</td><td>2.6.x</td></tr><tr><td><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes">2020.0.x</a> aka Ilford</td><td>2.4.x,2.5.x(Starting with 2020.0.3)</td></tr><tr><td><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-Hoxton-Release-Notes">Hoxton</a></td><td>2.2.x,2.3.x(Starting with SR5)</td></tr><tr><td><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-Greenwith-Release-Notes">Greenwith</a></td><td>2.1.x</td></tr><tr><td><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-Finchley-Release-Notes">Finchley</a></td><td>2.0.x</td></tr><tr><td><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-Edgware-Release-Notes">Edgware</a></td><td>1.5.x</td></tr><tr><td><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-Dalston-Release-Notes">Dalston</a></td><td>1.5.x</td></tr></tbody></table><blockquote><p>Spring Cloud Dalston, Edgware, Finchley, and Greenwich have all reached end of life status and are no longer supported.<br>Dalston, Edgware, Finchley 和 Greenwich 版本不再更新支持。</p></blockquote><p>(•̀ᴗ•́)و ̑̑</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-cloud&quot;&gt;SpringCloud兼容性官方说明&lt;/a&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-cloud&quot;&gt;SpringCloud兼容性官方说明（https://spring.io/projects/spring-cloud）&lt;/a&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;SpringCloud版本&lt;/th&gt;
-&lt;th&gt;SpringBoot版本</summary>
+&lt;tr</summary>
       
     
     
