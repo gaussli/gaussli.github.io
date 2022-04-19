@@ -6,7 +6,7 @@
   <link href="http://gaussli.com/atom.xml" rel="self"/>
   
   <link href="http://gaussli.com/"/>
-  <updated>2022-03-17T07:02:48.630Z</updated>
+  <updated>2022-04-19T16:01:33.034Z</updated>
   <id>http://gaussli.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【CentOS】yum工具问题</title>
+    <link href="http://gaussli.com/2022/04/19/%E3%80%90centos%E3%80%91yum%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/"/>
+    <id>http://gaussli.com/2022/04/19/%E3%80%90centos%E3%80%91yum%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/</id>
+    <published>2022-04-19T15:56:47.000Z</published>
+    <updated>2022-04-19T16:01:33.034Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="BDB1507-Thread-died-in-Berkeley-DB-library"><a href="#BDB1507-Thread-died-in-Berkeley-DB-library" class="headerlink" title="BDB1507 Thread died in Berkeley DB library"></a>BDB1507 Thread died in Berkeley DB library</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>yum搜索、安装或更新时报错，看意思是数据库出错，如图<br><img src="1.png"></p><h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ol><li><p>删除yum临时库文件<br>rm -fr /var/lib/rpm/__db.*</p></li><li><p>重建rpm数据库<br>rpm –rebuilddb</p></li><li><p>清理缓存及生产yumdb缓存<br>yum clean all<br>yum makecache</p></li></ol><p>(•̀ᴗ•́)و ̑̑</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;BDB1507-Thread-died-in-Berkeley-DB-library&quot;&gt;&lt;a href=&quot;#BDB1507-Thread-died-in-Berkeley-DB-library&quot; class=&quot;headerlink&quot; title=&quot;BDB1507 </summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://gaussli.com/categories/tech/"/>
+    
+    <category term="Linux" scheme="http://gaussli.com/categories/tech/linux/"/>
+    
+    
+    <category term="CentOS" scheme="http://gaussli.com/tags/centos/"/>
+    
+    <category term="yum" scheme="http://gaussli.com/tags/yum/"/>
+    
+    <category term="Linux" scheme="http://gaussli.com/tags/linux/"/>
+    
+    <category term="问题" scheme="http://gaussli.com/tags/%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>【SpringCloud】版本兼容性</title>
@@ -705,38 +737,6 @@
     <category term="Kubelet" scheme="http://gaussli.com/tags/kubelet/"/>
     
     <category term="Kubectl" scheme="http://gaussli.com/tags/kubectl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【容器化】Docker部署</title>
-    <link href="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91docker%E9%83%A8%E7%BD%B2/"/>
-    <id>http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91docker%E9%83%A8%E7%BD%B2/</id>
-    <published>2021-07-26T14:23:36.000Z</published>
-    <updated>2021-07-26T14:27:34.182Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h1><p>official-website：<a href="https://www.docker.com/">https://www.docker.com/</a></p><p>中文教程：<a href="https://www.runoob.com/docker/docker-tutorial.html">https://www.runoob.com/docker/docker-tutorial.html</a></p><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote><p>官方说明：Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.</p></blockquote><h1 id="YUM方式部署"><a href="#YUM方式部署" class="headerlink" title="YUM方式部署"></a>YUM方式部署</h1><h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h3><h5 id="配置Docker-CE的YUM源"><a href="#配置Docker-CE的YUM源" class="headerlink" title="配置Docker-CE的YUM源"></a>配置Docker-CE的YUM源</h5><p>YUM默认源中的Docker是比较旧的，如果需要安装新版本的Docker，需要配置Docker-CE的YUM源。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">yum makecache fast</span><br></pre></td></tr></table></figure><p>结果截图：<br><img src="60f67aa657f0b.png"></p><h5 id="查看可安装的Docker版本"><a href="#查看可安装的Docker版本" class="headerlink" title="查看可安装的Docker版本"></a>查看可安装的Docker版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list docker-ce --showduplicates</span><br></pre></td></tr></table></figure><p>结果截图：<br><img src="60f67b6c61696.png"></p><h3 id="2-安装部署"><a href="#2-安装部署" class="headerlink" title="2. 安装部署"></a>2. 安装部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装最新版本</span></span><br><span class="line"><span class="comment"># yum install -y docker-ce</span></span><br><span class="line"><span class="comment"># 安装指定指定版本</span></span><br><span class="line">yum install -y docker-ce-3:19.03.15-3.el7.x86_64</span><br></pre></td></tr></table></figure><p>结果截图：<br><img src="60f67e6229ffd.png"></p><h3 id="3-配置开机自启动及服务启动"><a href="#3-配置开机自启动及服务启动" class="headerlink" title="3. 配置开机自启动及服务启动"></a>3. 配置开机自启动及服务启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure><p>结果截图：<br><img src="60f67ea72757d.png"></p><h3 id="4-配置私有仓库"><a href="#4-配置私有仓库" class="headerlink" title="4. 配置私有仓库"></a>4. 配置私有仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line"><span class="comment"># 配置Docker私有仓库文件</span></span><br><span class="line">cat &lt;&lt; <span class="string">EOF &gt; /etc/docker/daemon.json</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  &quot;registry-mirrors&quot;: [</span></span><br><span class="line"><span class="string">    &quot;http://&lt;IP&gt;:&lt;PORT&gt;&quot;</span></span><br><span class="line"><span class="string">  ],</span></span><br><span class="line"><span class="string">  &quot;insecure-registries&quot;: [</span></span><br><span class="line"><span class="string">    &quot;&lt;IP&gt;:&lt;PORT&gt;&quot;</span></span><br><span class="line"><span class="string">  ]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment"># 重启Docker服务</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure><h3 id="5-测试镜像拉取"><a href="#5-测试镜像拉取" class="headerlink" title="5. 测试镜像拉取"></a>5. 测试镜像拉取</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull busybox</span><br></pre></td></tr></table></figure><p>结果截图：<br><img src="60f685d6208a5.png"></p><p>(•̀ᴗ•́)و ̑̑</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;官网&quot;&gt;&lt;a href=&quot;#官网&quot; class=&quot;headerlink&quot; title=&quot;官网&quot;&gt;&lt;/a&gt;官网&lt;/h1&gt;&lt;p&gt;official-website：&lt;a href=&quot;https://www.docker.com/&quot;&gt;https://www.docker.</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="http://gaussli.com/categories/tech/"/>
-    
-    <category term="Container" scheme="http://gaussli.com/categories/tech/container/"/>
-    
-    <category term="Docker" scheme="http://gaussli.com/categories/tech/container/docker/"/>
-    
-    
-    <category term="YUM" scheme="http://gaussli.com/tags/yum/"/>
-    
-    <category term="Docker" scheme="http://gaussli.com/tags/docker/"/>
-    
-    <category term="Container" scheme="http://gaussli.com/tags/container/"/>
     
   </entry>
   
