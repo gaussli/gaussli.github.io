@@ -251,7 +251,7 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; yum install cmake -y</span><br></pre></td></tr></table></figure>
 
 <p>安装结果：</p>
-<p><img src="yumcmake.png" alt="cmake安装结果"></p>
+<p><img src="/yumcmake.png" alt="cmake安装结果"></p>
 <ol start="2">
 <li>lua和lua-devel</li>
 </ol>
@@ -262,7 +262,7 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CMake Error at /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake:108 (message):</span><br><span class="line">  Could NOT find Lua (missing: LUA_INCLUDE_DIR)</span><br></pre></td></tr></table></figure>
 
 <p>安装结果：</p>
-<p><img src="yumlua-devel.png" alt="lua-devel安装结果"></p>
+<p><img src="/yumlua-devel.png" alt="lua-devel安装结果"></p>
 <ol start="3">
 <li>gcc-c++</li>
 </ol>
@@ -272,7 +272,7 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; yum install gcc-c++ -y</span><br></pre></td></tr></table></figure>
 
 <p>安装结果：</p>
-<p><img src="yumgcc-c++.png" alt="gcc-c++安装结果"></p>
+<p><img src="/yumgcc-c++.png" alt="gcc-c++安装结果"></p>
 <h2 id="下载并解压源码包"><a href="#下载并解压源码包" class="headerlink" title="下载并解压源码包"></a>下载并解压源码包</h2><p>Click入<a target="_blank" rel="noopener" href="http://axkibe.github.io/lsyncd/">lsyncd网站</a>，找到下载链接<a target="_blank" rel="noopener" href="https://github.com/axkibe/lsyncd/archive/release-2.1.6.tar.gz">lsyncd源码包</a>，进行下载。很奇怪的一点是它居然用<code>releace-2.1.6.tar.gz</code>来进行命名，一点都看不出是lsyncd包，而且这样的命名也不符合发布包命名的一般规则，可见作者就是一任性的人。为了文件管理，可以把它更名为<code>lsyncd-2.1.6.tar.gz</code>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; wget -c https://github.com/axkibe/lsyncd/archive/release-2.1.6.tar.gz -O lsyncd-2.1.6.tar.gz</span><br><span class="line">shell&gt; tar -zxvf lsyncd-2.1.6.tar.gz</span><br></pre></td></tr></table></figure>
 
@@ -280,11 +280,11 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; cmake -DCMAKE_INSTALL_PREFIX=/usr/local/lsyncd</span><br><span class="line">shell&gt; make</span><br><span class="line">shell&gt; make install</span><br></pre></td></tr></table></figure>
 
 <p>cmake结果：</p>
-<p><img src="cmake.png" alt="cmake结果"></p>
+<p><img src="/cmake.png" alt="cmake结果"></p>
 <p>make结果：</p>
-<p><img src="make.png" alt="make结果"></p>
+<p><img src="/make.png" alt="make结果"></p>
 <p>make install结果:</p>
-<p><img src="makeinstall.png" alt="make install结果"></p>
+<p><img src="/makeinstall.png" alt="make install结果"></p>
 <p>(•̀ᴗ•́)و ̑̑</p>
 
         </div>
@@ -293,7 +293,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/07/15/linux-lsyncd%E5%AE%89%E8%A3%85/" data-id="cm45dlun30026ggye1mlhcad2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/07/15/linux-lsyncd%E5%AE%89%E8%A3%85/" data-id="cm45dsm0q0024rwyehtzi2bvz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

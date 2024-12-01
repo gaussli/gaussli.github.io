@@ -224,7 +224,7 @@ var _hmt = _hmt || [];
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">Words: </span>
-      <span class="post-count">385</span>
+      <span class="post-count">387</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">Read time: </span>
       <span class="post-count">2 mins. </span>
@@ -253,10 +253,10 @@ var _hmt = _hmt || [];
 <h1 id="解决方案（更新证书有效期）"><a href="#解决方案（更新证书有效期）" class="headerlink" title="解决方案（更新证书有效期）"></a>解决方案（更新证书有效期）</h1><h2 id="1-备份证书"><a href="#1-备份证书" class="headerlink" title="1. 备份证书"></a>1. 备份证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -rp /etc/kubernetes /etc/kubernetes.bak.[<span class="built_in">date</span>]</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-更新所有证书"><a href="#2-更新所有证书" class="headerlink" title="2. 更新所有证书"></a>2. 更新所有证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm alpha certs renew all</span><br></pre></td></tr></table></figure>
-<p><img src="60ed3268f3349.png"></p>
-<h2 id="3-复制admin-conf到-kube-config，kubectl需要用到该文件"><a href="#3-复制admin-conf到-kube-config，kubectl需要用到该文件" class="headerlink" title="3. 复制admin.conf到~/.kube/config，kubectl需要用到该文件"></a>3. 复制admin.conf到~/.kube/config，kubectl需要用到该文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -rp ~/.kube ~/.kube.bak.[<span class="built_in">date</span>]</span><br><span class="line"><span class="built_in">cp</span> /etc/kubernetes/admin.conf ~/.kube/config</span><br></pre></td></tr></table></figure>
+<p><img src="/60ed3268f3349.png"></p>
+<h2 id="3-复制admin-conf到-kube-config，kubectl需要用到该文件"><a href="#3-复制admin-conf到-kube-config，kubectl需要用到该文件" class="headerlink" title="3. 复制admin.conf到~&#x2F;.kube&#x2F;config，kubectl需要用到该文件"></a>3. 复制admin.conf到~&#x2F;.kube&#x2F;config，kubectl需要用到该文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -rp ~/.kube ~/.kube.bak.[<span class="built_in">date</span>]</span><br><span class="line"><span class="built_in">cp</span> /etc/kubernetes/admin.conf ~/.kube/config</span><br></pre></td></tr></table></figure>
 
-<p><img src="60ed3346327db.png"></p>
+<p><img src="/60ed3346327db.png"></p>
 <h2 id="4-重启kube-apiserver、kube-controller-manager、kube-scheduler和etcd服务或直接重启docker"><a href="#4-重启kube-apiserver、kube-controller-manager、kube-scheduler和etcd服务或直接重启docker" class="headerlink" title="4. 重启kube-apiserver、kube-controller-manager、kube-scheduler和etcd服务或直接重启docker"></a>4. 重启kube-apiserver、kube-controller-manager、kube-scheduler和etcd服务或直接重启docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 <p>(•̀ᴗ•́)و ̑̑</p>
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" data-id="cm45dlunw006wggyedawq3f66" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" data-id="cm45dsm1k006vrwye5g2x3ly0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

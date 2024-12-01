@@ -12,12 +12,12 @@
     
     <meta name="keywords" content="log4j,logger" />
     
-    <meta name="description" content="J2EE-Log4j配置说明 配置根Logger，语法为   log4j.rootLogger&#x3D;[level],appenderName,appenderName2,…  level级别种类  ALL ERROR：严重错误，主要是程序错误 WARN：一般警告，比如session丢失 INFO：一般显示信息，比如登录登出 DEBUG：程序的调试信息   配置日志信息输出目的地   log4j.app">
+    <meta name="description" content="J2EE-Log4j配置说明 配置根Logger，语法为   log4j.rootLogger&#x3D;[level],appenderName,appenderName2,…  level级别种类  ALL ERROR：严重错误，主要是程序错误 WARN：一般警告，比如session丢失 INFO：一般显示信息，比如登录登出 DEBUG：程序的调试信息   配置日志信息输出目的地   log4">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[J2EE]Log4j配置说明">
 <meta property="og:url" content="http://gaussli.com/2017/11/06/j2ee-log4j%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
-<meta property="og:description" content="J2EE-Log4j配置说明 配置根Logger，语法为   log4j.rootLogger&#x3D;[level],appenderName,appenderName2,…  level级别种类  ALL ERROR：严重错误，主要是程序错误 WARN：一般警告，比如session丢失 INFO：一般显示信息，比如登录登出 DEBUG：程序的调试信息   配置日志信息输出目的地   log4j.app">
+<meta property="og:description" content="J2EE-Log4j配置说明 配置根Logger，语法为   log4j.rootLogger&#x3D;[level],appenderName,appenderName2,…  level级别种类  ALL ERROR：严重错误，主要是程序错误 WARN：一般警告，比如session丢失 INFO：一般显示信息，比如登录登出 DEBUG：程序的调试信息   配置日志信息输出目的地   log4">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2017-11-06T05:35:27.000Z">
@@ -242,7 +242,7 @@ var _hmt = _hmt || [];
 
             <h1 id="J2EE-Log4j配置说明"><a href="#J2EE-Log4j配置说明" class="headerlink" title="J2EE-Log4j配置说明"></a>J2EE-Log4j配置说明</h1><ul>
 <li><p>配置根Logger，语法为</p>
-<p>  log4j.rootLogger=[level],appenderName,appenderName2,…</p>
+<p>  log4j.rootLogger&#x3D;[level],appenderName,appenderName2,…</p>
 </li>
 <li><p>level级别种类</p>
 <ul>
@@ -254,28 +254,28 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 <li><p>配置日志信息输出目的地</p>
-<p>  log4j.appender.appenderName=fully.qualified.name.of.appender.class</p>
+<p>  log4j.appender.appenderName&#x3D;fully.qualified.name.of.appender.class</p>
 <ul>
 <li>org.apache.log4j.ConsoleAppender：控制台<ul>
-<li>Threshold=DEBUG：指定日志信息的输出最低层次</li>
-<li>ImmediateFlush=TRUE：默认值是true，所有的消息都会被立即输出</li>
-<li>Target=System.err：默认值是System.out，输出到控制台（err为红色，out为黑色）</li>
+<li>Threshold&#x3D;DEBUG：指定日志信息的输出最低层次</li>
+<li>ImmediateFlush&#x3D;TRUE：默认值是true，所有的消息都会被立即输出</li>
+<li>Target&#x3D;System.err：默认值是System.out，输出到控制台（err为红色，out为黑色）</li>
 </ul>
 </li>
 <li>org.apache.log4j.FileAppender：文件<ul>
-<li>Threshold=INFO：指定日志信息的输出最低层次</li>
-<li>ImmediateFlush=TRUE：默认值是true，所有的消息都会被立即输出</li>
-<li>File=Path/to/log/file：指定消息输出到“Path/to/log/file”文件</li>
-<li>Append=FALSE：默认值是true，将消息追加到指定文件中，false指将消息覆盖指定的文件内容</li>
-<li>Encoding=UTF-8：可以指定文件的编码格式</li>
+<li>Threshold&#x3D;INFO：指定日志信息的输出最低层次</li>
+<li>ImmediateFlush&#x3D;TRUE：默认值是true，所有的消息都会被立即输出</li>
+<li>File&#x3D;Path&#x2F;to&#x2F;log&#x2F;file：指定消息输出到“Path&#x2F;to&#x2F;log&#x2F;file”文件</li>
+<li>Append&#x3D;FALSE：默认值是true，将消息追加到指定文件中，false指将消息覆盖指定的文件内容</li>
+<li>Encoding&#x3D;UTF-8：可以指定文件的编码格式</li>
 </ul>
 </li>
 <li>org.apache.log4j.DailyRollingFileAppender：每天产生一个日志文件<ul>
-<li>Threshold=WARN：指定日志消息的输出最低层次</li>
-<li>ImmediateFlush=TRUE：默认值是true，所有的消息都会被立即输出</li>
-<li>File=Path/to/log/file：指定消息输出到“Path/to/log/file”文件</li>
-<li>Append=FALSE：默认值是true，将消息追加到指定文件中，false指将消息覆盖指定的文件内容</li>
-<li>DatePattern=’.’yyyy-ww：每周滚动一次文件，即每周产生一个新的文件，还可以使用以下参数：<ul>
+<li>Threshold&#x3D;WARN：指定日志消息的输出最低层次</li>
+<li>ImmediateFlush&#x3D;TRUE：默认值是true，所有的消息都会被立即输出</li>
+<li>File&#x3D;Path&#x2F;to&#x2F;log&#x2F;file：指定消息输出到“Path&#x2F;to&#x2F;log&#x2F;file”文件</li>
+<li>Append&#x3D;FALSE：默认值是true，将消息追加到指定文件中，false指将消息覆盖指定的文件内容</li>
+<li>DatePattern&#x3D;’.’yyyy-ww：每周滚动一次文件，即每周产生一个新的文件，还可以使用以下参数：<ul>
 <li>‘.’yyyy-MM：每月</li>
 <li>‘.’yyyy-ww：每周</li>
 <li>‘.’yyyy-MM-dd：每天</li>
@@ -284,32 +284,32 @@ var _hmt = _hmt || [];
 <li>‘.’yyyy-MM-dd-HH-mm：每分钟</li>
 </ul>
 </li>
-<li>Encoding=UTF-8：可以指定文件的编码格式</li>
+<li>Encoding&#x3D;UTF-8：可以指定文件的编码格式</li>
 </ul>
 </li>
 <li>org.apache.log4j.RollingFileAppender：文件大小到达指定大小的时候产生一个新文件<ul>
-<li>Threshold=ERROR：指定日志消息的输出最低层次</li>
-<li>ImmediateFlush=TRUE：默认值是true，所有的消息都会被立即输出</li>
-<li>File=Path/to/log/file：指定消息输出到“Path/to/log/file”文件</li>
-<li>Append=FALSE：默认值是true，将消息追加到指定文件中，false指将消息覆盖指定的文件内容</li>
-<li>MaxFileSize=100KB：后缀可以是KB，MB，GB。在日志文件到达该大小时，将会自动滚动新增一个文件。如example.log.1</li>
-<li>MaxBackupIndex=2：指定可以产生的滚动文件的最大数</li>
-<li>Encoding=UTF-8：可以指定文件的编码格式</li>
+<li>Threshold&#x3D;ERROR：指定日志消息的输出最低层次</li>
+<li>ImmediateFlush&#x3D;TRUE：默认值是true，所有的消息都会被立即输出</li>
+<li>File&#x3D;Path&#x2F;to&#x2F;log&#x2F;file：指定消息输出到“Path&#x2F;to&#x2F;log&#x2F;file”文件</li>
+<li>Append&#x3D;FALSE：默认值是true，将消息追加到指定文件中，false指将消息覆盖指定的文件内容</li>
+<li>MaxFileSize&#x3D;100KB：后缀可以是KB，MB，GB。在日志文件到达该大小时，将会自动滚动新增一个文件。如example.log.1</li>
+<li>MaxBackupIndex&#x3D;2：指定可以产生的滚动文件的最大数</li>
+<li>Encoding&#x3D;UTF-8：可以指定文件的编码格式</li>
 </ul>
 </li>
 <li>org.apache.log4j.WriterAppender：将日志信息以流格式发送到任意指定的地方</li>
 </ul>
 </li>
 <li><p>配置日志信息的格式</p>
-<p>  log4j.appender.appenderName.layout=fully.qualified.name.of.layout.class</p>
+<p>  log4j.appender.appenderName.layout&#x3D;fully.qualified.name.of.layout.class</p>
 <ul>
 <li>org.apache.log4j.HTMLLayout：以HTML表格形式布局<ul>
-<li>LocationInfo=TRUE：默认值是false，输出java文件名称和行号</li>
-<li>Title=XXX Log Message：默认值是Log4jLog Message</li>
+<li>LocationInfo&#x3D;TRUE：默认值是false，输出java文件名称和行号</li>
+<li>Title&#x3D;XXX Log Message：默认值是Log4jLog Message</li>
 </ul>
 </li>
 <li>org.apache.log4j.PatternLayout：可以灵活地指定布局模式<ul>
-<li>ConversionPattern=%m%n：格式化指定的恶消息<ul>
+<li>ConversionPattern&#x3D;%m%n：格式化指定的恶消息<ul>
 <li>%m：输出代码中指定的消息</li>
 <li>%p：输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL</li>
 <li>％r：输出自应用启动到输出该log信息耗费的毫秒数</li>
@@ -339,7 +339,7 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 <li><p>指定特定包的输出特定的级别</p>
-<p>  log4j.logger.org.springframework=DEBUG</p>
+<p>  log4j.logger.org.springframework&#x3D;DEBUG</p>
 </li>
 </ul>
 <p>(•̀ᴗ•́)و ̑̑</p>
@@ -350,7 +350,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2017/11/06/j2ee-log4j%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/" data-id="cm45dlumw0018ggyeh3180hi7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2017/11/06/j2ee-log4j%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/" data-id="cm45dsm0k001arwye5qjb0mq0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -430,7 +430,7 @@ var _hmt = _hmt || [];
         "url": "http://gaussli.com/2017/11/06/j2ee-log4j配置说明/",
         "description": "J2EE-Log4j配置说明
 配置根Logger，语法为
-  log4j.rootLogger=[level],appenderName,appenderName2,…
+  log4j.rootLogger&#x3D;[level],appenderName,appenderName2,…
 
 level级别种类
 
@@ -442,7 +442,7 @@ DEBUG：程序的调试信息
 
 
 配置日志信息输出目的地
-  log4j.app",
+  log4",
         "wordCount": 20
     }
 </script>

@@ -10,21 +10,21 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Kernel,CentOS,更新内核,grub2,elrepo" />
+    <meta name="keywords" content="CentOS,Kernel,更新内核,grub2,elrepo" />
     
-    <meta name="description" content="环境 平台：virtualbox虚拟机 系统：CentOS 7.6 旧内核：3.10.0-957.5.1.el7.x86_64 安装的新内核：4.4.176-1.el7.elrepo.x86_64   步骤 查看当前内核 1uname -a 查看系统版本 1cat &#x2F;etc&#x2F;redhat-release 查看已安装的内核 1rpm -qa | grep kernel   查看是否有关于内核的源，e">
+    <meta name="description" content="环境 平台：virtualbox虚拟机 系统：CentOS 7.6 旧内核：3.10.0-957.5.1.el7.x86_64 安装的新内核：4.4.176-1.el7.elrepo.x86_64   步骤 查看当前内核 1uname -a  查看系统版本 1cat &#x2F;etc&#x2F;redhat-release 查看已安装的内核 1rpm -qa | grep kernel   查看是否有关于内核的源，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Linux]CentOS7.6更新内核">
 <meta property="og:url" content="http://gaussli.com/2019/03/06/linux-centos7-6%E6%9B%B4%E6%96%B0%E5%86%85%E6%A0%B8/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
-<meta property="og:description" content="环境 平台：virtualbox虚拟机 系统：CentOS 7.6 旧内核：3.10.0-957.5.1.el7.x86_64 安装的新内核：4.4.176-1.el7.elrepo.x86_64   步骤 查看当前内核 1uname -a 查看系统版本 1cat &#x2F;etc&#x2F;redhat-release 查看已安装的内核 1rpm -qa | grep kernel   查看是否有关于内核的源，e">
+<meta property="og:description" content="环境 平台：virtualbox虚拟机 系统：CentOS 7.6 旧内核：3.10.0-957.5.1.el7.x86_64 安装的新内核：4.4.176-1.el7.elrepo.x86_64   步骤 查看当前内核 1uname -a  查看系统版本 1cat &#x2F;etc&#x2F;redhat-release 查看已安装的内核 1rpm -qa | grep kernel   查看是否有关于内核的源，">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2019-03-06T15:22:06.000Z">
 <meta property="article:modified_time" content="2021-07-26T06:01:36.000Z">
 <meta property="article:author" content="gaussli">
-<meta property="article:tag" content="Kernel">
 <meta property="article:tag" content="CentOS">
+<meta property="article:tag" content="Kernel">
 <meta property="article:tag" content="更新内核">
 <meta property="article:tag" content="grub2">
 <meta property="article:tag" content="elrepo">
@@ -252,58 +252,63 @@ var _hmt = _hmt || [];
 <hr>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li><p>查看当前内核</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>查看系统版本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure></li>
 <li><p>查看已安装的内核</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep kernel</span><br></pre></td></tr></table></figure>
-<p><img src="3.png" alt="已安装的内核图片"></p>
+<p><img src="/3.png" alt="已安装的内核图片"></p>
 </li>
 <li><p>查看是否有关于内核的源，elrepo（RPM repository for Enterprise Linux package），其实是个企业级Linux的仓库，这里只用到内核包，所以称为内核源</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum repolist</span><br></pre></td></tr></table></figure>
-<p><img src="4.png" alt="repolist图片"></p>
+<p><img src="/4.png" alt="repolist图片"></p>
 </li>
 <li><p>安装内核源，官网 <a target="_blank" rel="noopener" href="http://elrepo.org/tiki/tiki-index.php">http://elrepo.org/tiki/tiki-index.php</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm</span><br></pre></td></tr></table></figure>
-<p>安装完后重新执行<code>yum repolist</code>就能看到内核源已经安装好了<br><img src="5.png" alt="已安装内核源图片"></p>
+<p>安装完后重新执行<code>yum repolist</code>就能看到内核源已经安装好了<br><img src="/5.png" alt="已安装内核源图片"></p>
 </li>
 <li><p>查看内核源配置文件，会发现针对内核的仓库是默认关闭的，enable属性的值为0，所以要不就是设置为1，要不就是yum搜索、查询、安装的时候加上<code>--enablerepo=elrepo-kernel</code>参数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/yum.repos.d/elrepo.repo</span><br></pre></td></tr></table></figure>
-<p><img src="6.png" alt="内核仓库关闭图片"></p>
+<p><img src="/6.png" alt="内核仓库关闭图片"></p>
 </li>
 <li><p>查看新的内核包，lt表示longterm（长时间支持版本），ml表示mainline（主线版本），一般服务端的话还是longterm，出了问题能获得更多的官方支持</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum search --enablerepo=elrepo-kernel lt</span><br></pre></td></tr></table></figure>
-<p><img src="7.png" alt="yum搜索内核包图片"></p>
+<p><img src="/7.png" alt="yum搜索内核包图片"></p>
 </li>
 <li><p>查看kernel-lt和kernel-ml的信息，可以发现当前lt版本是4.4.176，而ml版本是5.0.0。在写这篇文章的前一天看还只是4.10.xxx，隔一天就有5.0.0版本，哈哈哈，但是我还是装的lt版本</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum info --enablerepo=elrepo-kernel kernel-lt kernel-ml</span><br></pre></td></tr></table></figure>
-<p><img src="8.png" alt="kernel-lt信息图片"></p>
+<p><img src="/8.png" alt="kernel-lt信息图片"></p>
 </li>
 <li><p>删除旧版本的kernel-tools和kernel-tools-libs，不然在安装时会出现包冲突错误</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove kernel-tools-3.10.0-957.5.1.el7.x86_64 kernel-tools-libs-3.10.0-957.5.1.el7.x86_64</span><br></pre></td></tr></table></figure>
-<p>不删除出现的错误如下<br><img src="9.png" alt="不删除tools和tools-libs包的冲突错误图片"></p>
+<p>不删除出现的错误如下<br><img src="/9.png" alt="不删除tools和tools-libs包的冲突错误图片"></p>
 </li>
 <li><p>安装kernel-lt、kernel-lt-headers、kernel-lt-devel、kernel-lt-tools、kernel-lt-tools-libs，其中只安装kernel系统就能跑了，其他的有可能其他软件需要使用到的而已，看个人选择。文章后面有不同包的一些说明</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install --enablerepo=elrepo-kernel -y kernel-lt kernel-lt-headers kernel-lt-devel kernel-lt-tools kernel-lt-tools-libs</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install --enablerepo=elrepo-kernel -y kernel-lt kernel-lt-headers kernel-lt-devel kernel-lt-tools kernel-lt-tools-libs</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>查看当前可用的内核列表</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F\&#x27; &#x27;$1==&quot;menuentry &quot; &#123;print i++ &quot; : &quot; $2&#125;&#x27; /etc/grub2.cfg</span><br></pre></td></tr></table></figure>
-<p><img src="11.png" alt="可用内核列表图片"></p>
+<p><img src="/11.png" alt="可用内核列表图片"></p>
 </li>
 <li><p>查看当前使用的内核，查看GRUB_DEFAULT属性，该值对应的数字就是第11步内核列表前面的序号，这里是<code>save</code>，表示上次开机记住的，由于之前还没有新的内核，所以这里是使用<code>1 : CentOS Linux (3.10.0-957.5.1.el7.x86_64) 7 (Core)</code>这个版本的内核</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/default/grub</span><br></pre></td></tr></table></figure>
-<p><img src="12.png" alt="当前使用的内核图片"></p>
+<p><img src="/12.png" alt="当前使用的内核图片"></p>
 </li>
 <li><p>如果当前使用的内核不是所希望的，可使用grub2-set-default命令进行设置，不要直接修改<code>/etc/default/grub</code>文件，这里设置为0表示下次重启使用<code>0 : CentOS Linux (4.4.176-1.el7.elrepo.x86_64) 7 (Core)</code>这个内核（PS：如果是CentOS 7.0以下的，使用grub来做系统引导的）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub2-set-default 0</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub2-set-default 0</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>重启，使内核配置生效</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>重新查看内核版本，就会发现内核已经是刚刚下载的4.4.176内核（kernel-lt版本）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>删除旧内核（可选操作），通过<code>rpm -qa | grep kernel</code>查看已有内核，接着使用<code>yum remove</code>进行删除</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove kernel-3.10.0-957.5.1.el7.x86_64 kernel-devel-3.10.0-957.5.1.el7.x86_64</span><br></pre></td></tr></table></figure></li>
 <li><p>重建grub2的配置文件（可选操作）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub2-mkconfig -o /boot/grub2/grub.cfg</span><br></pre></td></tr></table></figure>
-<p>这时重新查看可用的内核列表，就没有了旧内核可以选择了<br><img src="16.png" alt="可用内核列表"></p>
+<p>这时重新查看可用的内核列表，就没有了旧内核可以选择了<br><img src="/16.png" alt="可用内核列表"></p>
 </li>
 </ol>
 <hr>
@@ -352,7 +357,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2019/03/06/linux-centos7-6%E6%9B%B4%E6%96%B0%E5%86%85%E6%A0%B8/" data-id="cm45dlumz001qggye11s3gt9r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2019/03/06/linux-centos7-6%E6%9B%B4%E6%96%B0%E5%86%85%E6%A0%B8/" data-id="cm45dsm0o001trwyeb99tf9b8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -424,7 +429,7 @@ var _hmt = _hmt || [];
         },
         "headline": "[Linux]CentOS7.6更新内核",
         "image": "http://gaussli.com/placeholder.png",
-        "keywords": "Kernel CentOS 更新内核 grub2 elrepo",
+        "keywords": "CentOS Kernel 更新内核 grub2 elrepo",
         "genre": "Tech Linux",
         "datePublished": "2019-03-06",
         "dateCreated": "2019-03-06",
@@ -440,13 +445,14 @@ var _hmt = _hmt || [];
 步骤
 查看当前内核
 1uname -a
+
 查看系统版本
 1cat /etc/redhat-release
 查看已安装的内核
 1rpm -qa | grep kernel
 
 
-查看是否有关于内核的源，e",
+查看是否有关于内核的源，",
         "wordCount": 258
     }
 </script>

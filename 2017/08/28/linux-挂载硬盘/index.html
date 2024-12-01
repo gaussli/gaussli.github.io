@@ -12,12 +12,12 @@
     
     <meta name="keywords" content="硬盘,挂载,fdisk,mount" />
     
-    <meta name="description" content="fdisk -l：查看当前机器硬盘及分区情况 fdisk &#x2F;dev&#x2F;vdb：进入硬盘分区 n：进入分区命令 p：主分区；e：逻辑分区 w：保存退出 fdisk -l：再次查看当前机器硬盘及分区情况 mkfs -t ext3 -c &#x2F;dev&#x2F;vdb1：深入格式化；mkfs.ext3 &#x2F;dev&#x2F;vdb1：快速格式化 mount &#x2F;dev&#x2F;vdb1 &#x2F;mnt&#x2F; df -k：查看挂载信息 修改文件&#x2F;et">
+    <meta name="description" content="fdisk -l：查看当前机器硬盘及分区情况 fdisk &#x2F;dev&#x2F;vdb：进入硬盘分区 n：进入分区命令 p：主分区；e：逻辑分区 w：保存退出 fdisk -l：再次查看当前机器硬盘及分区情况 mkfs -t ext3 -c &#x2F;dev&#x2F;vdb1：深入格式化；mkfs.ext3 &#x2F;dev&#x2F;vdb1：快速格式化 mount &#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Linux]挂载硬盘">
 <meta property="og:url" content="http://gaussli.com/2017/08/28/linux-%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
-<meta property="og:description" content="fdisk -l：查看当前机器硬盘及分区情况 fdisk &#x2F;dev&#x2F;vdb：进入硬盘分区 n：进入分区命令 p：主分区；e：逻辑分区 w：保存退出 fdisk -l：再次查看当前机器硬盘及分区情况 mkfs -t ext3 -c &#x2F;dev&#x2F;vdb1：深入格式化；mkfs.ext3 &#x2F;dev&#x2F;vdb1：快速格式化 mount &#x2F;dev&#x2F;vdb1 &#x2F;mnt&#x2F; df -k：查看挂载信息 修改文件&#x2F;et">
+<meta property="og:description" content="fdisk -l：查看当前机器硬盘及分区情况 fdisk &#x2F;dev&#x2F;vdb：进入硬盘分区 n：进入分区命令 p：主分区；e：逻辑分区 w：保存退出 fdisk -l：再次查看当前机器硬盘及分区情况 mkfs -t ext3 -c &#x2F;dev&#x2F;vdb1：深入格式化；mkfs.ext3 &#x2F;dev&#x2F;vdb1：快速格式化 mount &#x2F;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2017-08-28T07:48:29.000Z">
@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">Words: </span>
-      <span class="post-count">133</span>
+      <span class="post-count">143</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">Read time: </span>
       <span class="post-count">1 mins. </span>
@@ -244,13 +244,13 @@ var _hmt = _hmt || [];
 
             <ol>
 <li>fdisk -l：查看当前机器硬盘及分区情况</li>
-<li>fdisk /dev/vdb：进入硬盘分区</li>
+<li>fdisk &#x2F;dev&#x2F;vdb：进入硬盘分区</li>
 <li>n：进入分区命令</li>
 <li>p：主分区；e：逻辑分区</li>
 <li>w：保存退出</li>
 <li>fdisk -l：再次查看当前机器硬盘及分区情况</li>
-<li>mkfs -t ext3 -c /dev/vdb1：深入格式化；mkfs.ext3 /dev/vdb1：快速格式化</li>
-<li>mount /dev/vdb1 /mnt/</li>
+<li>mkfs -t ext3 -c &#x2F;dev&#x2F;vdb1：深入格式化；mkfs.ext3 &#x2F;dev&#x2F;vdb1：快速格式化</li>
+<li>mount &#x2F;dev&#x2F;vdb1 &#x2F;mnt&#x2F;</li>
 <li>df -k：查看挂载信息</li>
 <li>修改文件<code>/etc/fstab</code>，添加<code>/dev/vdb1 /mnt ext4 defaults 0 0</code>，实现开机自动挂载</li>
 </ol>
@@ -264,7 +264,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2017/08/28/linux-%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98/" data-id="cm45dluna0037ggye2jb6dema" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2017/08/28/linux-%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98/" data-id="cm45dsm0y0036rwyeh932b6nh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -344,15 +344,13 @@ var _hmt = _hmt || [];
         "url": "http://gaussli.com/2017/08/28/linux-挂载硬盘/",
         "description": "
 fdisk -l：查看当前机器硬盘及分区情况
-fdisk /dev/vdb：进入硬盘分区
+fdisk &#x2F;dev&#x2F;vdb：进入硬盘分区
 n：进入分区命令
 p：主分区；e：逻辑分区
 w：保存退出
 fdisk -l：再次查看当前机器硬盘及分区情况
-mkfs -t ext3 -c /dev/vdb1：深入格式化；mkfs.ext3 /dev/vdb1：快速格式化
-mount /dev/vdb1 /mnt/
-df -k：查看挂载信息
-修改文件/et",
+mkfs -t ext3 -c &#x2F;dev&#x2F;vdb1：深入格式化；mkfs.ext3 &#x2F;dev&#x2F;vdb1：快速格式化
+mount &#x2F;",
         "wordCount": 22
     }
 </script>

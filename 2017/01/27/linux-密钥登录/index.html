@@ -12,12 +12,12 @@
     
     <meta name="keywords" content="ssh,免密码,登录,禁止密码" />
     
-    <meta name="description" content="生成rsa密钥  1ssh-keygen -t rsa   修改&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件 取消注释，允许密钥登录    123RSAAuthentication yesPubkeyAuthentication yesAuthorizedKeysFile      .ssh&#x2F;authorized_keys  2. 不允许密码登录，只允许密钥登录  1PasswordAuthen">
+    <meta name="description" content="生成rsa密钥  1ssh-keygen -t rsa   修改&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件  取消注释，允许密钥登录    123RSAAuthentication yesPubkeyAuthentication yesAuthorizedKeysFile      .ssh&#x2F;authorized_keys  2. 不允许密码登录，只允许密钥登录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Linux]密钥登录">
 <meta property="og:url" content="http://gaussli.com/2017/01/27/linux-%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
-<meta property="og:description" content="生成rsa密钥  1ssh-keygen -t rsa   修改&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件 取消注释，允许密钥登录    123RSAAuthentication yesPubkeyAuthentication yesAuthorizedKeysFile      .ssh&#x2F;authorized_keys  2. 不允许密码登录，只允许密钥登录  1PasswordAuthen">
+<meta property="og:description" content="生成rsa密钥  1ssh-keygen -t rsa   修改&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件  取消注释，允许密钥登录    123RSAAuthentication yesPubkeyAuthentication yesAuthorizedKeysFile      .ssh&#x2F;authorized_keys  2. 不允许密码登录，只允许密钥登录">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2017-01-27T07:45:31.000Z">
@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">Words: </span>
-      <span class="post-count">57</span>
+      <span class="post-count">60</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">Read time: </span>
       <span class="post-count">1 mins. </span>
@@ -248,7 +248,8 @@ var _hmt = _hmt || [];
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>修改/etc/ssh/sshd_config文件<ol>
+<li><p>修改&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件</p>
+<ol>
 <li>取消注释，允许密钥登录</li>
 </ol>
 </li>
@@ -272,7 +273,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2017/01/27/linux-%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/" data-id="cm45dluna0033ggyeenhz6891" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2017/01/27/linux-%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/" data-id="cm45dsm0x002zrwye27fvb1b9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -356,7 +357,8 @@ var _hmt = _hmt || [];
 1ssh-keygen -t rsa
 
 
-修改/etc/ssh/sshd_config文件
+修改&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件
+
 取消注释，允许密钥登录
 
 
@@ -364,8 +366,7 @@ var _hmt = _hmt || [];
 123RSAAuthentication yesPubkeyAuthentication yesAuthorizedKeysFile      .ssh/authorized_keys
 
 2. 不允许密码登录，只允许密钥登录
-
-1PasswordAuthen",
+",
         "wordCount": 45
     }
 </script>

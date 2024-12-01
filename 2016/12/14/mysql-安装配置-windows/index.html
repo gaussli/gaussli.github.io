@@ -12,12 +12,12 @@
     
     <meta name="keywords" content="软件安装,MySQL,Windows" />
     
-    <meta name="description" content="本文记录MySQL在Windows下的安装配置  下载MySQL并解压缩到本地文件夹   例：C:\devsofts\mysql-5.7.16-winx64  配置系统环境变量   把MySQL中的bin目录添加到PATH环境变量中，注意环境变量以;进行分割 1C:\devsofts\mysql-5.7.16-winx64\bin;    配置my.ini文件   把MySQL目录下的my-def">
+    <meta name="description" content="本文记录MySQL在Windows下的安装配置  下载MySQL并解压缩到本地文件夹   例：C:\devsofts\mysql-5.7.16-winx642. 配置系统环境变量把MySQL中的bin目录添加到PATH环境变量中，注意环境变量以;进行分割 1C:\devsofts\mysql-5.7.16-winx64\bin;    配置my.ini文件   把MySQL目录下的my-defau">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[MySQL]安装配置-Windows">
 <meta property="og:url" content="http://gaussli.com/2016/12/14/mysql-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-windows/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
-<meta property="og:description" content="本文记录MySQL在Windows下的安装配置  下载MySQL并解压缩到本地文件夹   例：C:\devsofts\mysql-5.7.16-winx64  配置系统环境变量   把MySQL中的bin目录添加到PATH环境变量中，注意环境变量以;进行分割 1C:\devsofts\mysql-5.7.16-winx64\bin;    配置my.ini文件   把MySQL目录下的my-def">
+<meta property="og:description" content="本文记录MySQL在Windows下的安装配置  下载MySQL并解压缩到本地文件夹   例：C:\devsofts\mysql-5.7.16-winx642. 配置系统环境变量把MySQL中的bin目录添加到PATH环境变量中，注意环境变量以;进行分割 1C:\devsofts\mysql-5.7.16-winx64\bin;    配置my.ini文件   把MySQL目录下的my-defau">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2016-12-14T08:18:59.000Z">
@@ -246,15 +246,10 @@ var _hmt = _hmt || [];
 <li>下载MySQL并解压缩到本地文件夹</li>
 </ol>
 <hr>
-<p>例：<br>C:\devsofts\mysql-5.7.16-winx64</p>
-<ol start="2">
-<li>配置系统环境变量</li>
-</ol>
-<hr>
-<p>把MySQL中的bin目录添加到PATH环境变量中，注意环境变量以<code>;</code>进行分割</p>
+<h2 id="例：C-devsofts-mysql-5-7-16-winx642-配置系统环境变量"><a href="#例：C-devsofts-mysql-5-7-16-winx642-配置系统环境变量" class="headerlink" title="例：C:\devsofts\mysql-5.7.16-winx642. 配置系统环境变量"></a>例：<br>C:\devsofts\mysql-5.7.16-winx64<br><br>2. 配置系统环境变量</h2><p>把MySQL中的bin目录添加到PATH环境变量中，注意环境变量以<code>;</code>进行分割</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\devsofts\mysql-5.7.16-winx64\bin;</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E8%A7%A3%E5%8E%8B%E7%9B%AE%E5%BD%95.png" alt="MySQL-安装配置-Windows-解压目录"></p>
+<p><img src="/%E8%A7%A3%E5%8E%8B%E7%9B%AE%E5%BD%95.png" alt="MySQL-安装配置-Windows-解压目录"></p>
 <ol start="3">
 <li>配置my.ini文件</li>
 </ol>
@@ -269,29 +264,24 @@ var _hmt = _hmt || [];
 <p>使用管理员权限进入bin目录，执行以下命令，进行MySQL的初始化，执行完毕会发现新增了data文件夹以及其文件夹下新增很多文件。（PS：初始化前不能存在data文件夹，否则会报data文件夹已存在的错误。）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize-insecure</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E5%88%9D%E5%A7%8B%E5%8C%96%E5%90%8Edata%E7%9B%AE%E5%BD%95.png" alt="MySQL-安装配置-Windows-初始化后data目录"></p>
+<p><img src="/%E5%88%9D%E5%A7%8B%E5%8C%96%E5%90%8Edata%E7%9B%AE%E5%BD%95.png" alt="MySQL-安装配置-Windows-初始化后data目录"></p>
 <ol start="5">
 <li>安装MySQL服务</li>
 </ol>
 <hr>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E5%AE%89%E8%A3%85MySQL%E6%9C%8D%E5%8A%A1.png" alt="MySQL-安装配置-Windows-安装MySQL服务"></p>
+<p><img src="/%E5%AE%89%E8%A3%85MySQL%E6%9C%8D%E5%8A%A1.png" alt="MySQL-安装配置-Windows-安装MySQL服务"></p>
 <p>PS：移除MySQL服务</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld remove</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E7%A7%BB%E9%99%A4MySQL%E6%9C%8D%E5%8A%A1.png" alt="MySQL-安装配置-Windows-移除MySQL服务"></p>
-<ol start="6">
-<li>启动MySQL服务</li>
-</ol>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+<h2 id="6-启动MySQL服务"><a href="#6-启动MySQL服务" class="headerlink" title="6. 启动MySQL服务"></a><img src="/%E7%A7%BB%E9%99%A4MySQL%E6%9C%8D%E5%8A%A1.png" alt="MySQL-安装配置-Windows-移除MySQL服务"><br><br>6. 启动MySQL服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E5%90%AF%E5%8A%A8MySQL%E6%9C%8D%E5%8A%A1.png" alt="MySQL-安装配置-Windows-启动MySQL服务"></p>
+<p><img src="/%E5%90%AF%E5%8A%A8MySQL%E6%9C%8D%E5%8A%A1.png" alt="MySQL-安装配置-Windows-启动MySQL服务"></p>
 <p>PS：暂停MySQL服务</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net stop mysql</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E5%81%9C%E6%AD%A2MySQL%E6%9C%8D%E5%8A%A1.png" alt="MySQL-安装配置-Windows-停止MySQL服务"></p>
+<p><img src="/%E5%81%9C%E6%AD%A2MySQL%E6%9C%8D%E5%8A%A1.png" alt="MySQL-安装配置-Windows-停止MySQL服务"></p>
 <ol start="7">
 <li>进入MySQL</li>
 </ol>
@@ -299,7 +289,7 @@ var _hmt = _hmt || [];
 <p>初始配置好MySQL后root密码为空</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E7%99%BB%E5%BD%95MySQL.png" alt="MySQL-安装配置-Windows-登录MySQL"></p>
+<p><img src="/%E7%99%BB%E5%BD%95MySQL.png" alt="MySQL-安装配置-Windows-登录MySQL"></p>
 <p>(•̀ᴗ•́)و ̑̑</p>
 
         </div>
@@ -308,7 +298,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/12/14/mysql-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-windows/" data-id="cm45dluni004aggyefwsx6rty" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/12/14/mysql-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE-windows/" data-id="cm45dsm16004arwyefa65drzb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -391,12 +381,7 @@ var _hmt = _hmt || [];
 下载MySQL并解压缩到本地文件夹
 
 
-例：C:\devsofts\mysql-5.7.16-winx64
-
-配置系统环境变量
-
-
-把MySQL中的bin目录添加到PATH环境变量中，注意环境变量以;进行分割
+例：C:\devsofts\mysql-5.7.16-winx642. 配置系统环境变量把MySQL中的bin目录添加到PATH环境变量中，注意环境变量以;进行分割
 1C:\devsofts\mysql-5.7.16-winx64\bin;
 
 
@@ -404,8 +389,8 @@ var _hmt = _hmt || [];
 配置my.ini文件
 
 
-把MySQL目录下的my-def",
-        "wordCount": 163
+把MySQL目录下的my-defau",
+        "wordCount": 173
     }
 </script>
 

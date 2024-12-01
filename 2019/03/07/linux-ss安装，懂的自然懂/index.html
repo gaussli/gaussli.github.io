@@ -251,15 +251,20 @@ var _hmt = _hmt || [];
 <p>话不多说，列出步骤：</p>
 <ol>
 <li><p>本机添加epel源，包含了很多额外的软件包、工具包，比官方的版本会更新</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y epel-release</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y epel-release</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>查找python的新版本，应该是能看到python34和python36，分别对应python3.4版本和python3.6版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum search python</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum search python</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>安装python36和python36-pip，因为最后是需要通过pip来安装shadowsocks，所以需要安装一个pip包管理工具</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y python36 python36-pip</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y python36 python36-pip</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>查找shadowsocks工具，由于装的是python36-pip，pip执行命令也变成了pip3.6</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3.6 search shadowsocks</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3.6 search shadowsocks</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>安装shadowsocks工具</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3.6 install shadowsocks</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3.6 install shadowsocks</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>编写配置文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/shadowsocks</span><br><span class="line">vim /etc/shadowsocks/shadowsocks.json</span><br></pre></td></tr></table></figure></li>
 </ol>
@@ -271,11 +276,14 @@ var _hmt = _hmt || [];
 </ul>
 <ol start="7">
 <li><p>安装gevent，gevent可以提高shadowsocks的性能</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3.6 install gevent</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3.6 install gevent</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>执行启动命令，shadowsocks.log路径可自定义</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver -c /etc/shadowsocks/shadowsocks.json &gt; /usr/local/shadowsocks/log/shadowsocks.log &amp;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver -c /etc/shadowsocks/shadowsocks.json &gt; /usr/local/shadowsocks/log/shadowsocks.log &amp;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>再做一个简单的端口监控，看看哪个账号用得比较多</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#</span><br><span class="line"># File: shadowsocks-port-ip-monitor.sh</span><br><span class="line">#</span><br><span class="line">filename=&quot;port-ip-monitor.log&quot;</span><br><span class="line">regex=&quot;4000[0-5]&quot; # monitor 40000-40005</span><br><span class="line">date +&quot;[%Y-%m-%d %H:%M:%S]&quot; &gt;&gt; $filename</span><br><span class="line">netstat -anp | egrep $regex | grep -E &quot;tcp.*ESTABLISHED&quot; | awk &#x27;&#123;print $4, $5&#125;&#x27; | cut -d: -f2 | sort -u &gt;&gt; $filename</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#</span><br><span class="line"># File: shadowsocks-port-ip-monitor.sh</span><br><span class="line">#</span><br><span class="line">filename=&quot;port-ip-monitor.log&quot;</span><br><span class="line">regex=&quot;4000[0-5]&quot; # monitor 40000-40005</span><br><span class="line">date +&quot;[%Y-%m-%d %H:%M:%S]&quot; &gt;&gt; $filename</span><br><span class="line">netstat -anp | egrep $regex | grep -E &quot;tcp.*ESTABLISHED&quot; | awk &#x27;&#123;print $4, $5&#125;&#x27; | cut -d: -f2 | sort -u &gt;&gt; $filename</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>启动定时任务，一分钟执行一次,<code>crontab -e</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * * * * sh /usr/local/shadowsocks/shell/shadowsocks-port-ip-monitor.sh</span><br></pre></td></tr></table></figure></li>
 </ol>
@@ -287,7 +295,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2019/03/07/linux-ss%E5%AE%89%E8%A3%85%EF%BC%8C%E6%87%82%E7%9A%84%E8%87%AA%E7%84%B6%E6%87%82/" data-id="cm45dlun5002jggyea97zawmn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2019/03/07/linux-ss%E5%AE%89%E8%A3%85%EF%BC%8C%E6%87%82%E7%9A%84%E8%87%AA%E7%84%B6%E6%87%82/" data-id="cm45dsm0t002krwye1r41fwtc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

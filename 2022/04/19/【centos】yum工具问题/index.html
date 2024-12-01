@@ -244,12 +244,14 @@ var _hmt = _hmt || [];
 
             <h1 id="BDB1507-Thread-died-in-Berkeley-DB-library"><a href="#BDB1507-Thread-died-in-Berkeley-DB-library" class="headerlink" title="BDB1507 Thread died in Berkeley DB library"></a>BDB1507 Thread died in Berkeley DB library</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>yum搜索、安装或更新时报错，看意思是数据库出错。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">错误：rpmdb: BDB0113 Thread/process 19822/139881366214720 failed: BDB1507 Thread died in Berkeley DB library</span><br><span class="line">错误：db5 错误(-30973) 来自 dbenv-&gt;failchk：BDB0087 DB_RUNRECOVERY: Fatal error, run database recovery</span><br><span class="line">错误：无法使用 db5 -  (-30973) 打开 Packages 索引</span><br><span class="line">错误：无法从 /var/lib/rpm 打开软件包数据库</span><br><span class="line">CRITICAL:yum.main:</span><br><span class="line"></span><br><span class="line">Error: rpmdb open failed</span><br></pre></td></tr></table></figure>
-<p>如图<br><img src="1.png"></p>
+<p>如图<br><img src="/1.png"></p>
 <h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ol>
 <li><p>删除yum临时库文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -fr /var/lib/rpm/__db.*</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -fr /var/lib/rpm/__db.*</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>重建rpm数据库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm –rebuilddb</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm –rebuilddb</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>清理缓存及生产yumdb缓存</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure></li>
 </ol>
@@ -261,7 +263,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2022/04/19/%E3%80%90centos%E3%80%91yum%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/" data-id="cm45dlunm004uggyeco3j9exo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2022/04/19/%E3%80%90centos%E3%80%91yum%E5%B7%A5%E5%85%B7%E9%97%AE%E9%A2%98/" data-id="cm45dsm19004rrwyebmdj394o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

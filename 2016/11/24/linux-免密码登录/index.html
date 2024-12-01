@@ -12,12 +12,12 @@
     
     <meta name="keywords" content="ssh,免密码,登录" />
     
-    <meta name="description" content="环境本地计算机：MacBook，假设用户名为：gaussli远程服务器：CentOS7，假设用户名为：gaussli-remote，IP为：192.168.1.101 处理问题描述MacBook下gaussli用户以gaussli-remote身份免密码登录到远程服务器192.168.1.104上  进入&#x2F;Users&#x2F;&#x2F;.ssh&#x2F;(Macbook)或&#x2F;home&#x2F;&#x2F;.ssh&#x2F;(Linux)文件夹，若">
+    <meta name="description" content="环境本地计算机：MacBook，假设用户名为：gaussli远程服务器：CentOS7，假设用户名为：gaussli-remote，IP为：192.168.1.101 处理问题描述MacBook下gaussli用户以gaussli-remote身份免密码登录到远程服务器192.168.1.104上  进入&#x2F;Users&#x2F;&#x2F;.ssh&#x2F;(Macbook)或&amp;#x2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Linux]免密码登录">
 <meta property="og:url" content="http://gaussli.com/2016/11/24/linux-%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
-<meta property="og:description" content="环境本地计算机：MacBook，假设用户名为：gaussli远程服务器：CentOS7，假设用户名为：gaussli-remote，IP为：192.168.1.101 处理问题描述MacBook下gaussli用户以gaussli-remote身份免密码登录到远程服务器192.168.1.104上  进入&#x2F;Users&#x2F;&#x2F;.ssh&#x2F;(Macbook)或&#x2F;home&#x2F;&#x2F;.ssh&#x2F;(Linux)文件夹，若">
+<meta property="og:description" content="环境本地计算机：MacBook，假设用户名为：gaussli远程服务器：CentOS7，假设用户名为：gaussli-remote，IP为：192.168.1.101 处理问题描述MacBook下gaussli用户以gaussli-remote身份免密码登录到远程服务器192.168.1.104上  进入&#x2F;Users&#x2F;&#x2F;.ssh&#x2F;(Macbook)或&amp;#x2">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2016-11-24T07:35:04.000Z">
@@ -224,7 +224,7 @@ var _hmt = _hmt || [];
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">Words: </span>
-      <span class="post-count">440</span>
+      <span class="post-count">459</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">Read time: </span>
       <span class="post-count">1 mins. </span>
@@ -244,7 +244,7 @@ var _hmt = _hmt || [];
             <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>本地计算机：MacBook，假设用户名为：gaussli<br>远程服务器：CentOS7，假设用户名为：gaussli-remote，IP为：192.168.1.101</p>
 <h2 id="处理问题描述"><a href="#处理问题描述" class="headerlink" title="处理问题描述"></a>处理问题描述</h2><p>MacBook下gaussli用户以gaussli-remote身份免密码登录到远程服务器192.168.1.104上</p>
 <ol>
-<li>进入/Users/<USERNAME>/.ssh/(Macbook)或/home/<USERNAME>/.ssh/(Linux)文件夹，若没有则创建一个。如果是对应root用户的话，root的用目录应该是/root/，所以应该创建/root/.ssh/。</li>
+<li>进入&#x2F;Users&#x2F;<USERNAME>&#x2F;.ssh&#x2F;(Macbook)或&#x2F;home&#x2F;<USERNAME>&#x2F;.ssh&#x2F;(Linux)文件夹，若没有则创建一个。如果是对应root用户的话，root的用目录应该是&#x2F;root&#x2F;，所以应该创建&#x2F;root&#x2F;.ssh&#x2F;。</li>
 </ol>
 <hr>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/gaussli/.ssh/</span><br></pre></td></tr></table></figure>
@@ -263,7 +263,7 @@ var _hmt = _hmt || [];
 <hr>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp /Users/gaussli/.ssh/id_rsa.pub gaussli-remote@192.168.1.104:/home/gaussli-remote/.ssh/</span><br></pre></td></tr></table></figure>
 
-<p>若远程服务器的用户目录（这里是/home/gaussli-remote/）下没有.ssh文件，会出现公钥文件复制失败的问题，可先在远程服务器用户目录（这里是/home/gaussli-remote/）下新建.ssh文件夹。</p>
+<p>若远程服务器的用户目录（这里是&#x2F;home&#x2F;gaussli-remote&#x2F;）下没有.ssh文件，会出现公钥文件复制失败的问题，可先在远程服务器用户目录（这里是&#x2F;home&#x2F;gaussli-remote&#x2F;）下新建.ssh文件夹。</p>
 <ol start="4">
 <li>以gaussli-remote身份进入远程服务器，并进入用户目录下.ssh文件夹</li>
 </ol>
@@ -294,7 +294,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/11/24/linux-%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/" data-id="cm45dlun7002sggyegdnac7fr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/11/24/linux-%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/" data-id="cm45dsm0w002urwye6ba00055" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -375,7 +375,7 @@ var _hmt = _hmt || [];
         "description": "环境本地计算机：MacBook，假设用户名为：gaussli远程服务器：CentOS7，假设用户名为：gaussli-remote，IP为：192.168.1.101
 处理问题描述MacBook下gaussli用户以gaussli-remote身份免密码登录到远程服务器192.168.1.104上
 
-进入/Users//.ssh/(Macbook)或/home//.ssh/(Linux)文件夹，若",
+进入&#x2F;Users&#x2F;&#x2F;.ssh&#x2F;(Macbook)或&#x2",
         "wordCount": 73
     }
 </script>

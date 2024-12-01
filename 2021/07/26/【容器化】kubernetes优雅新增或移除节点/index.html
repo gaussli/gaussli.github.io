@@ -248,11 +248,11 @@ var _hmt = _hmt || [];
 <h3 id="2-进入Master节点，查看当前是否存在可用Token，没有任何输出说明当前没有可用Token"><a href="#2-进入Master节点，查看当前是否存在可用Token，没有任何输出说明当前没有可用Token" class="headerlink" title="2. 进入Master节点，查看当前是否存在可用Token，没有任何输出说明当前没有可用Token"></a>2. 进入Master节点，查看当前是否存在可用Token，没有任何输出说明当前没有可用Token</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm token list</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-创建Token"><a href="#3-创建Token" class="headerlink" title="3. 创建Token"></a>3. 创建Token</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm token create</span><br></pre></td></tr></table></figure>
-<p>结果截图：<br><img src="60ece116f174c.png"></p>
+<p>结果截图：<br><img src="/60ece116f174c.png"></p>
 <h3 id="4-再次查看可用Token，可查看Token的一些信息"><a href="#4-再次查看可用Token，可查看Token的一些信息" class="headerlink" title="4. 再次查看可用Token，可查看Token的一些信息"></a>4. 再次查看可用Token，可查看Token的一些信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm token list</span><br></pre></td></tr></table></figure>
-<p>结果截图：<br><img src="60ece15c8dbae.png"></p>
+<p>结果截图：<br><img src="/60ece15c8dbae.png"></p>
 <h3 id="5-根据ca的公钥证书数据计算出hash值"><a href="#5-根据ca的公钥证书数据计算出hash值" class="headerlink" title="5. 根据ca的公钥证书数据计算出hash值"></a>5. 根据ca的公钥证书数据计算出hash值</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -in /etc/kubernetes/pki/ca.crt -noout -pubkey | openssl rsa -pubin -outform DER 2&gt;/dev/null | sha256sum | cut -d&#x27; &#x27; -f1</span><br></pre></td></tr></table></figure>
-<p>结果截图：<br><img src="60ece296c990b.png"></p>
+<p>结果截图：<br><img src="/60ece296c990b.png"></p>
 <h3 id="6-新节点安装kubectl、kubeadm、kubelet，版本需和Master的一致"><a href="#6-新节点安装kubectl、kubeadm、kubelet，版本需和Master的一致" class="headerlink" title="6. 新节点安装kubectl、kubeadm、kubelet，版本需和Master的一致"></a>6. 新节点安装kubectl、kubeadm、kubelet，版本需和Master的一致</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install kubelet-1.17.3 kubeadm-1.17.3 kubectl-1.17.3</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet</span><br><span class="line">systemctl start kubelet</span><br></pre></td></tr></table></figure>
 
 <h3 id="7-把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值"><a href="#7-把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值" class="headerlink" title="7. 把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值"></a>7. 把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm <span class="built_in">join</span> &lt;master-ip&gt;:6443 --node-name [new-node-hostname] --token kklhin.swv9pvue5jncxzqs --discovery-token-ca-cert-hash sha256:7e0f436144520310a988005261894d4c82c36c99c0db9e71e4daac5546d5f159</span><br></pre></td></tr></table></figure>
@@ -264,15 +264,15 @@ var _hmt = _hmt || [];
 <li>–delete-local-data<br>如果有mount local volumn的pod，会强制杀掉该pod并把料清除掉<br>另外如果跟本身的配置讯息有冲突时，drain就不会执行</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl drain [node-name] --force --ignore-daemonsets --delete-local-data</span><br></pre></td></tr></table></figure>
-<p>结果截图<br><img src="60ecf0f334e65.png"><br><img src="60ecf108e9659.png"></p>
+<p>结果截图<br><img src="/60ecf0f334e65.png"><br><img src="/60ecf108e9659.png"></p>
 <h3 id="2-删除节点"><a href="#2-删除节点" class="headerlink" title="2. 删除节点"></a>2. 删除节点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete node [node-name]</span><br></pre></td></tr></table></figure>
-<p><img src="60ecf1777808b.png"></p>
+<p><img src="/60ecf1777808b.png"></p>
 <h3 id="3-进入待删除节点，重置节点"><a href="#3-进入待删除节点，重置节点" class="headerlink" title="3. 进入待删除节点，重置节点"></a>3. 进入待删除节点，重置节点</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm reset</span><br></pre></td></tr></table></figure>
 
 <h3 id="4-（可选）移除待删除节点的Kubernetes网络配置"><a href="#4-（可选）移除待删除节点的Kubernetes网络配置" class="headerlink" title="4. （可选）移除待删除节点的Kubernetes网络配置"></a>4. （可选）移除待删除节点的Kubernetes网络配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看网络配置</span><br><span class="line">ip a</span><br></pre></td></tr></table></figure>
-<p>结果截图<br><img src="60ee322e1ce39.png"><br>发现有两个Kubernetes的网络配置（flannel.1和cni0）是已无用网络配置，对其进行下线及删除</p>
+<p>结果截图<br><img src="/60ee322e1ce39.png"><br>发现有两个Kubernetes的网络配置（flannel.1和cni0）是已无用网络配置，对其进行下线及删除</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ifconfig cni0 down</span><br><span class="line">ifconfig flannel.1 down</span><br><span class="line">ip link delete cni0</span><br><span class="line">ip link delete flannel.1</span><br><span class="line">ip a</span><br></pre></td></tr></table></figure>
-<p>结果截图<br><img src="60ee32666c273.png"></p>
+<p>结果截图<br><img src="/60ee32666c273.png"></p>
 <p>(•̀ᴗ•́)و ̑̑</p>
 
         </div>
@@ -281,7 +281,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BC%98%E9%9B%85%E6%96%B0%E5%A2%9E%E6%88%96%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9/" data-id="cm45dlunw006tggye6ujp0jqs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BC%98%E9%9B%85%E6%96%B0%E5%A2%9E%E6%88%96%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9/" data-id="cm45dsm1k006rrwyeglml14cs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
 <h2 id="步骤1–安装"><a href="#步骤1–安装" class="headerlink" title="步骤1–安装"></a>步骤1–安装</h2><p>部分Linux是原本就带有mail的了，没有也不怕，执行以下命令就可以了（以下所有情况均在CentOS下执行测试）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; yum install mailx -y</span><br></pre></td></tr></table></figure>
 
-<p><img src="%E5%AE%89%E8%A3%85mailx.png" alt="安装mailx"></p>
+<p><img src="/%E5%AE%89%E8%A3%85mailx.png" alt="安装mailx"></p>
 <h2 id="步骤2–配置"><a href="#步骤2–配置" class="headerlink" title="步骤2–配置"></a>步骤2–配置</h2><p>接下来进行外部smtp配置，修改<code>／etc/mail.rc</code>，在文档最后添加以下几句，保存退出。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> from=xxx@163.com</span><br><span class="line"><span class="built_in">set</span> smtp=smtp.163.com</span><br><span class="line"><span class="built_in">set</span> smtp-auth-user=xxx			<span class="comment"># 和from属性中‘@’之前一样</span></span><br><span class="line"><span class="built_in">set</span> smtp-auth-password=xxx		＃ 邮箱密码</span><br><span class="line"><span class="built_in">set</span> smtp-auth=login</span><br></pre></td></tr></table></figure>
 
@@ -254,7 +254,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/07/15/linux-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/" data-id="cm45dlunc003fggyeew4j8zbl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/07/15/linux-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/" data-id="cm45dsm11003lrwyef63q4xnp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

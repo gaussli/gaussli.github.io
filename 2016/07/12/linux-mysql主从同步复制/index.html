@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show master status\G;</span><br></pre></td></tr></table></figure>
 
 <p>结果截图如下图(为保护数据安全，进行了数据库名打码)：</p>
-<p><img src="%E4%B8%BB%E5%B1%9E%E6%80%A7%E4%BF%A1%E6%81%AF.png" alt="show master status\G"></p>
+<p><img src="/%E4%B8%BB%E5%B1%9E%E6%80%A7%E4%BF%A1%E6%81%AF.png" alt="show master status\G"></p>
 <h2 id="步骤3–在主数据库新建slave权限的账号"><a href="#步骤3–在主数据库新建slave权限的账号" class="headerlink" title="步骤3–在主数据库新建slave权限的账号"></a>步骤3–在主数据库新建slave权限的账号</h2><p>一般来说会新建一个只有slave权限的账号供主从同步使用，当然使用其他高权限账号，如root也是可以，不过怎么说也是不够安全。</p>
 <p>使用账号密码登录mysql命令行，执行以下命令，新建slave权限的账号：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create user <span class="string">&#x27;username&#x27;</span>@<span class="string">&#x27;host&#x27;</span> identified by <span class="string">&#x27;password&#x27;</span>;</span><br><span class="line">mysql&gt; grant replication slave on databasename.tablename to <span class="string">&#x27;username&#x27;</span>@<span class="string">&#x27;host&#x27;</span>;</span><br></pre></td></tr></table></figure>
@@ -268,7 +268,7 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; mysqldump -u[数据库用户名] -p[数据库密码] [数据库名] &gt; [导出路径]</span><br></pre></td></tr></table></figure>
 
 <p>使用<code>tail</code>命令查看备份数据文件的最后几行，获取当前备份文件的备份时间，这个时间很重要，需要靠这个时间来确认从数据库的起始同步点，结果如图：</p>
-<p><img src="%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4.png" alt="备份文件时间"></p>
+<p><img src="/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4.png" alt="备份文件时间"></p>
 <h2 id="步骤5–配置从数据库从属性1"><a href="#步骤5–配置从数据库从属性1" class="headerlink" title="步骤5–配置从数据库从属性1"></a>步骤5–配置从数据库从属性1</h2><p>修改<em>my.cnf</em>配置文件，修改<code>server_id</code>，可选修改<code>log_bin</code>、<code>binlog-do-db</code>属性。这里的<code>server_id</code>表示数据库的独特标识，所以不能主数据库的<code>server_id</code>相同，如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">server_id = 2</span><br></pre></td></tr></table></figure>
 
@@ -287,11 +287,11 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; /usr/local/mysql/bin/mysqlbinlog --start-datetime=<span class="string">&quot;2016-07-08 17:00:00&quot;</span> --stop-datetime=<span class="string">&quot;2016-07-08 17:30:00 mysql-bin.000006&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>由于编码和binlog编码不一样，导致了以下的错误：</p>
-<p><img src="binlog%E6%9F%A5%E7%9C%8B%E5%A4%B1%E8%B4%A5%E9%94%99%E8%AF%AF.png" alt="binlog查看失败错误"></p>
+<p><img src="/binlog%E6%9F%A5%E7%9C%8B%E5%A4%B1%E8%B4%A5%E9%94%99%E8%AF%AF.png" alt="binlog查看失败错误"></p>
 <p>这个时候添加参数<code>--no-defaults</code>即可：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; /usr/local/mysql/bin/mysqlbinlog --no-defaults --start-datetime=<span class="string">&quot;2016-07-08 17:00:00&quot;</span> --stop-datetime=<span class="string">&quot;2016-07-08 17:30:00&quot;</span> mysql-bin.000006</span><br></pre></td></tr></table></figure>
 <p>接着在结果中慢慢找到刚小于<code>2016-07-08 17:15:42</code>和刚大于<code>2016-07-08 17:15:42</code>的位置：</p>
-<p><img src="pos%E4%BD%8D%E7%BD%AE.png" alt="pos位置"></p>
+<p><img src="/pos%E4%BD%8D%E7%BD%AE.png" alt="pos位置"></p>
 <p>接着就得出<code>214497149</code>就是为同步点</p>
 <h2 id="步骤9–配置从数据库从属性2"><a href="#步骤9–配置从数据库从属性2" class="headerlink" title="步骤9–配置从数据库从属性2"></a>步骤9–配置从数据库从属性2</h2><p>步骤5中的从属性是配置mysql配置文件<code>my.cnf</code>的，而这里是对数据库内容进行配置。</p>
 <p>使用账号密码登录mysql命令行，执行以下命令，配置从属性：</p>
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/07/12/linux-mysql%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5%E5%A4%8D%E5%88%B6/" data-id="cm45dlun30029ggyeanofepjp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/07/12/linux-mysql%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5%E5%A4%8D%E5%88%B6/" data-id="cm45dsm0r0029rwye9ydu37rr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

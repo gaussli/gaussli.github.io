@@ -264,13 +264,13 @@ var _hmt = _hmt || [];
     
 
         <p class="article-excerpt">
-            0. 一些说明MySQL版本：5.6.37MySQL安装目录：/usr/lcoal/mysql
+            0. 一些说明MySQL版本：5.6.37MySQL安装目录：&#x2F;usr&#x2F;lcoal&#x2F;mysql
 1. 下载MySQL的tar.gz版本，解压并复制到安装的目录下12tar -zxvf mysql-file.tar.gzcp -R mysql-file /usr/local/mysql
 
 
 2. 进入MySQL安装目录1cd /usr/local/mysql
 
-3. 执行./scripts/mysq
+3. 执
         </p>
     </div>
 </article>
@@ -329,7 +329,7 @@ groupadd
 创建用户
 
 
-useradd -M -s /sbin/nologin  -g 
+useradd -M -s &#x2F;sbin&#x2F;nologin  -g 
 -M：表示不创建用户目录-s：表示用户执行的shell，nologin表示该shell不可作为登录，即该用户不可登录
 (•̀ᴗ•́)و ̑̑
 
@@ -380,15 +380,13 @@ useradd -M -s /sbin/nologin  -g
         <p class="article-excerpt">
             
 fdisk -l：查看当前机器硬盘及分区情况
-fdisk /dev/vdb：进入硬盘分区
+fdisk &#x2F;dev&#x2F;vdb：进入硬盘分区
 n：进入分区命令
 p：主分区；e：逻辑分区
 w：保存退出
 fdisk -l：再次查看当前机器硬盘及分区情况
-mkfs -t ext3 -c /dev/vdb1：深入格式化；mkfs.ext3 /dev/vdb1：快速格式化
-mount /dev/vdb1 /mnt/
-df -k：查看挂载信息
-修改文件/et
+mkfs -t ext3 -c &#x2F;dev&#x2F;vdb1：深入格式化；mkfs.ext3 &#x2F;dev&#x2F;vdb1：快速格式化
+mount &#x2F;
         </p>
     </div>
 </article>
@@ -444,7 +442,8 @@ df -k：查看挂载信息
 1ssh-keygen -t rsa
 
 
-修改/etc/ssh/sshd_config文件
+修改&#x2F;etc&#x2F;ssh&#x2F;sshd_config文件
+
 取消注释，允许密钥登录
 
 
@@ -453,7 +452,6 @@ df -k：查看挂载信息
 
 2. 不允许密码登录，只允许密钥登录
 
-1PasswordAuthen
         </p>
     </div>
 </article>
@@ -572,11 +570,11 @@ df -k：查看挂载信息
             
 格式
 
-alias “&lt;别名命令&gt;=&lt;原本命令或命令行指令&gt;”
+alias “&lt;别名命令&gt;&#x3D;&lt;原本命令或命令行指令&gt;”
 
 例子
 
-alias “gl=cd /usr/local/bin/“
+alias “gl&#x3D;cd &#x2F;usr&#x2F;local&#x2F;bin&#x2F;“
 (•̀ᴗ•́)و ̑̑
 
         </p>
@@ -627,7 +625,7 @@ alias “gl=cd /usr/local/bin/“
             环境本地计算机：MacBook，假设用户名为：gaussli远程服务器：CentOS7，假设用户名为：gaussli-remote，IP为：192.168.1.101
 处理问题描述MacBook下gaussli用户以gaussli-remote身份免密码登录到远程服务器192.168.1.104上
 
-进入/Users//.ssh/(Macbook)或/home//.ssh/(Linux)文件夹，若
+进入&#x2F;Users&#x2F;&#x2F;.ssh&#x2F;(Macbook)或&#x2
         </p>
     </div>
 </article>
@@ -735,56 +733,44 @@ alias “gl=cd /usr/local/bin/“
 
 
 1
-/
+&#x2F;
 跟目录
 
 
 
 2
-/bin
+&#x2F;bin
 命令保存目录（普通用户就可以读取执行的命令）
 
 
 
 3
-/boot
+&#x2F;boot
 启动目录，启动相关文件
 
 
 
 4
-/dev
+&#x2F;dev
 设备文件保存目录
 
 
 
 5
-/etc
+&#x2F;etc
 配置文件保存目录
 
 
 
 6
-/home
+&#x2F;home
 普通用户的家目录
 
 
 
 7
-/lib
-系统库保存目录
-
-
-
-8
-/mnt
-系统挂载目录
-
-
-
-9
-/media
-
+&#x2F;lib
+系统
         </p>
     </div>
 </article>

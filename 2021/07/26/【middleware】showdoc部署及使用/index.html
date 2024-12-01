@@ -252,26 +252,26 @@ var _hmt = _hmt || [];
 
 <h2 id="4-启动服务"><a href="#4-启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name showdoc -user=root --privileged=<span class="literal">true</span> -p 4999:80 -v /usr/local/showDoc/showdoc_data/html:/var/www/html star7th/showdoc</span><br></pre></td></tr></table></figure>
 
-<h1 id="服务访问"><a href="#服务访问" class="headerlink" title="服务访问"></a>服务访问</h1><p>直接访问服务地址及端口，默认端口：4999。<br>访问界面截图：<br><img src="60f4e01b0562a.png"></p>
+<h1 id="服务访问"><a href="#服务访问" class="headerlink" title="服务访问"></a>服务访问</h1><p>直接访问服务地址及端口，默认端口：4999。<br>访问界面截图：<br><img src="/60f4e01b0562a.png"></p>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>直接注册登录使用。注册强烈建议使用BIP账号。</p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><h2 id="1-服务器迁移"><a href="#1-服务器迁移" class="headerlink" title="1. 服务器迁移"></a>1. 服务器迁移</h2><p>官方说明：<a target="_blank" rel="noopener" href="https://www.showdoc.com.cn/help/2511252204165611">https://www.showdoc.com.cn/help/2511252204165611</a></p>
 <h3 id="如何迁移"><a href="#如何迁移" class="headerlink" title="如何迁移"></a>如何迁移</h3><p>这里的迁移服务器，指的是：服务器A已经安装好了showdoc， 然后现在要迁移到服务器B去。</p>
 <p>首先参考教程，在新服务器上全新安装一个showdoc。推荐使用官方自动脚本或者docker方式安装。</p>
-<p>假如你是官方自动脚本或者docker方式安装，那么数据将放在/showdoc_data/html下。复制旧服务器的Sqlite/showdoc.db.php，以及Public/Uploads/下的所有文件（如没有则可忽略之），覆盖到新showdoc目录的相应文件。覆盖后重新给这些文件可写权限.</p>
-<p>（可选）如果原有文档里已经有上传的图片和附件，换新的域名的时候也许访问不了。可进入数据库把图片附件路径改一下。showdoc使用sqlite数据库。数据库文件是安装目录下的Sqlite/showdoc.db.php。你可以网络搜索如何在命令行中使用 sqlite数据库，或者使用SQLiteStudio等可视化工具。进入数据库后，执行update page set page_content = replace(page_content,’原始host’,’新host’); 和 update upload_file set real_url= replace(real_url,’原始host’,’新host’);</p>
+<p>假如你是官方自动脚本或者docker方式安装，那么数据将放在&#x2F;showdoc_data&#x2F;html下。复制旧服务器的Sqlite&#x2F;showdoc.db.php，以及Public&#x2F;Uploads&#x2F;下的所有文件（如没有则可忽略之），覆盖到新showdoc目录的相应文件。覆盖后重新给这些文件可写权限.</p>
+<p>（可选）如果原有文档里已经有上传的图片和附件，换新的域名的时候也许访问不了。可进入数据库把图片附件路径改一下。showdoc使用sqlite数据库。数据库文件是安装目录下的Sqlite&#x2F;showdoc.db.php。你可以网络搜索如何在命令行中使用 sqlite数据库，或者使用SQLiteStudio等可视化工具。进入数据库后，执行update page set page_content &#x3D; replace(page_content,’原始host’,’新host’); 和 update upload_file set real_url&#x3D; replace(real_url,’原始host’,’新host’);</p>
 <h3 id="常见误区"><a href="#常见误区" class="headerlink" title="常见误区"></a>常见误区</h3><p>复制旧服务器文件过去后，忘记给可写权限<br>新服务器本身没有安装好环境，如缺少php-sqlite扩展等<br>直接用新代码覆盖旧代码，而不是按照官方推荐方式去做。<br>服务器转移数据的时候使用FTP。注意，如果使用FTP，应该用二进制模式传输，否则会破坏数据库文件</p>
 <h2 id="2-数据库迁移"><a href="#2-数据库迁移" class="headerlink" title="2. 数据库迁移"></a>2. 数据库迁移</h2><p>官方说明：<a target="_blank" rel="noopener" href="https://www.showdoc.com.cn/help/31990">https://www.showdoc.com.cn/help/31990</a></p>
 <h3 id="一些说明"><a href="#一些说明" class="headerlink" title="一些说明"></a>一些说明</h3><p>mysql版本由于年久失修，已经放弃维护，官方不再保证能迁移成功。现在官方已在全力支持sqlite版本，请使用新版。另外如果你依然强制使用mysql，则可自行二次开发，但官方不提供支持，也请勿浪费时间问官方团队。经过二次开发的版本有可能与官方以后的版本升级冲突导致升级失败，请谨慎考虑</p>
 <h3 id="为什么要迁移数据库"><a href="#为什么要迁移数据库" class="headerlink" title="为什么要迁移数据库"></a>为什么要迁移数据库</h3><p>如果你是早期使用mysql那部分的用户，可以考虑迁移数据库到Sqlite，否则以后无法再使用官方新增的任何功能。ShowDoc使用Sqlite的理由如下：</p>
 <p>PHP环境默认支持Sqlite，所以只需要安装好PHP环境，即可使用ShowDoc，无须再安装mysql。这对于不懂mysql的开发者（如App开发者）来说会更容易一些。同时方便官方维护ShowDoc，不用维护和测试两个数据库版本</p>
 <p>Sqlite的性能并不差，对于总项目数在一万以内的情况，基本不用考虑性能问题。所以完全足够普通公司或者团队的使用。</p>
-<p>Sqlite数据库文件放在/Sqlite目录下，迁移和备份都十分简单，直接复制/转移该目录即可</p>
+<p>Sqlite数据库文件放在&#x2F;Sqlite目录下，迁移和备份都十分简单，直接复制&#x2F;转移该目录即可</p>
 <h3 id="如何迁移-1"><a href="#如何迁移-1" class="headerlink" title="如何迁移"></a>如何迁移</h3><p>备份所有代码和数据库</p>
 <p>下载新代码：<a target="_blank" rel="noopener" href="https://github.com/star7th/showdoc">https://github.com/star7th/showdoc</a></p>
-<p>将新代码中的/Sqlite/ 复制到旧目录(如果已存在/Sqlite则覆盖之)，并赋予/Sqlite/showdoc.db.php可写权限</p>
-<p>复制新代码中的server/Application/Home/Controller/UpdateController.class.php 覆盖原来旧的相应文件。</p>
-<p>在浏览器访问：<a target="_blank" rel="noopener" href="http://xxxx.com/index.php?s=/home/update/toSqlite">http://xxxx.com/index.php?s=/home/update/toSqlite</a> ，看到ok提示后，mysql的数据已经写入/Sqlite/showdoc.db.php</p>
-<p>此时，除了/Sqlite/showdoc.db.php文件外，旧目录的其他所有文件全部用新下载的文件覆盖。注意清理runtime缓存以及保留原来文件夹权限的设定。具体哪些文件需要权限，可参考安装手册。</p>
+<p>将新代码中的&#x2F;Sqlite&#x2F; 复制到旧目录(如果已存在&#x2F;Sqlite则覆盖之)，并赋予&#x2F;Sqlite&#x2F;showdoc.db.php可写权限</p>
+<p>复制新代码中的server&#x2F;Application&#x2F;Home&#x2F;Controller&#x2F;UpdateController.class.php 覆盖原来旧的相应文件。</p>
+<p>在浏览器访问：<a target="_blank" rel="noopener" href="http://xxxx.com/index.php?s=/home/update/toSqlite">http://xxxx.com/index.php?s=/home/update/toSqlite</a> ，看到ok提示后，mysql的数据已经写入&#x2F;Sqlite&#x2F;showdoc.db.php</p>
+<p>此时，除了&#x2F;Sqlite&#x2F;showdoc.db.php文件外，旧目录的其他所有文件全部用新下载的文件覆盖。注意清理runtime缓存以及保留原来文件夹权限的设定。具体哪些文件需要权限，可参考安装手册。</p>
 <p>(•̀ᴗ•́)و ̑̑</p>
 
         </div>
@@ -280,7 +280,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90middleware%E3%80%91showdoc%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/" data-id="cm45dluno0059ggye8hpogmqh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90middleware%E3%80%91showdoc%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/" data-id="cm45dsm1c005arwyehol62kda" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

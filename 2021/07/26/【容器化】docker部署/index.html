@@ -248,17 +248,17 @@ var _hmt = _hmt || [];
 </blockquote>
 <h1 id="YUM方式部署"><a href="#YUM方式部署" class="headerlink" title="YUM方式部署"></a>YUM方式部署</h1><h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h3><h5 id="配置Docker-CE的YUM源"><a href="#配置Docker-CE的YUM源" class="headerlink" title="配置Docker-CE的YUM源"></a>配置Docker-CE的YUM源</h5><p>YUM默认源中的Docker是比较旧的，如果需要安装新版本的Docker，需要配置Docker-CE的YUM源。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -o /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">yum makecache fast</span><br></pre></td></tr></table></figure>
-<p>结果截图：<br><img src="60f67aa657f0b.png"></p>
+<p>结果截图：<br><img src="/60f67aa657f0b.png"></p>
 <h5 id="查看可安装的Docker版本"><a href="#查看可安装的Docker版本" class="headerlink" title="查看可安装的Docker版本"></a>查看可安装的Docker版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list docker-ce --showduplicates</span><br></pre></td></tr></table></figure>
-<p>结果截图：<br><img src="60f67b6c61696.png"></p>
+<p>结果截图：<br><img src="/60f67b6c61696.png"></p>
 <h3 id="2-安装部署"><a href="#2-安装部署" class="headerlink" title="2. 安装部署"></a>2. 安装部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装最新版本</span></span><br><span class="line"><span class="comment"># yum install -y docker-ce</span></span><br><span class="line"><span class="comment"># 安装指定指定版本</span></span><br><span class="line">yum install -y docker-ce-3:19.03.15-3.el7.x86_64</span><br></pre></td></tr></table></figure>
-<p>结果截图：<br><img src="60f67e6229ffd.png"></p>
+<p>结果截图：<br><img src="/60f67e6229ffd.png"></p>
 <h3 id="3-配置开机自启动及服务启动"><a href="#3-配置开机自启动及服务启动" class="headerlink" title="3. 配置开机自启动及服务启动"></a>3. 配置开机自启动及服务启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
-<p>结果截图：<br><img src="60f67ea72757d.png"></p>
+<p>结果截图：<br><img src="/60f67ea72757d.png"></p>
 <h3 id="4-配置私有仓库"><a href="#4-配置私有仓库" class="headerlink" title="4. 配置私有仓库"></a>4. 配置私有仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line"><span class="comment"># 配置Docker私有仓库文件</span></span><br><span class="line"><span class="built_in">cat</span> &lt;&lt; <span class="string">EOF &gt; /etc/docker/daemon.json</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  &quot;registry-mirrors&quot;: [</span></span><br><span class="line"><span class="string">    &quot;http://&lt;IP&gt;:&lt;PORT&gt;&quot;</span></span><br><span class="line"><span class="string">  ],</span></span><br><span class="line"><span class="string">  &quot;insecure-registries&quot;: [</span></span><br><span class="line"><span class="string">    &quot;&lt;IP&gt;:&lt;PORT&gt;&quot;</span></span><br><span class="line"><span class="string">  ]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"><span class="comment"># 重启Docker服务</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-测试镜像拉取"><a href="#5-测试镜像拉取" class="headerlink" title="5. 测试镜像拉取"></a>5. 测试镜像拉取</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull busybox</span><br></pre></td></tr></table></figure>
-<p>结果截图：<br><img src="60f685d6208a5.png"></p>
+<p>结果截图：<br><img src="/60f685d6208a5.png"></p>
 <p>(•̀ᴗ•́)و ̑̑</p>
 
         </div>
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91docker%E9%83%A8%E7%BD%B2/" data-id="cm45dlunp005lggyeb93a5q14" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91docker%E9%83%A8%E7%BD%B2/" data-id="cm45dsm1d005irwye84rm7kgf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

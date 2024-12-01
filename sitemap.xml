@@ -524,15 +524,6 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/2019/03/06/linux-centos7-6%E6%9B%B4%E6%96%B0%E5%86%85%E6%A0%B8/</loc>
-    
-    <lastmod>2021-07-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gaussli.com/2019/03/08/linux-centos7%E4%BB%A5%E4%B8%8A%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E6%97%B6%E5%8C%BA/</loc>
     
     <lastmod>2021-07-26</lastmod>
@@ -542,7 +533,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/2019/03/08/linux-elrepo%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E/</loc>
+    <loc>http://gaussli.com/2019/03/06/linux-centos7-6%E6%9B%B4%E6%96%B0%E5%86%85%E6%A0%B8/</loc>
     
     <lastmod>2021-07-26</lastmod>
     
@@ -560,7 +551,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/2019/03/07/linux-linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/</loc>
+    <loc>http://gaussli.com/2019/03/08/linux-elrepo%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%B4%E6%98%8E/</loc>
     
     <lastmod>2021-07-26</lastmod>
     
@@ -579,6 +570,15 @@
   
   <url>
     <loc>http://gaussli.com/2016/07/15/linux-lsyncd%E5%AE%89%E8%A3%85/</loc>
+    
+    <lastmod>2021-07-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/2019/03/07/linux-linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2021-07-26</lastmod>
     
@@ -650,7 +650,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/2016/11/24/linux-%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</loc>
+    <loc>http://gaussli.com/2017/08/30/linux-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7/</loc>
     
     <lastmod>2021-07-26</lastmod>
     
@@ -659,7 +659,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/2017/08/30/linux-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7/</loc>
+    <loc>http://gaussli.com/2016/11/24/linux-%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</loc>
     
     <lastmod>2021-07-26</lastmod>
     
@@ -677,7 +677,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/2016/08/10/linux-%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://gaussli.com/2017/01/27/linux-%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/</loc>
     
     <lastmod>2021-07-26</lastmod>
     
@@ -686,7 +686,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/2017/01/27/linux-%E5%AF%86%E9%92%A5%E7%99%BB%E5%BD%95/</loc>
+    <loc>http://gaussli.com/2016/08/10/linux-%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2021-07-26</lastmod>
     
@@ -740,15 +740,6 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/2016/07/15/linux-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</loc>
-    
-    <lastmod>2021-07-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gaussli.com/2016/12/06/linux-%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D/</loc>
     
     <lastmod>2021-07-26</lastmod>
@@ -759,6 +750,15 @@
   
   <url>
     <loc>http://gaussli.com/2018/01/12/mac-brew%E5%92%8Cbrew-cask%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    
+    <lastmod>2021-07-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/2016/07/15/linux-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</loc>
     
     <lastmod>2021-07-26</lastmod>
     
@@ -909,14 +909,14 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/%E9%95%BF%E6%B2%99/</loc>
+    <loc>http://gaussli.com/tags/%E6%88%90%E9%83%BD/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/%E6%88%90%E9%83%BD/</loc>
+    <loc>http://gaussli.com/tags/%E9%95%BF%E6%B2%99/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1007,13 +1007,6 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/nsattributedstring/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://gaussli.com/tags/subview/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1029,6 +1022,13 @@
   
   <url>
     <loc>http://gaussli.com/tags/uicontrol/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/nsattributedstring/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1078,6 +1078,20 @@
   
   <url>
     <loc>http://gaussli.com/tags/afnetworking/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/%E9%A2%9C%E8%89%B2/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1147,21 +1161,21 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/%E7%8A%B6%E6%80%81%E6%A0%8F/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/%E9%A2%9C%E8%89%B2/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://gaussli.com/tags/%E5%8A%A8%E4%BD%9C%E5%85%83%E7%B4%A0/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/springmvc/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/xml/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1176,27 +1190,6 @@
   
   <url>
     <loc>http://gaussli.com/tags/logger/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/springmvc/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/maven/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/xml/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1225,6 +1218,13 @@
   
   <url>
     <loc>http://gaussli.com/tags/life-cycle/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/maven/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1280,14 +1280,28 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/kernel/</loc>
+    <loc>http://gaussli.com/tags/centos/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/centos/</loc>
+    <loc>http://gaussli.com/tags/%E6%97%B6%E5%8C%BA/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/%E6%97%B6%E9%97%B4/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/kernel/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1315,27 +1329,6 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/%E6%97%B6%E5%8C%BA/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/%E6%97%B6%E9%97%B4/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/yum/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://gaussli.com/tags/gitlab/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1357,14 +1350,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/linux/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/ssh/</loc>
+    <loc>http://gaussli.com/tags/yum/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1407,6 +1393,20 @@
   
   <url>
     <loc>http://gaussli.com/tags/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/linux/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/ssh/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1476,13 +1476,6 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/yum/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://gaussli.com/tags/hostname/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1490,14 +1483,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/%E5%85%8D%E5%AF%86%E7%A0%81/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/%E7%99%BB%E5%BD%95/</loc>
+    <loc>http://gaussli.com/tags/yum/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1526,6 +1512,20 @@
   
   <url>
     <loc>http://gaussli.com/tags/nologin/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/%E5%85%8D%E5%AF%86%E7%A0%81/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/%E7%99%BB%E5%BD%95/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1784,13 +1784,6 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/ip/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://gaussli.com/tags/springboot/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1805,7 +1798,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/tags/%E5%8A%A0%E8%BD%BD/</loc>
+    <loc>http://gaussli.com/tags/ip/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1833,6 +1826,20 @@
   </url>
   
   <url>
+    <loc>http://gaussli.com/tags/%E5%8A%A0%E8%BD%BD/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://gaussli.com/tags/xxl-job/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1848,13 +1855,6 @@
   
   <url>
     <loc>http://gaussli.com/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1917,6 +1917,13 @@
   </url>
   
   <url>
+    <loc>http://gaussli.com/tags/container/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://gaussli.com/tags/springcloud/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1925,13 +1932,6 @@
   
   <url>
     <loc>http://gaussli.com/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/container/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2190,6 +2190,20 @@
   </url>
   
   <url>
+    <loc>http://gaussli.com/tags/kubesphere/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/tags/yaml/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://gaussli.com/tags/kubeadm/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -2205,20 +2219,6 @@
   
   <url>
     <loc>http://gaussli.com/tags/kubectl/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/kubesphere/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gaussli.com/tags/yaml/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2248,13 +2248,6 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/categories/travel/%E9%95%BF%E6%B2%99/</loc>
-    <lastmod>2024-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://gaussli.com/categories/tech/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -2262,7 +2255,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/categories/tech/javaweb/</loc>
+    <loc>http://gaussli.com/categories/travel/%E9%95%BF%E6%B2%99/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2270,6 +2263,13 @@
   
   <url>
     <loc>http://gaussli.com/categories/tech/app/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gaussli.com/categories/tech/javaweb/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2290,7 +2290,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/categories/tech/javaweb/j2ee/</loc>
+    <loc>http://gaussli.com/categories/tech/app/ios/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2304,7 +2304,7 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/categories/tech/app/ios/</loc>
+    <loc>http://gaussli.com/categories/tech/javaweb/j2ee/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2388,14 +2388,14 @@
   </url>
   
   <url>
-    <loc>http://gaussli.com/categories/tech/javaweb/spring/</loc>
+    <loc>http://gaussli.com/categories/tech/container/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://gaussli.com/categories/tech/container/</loc>
+    <loc>http://gaussli.com/categories/tech/javaweb/spring/</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

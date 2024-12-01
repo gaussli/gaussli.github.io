@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">Words: </span>
-      <span class="post-count">659</span>
+      <span class="post-count">667</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">Read time: </span>
       <span class="post-count">2 mins. </span>
@@ -244,9 +244,9 @@ var _hmt = _hmt || [];
 
             <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>openebs作为Kubernetes持久层使用的时候，数据只会存在Kubernetes集群中某个节点中，节点间的数据不会自动共享，这也是导致Kubesphere官方说openebs建议不在生产环境下使用的原因。<br>这种情况下，如果某个Node节点从集群中移除后，该Node节点中的数据就需要手动同步到其他节点中。</p>
 <h1 id="现象发现"><a href="#现象发现" class="headerlink" title="现象发现"></a>现象发现</h1><h2 id="1-Node节点移除后，某pod一直处于Pending状态"><a href="#1-Node节点移除后，某pod一直处于Pending状态" class="headerlink" title="1. Node节点移除后，某pod一直处于Pending状态"></a>1. Node节点移除后，某pod一直处于Pending状态</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod -A |grep Pending</span><br></pre></td></tr></table></figure>
-<p>结果截图<br><img src="60ed40e418af3.png"></p>
+<p>结果截图<br><img src="/60ed40e418af3.png"></p>
 <h2 id="2-查看pod的describe信息"><a href="#2-查看pod的describe信息" class="headerlink" title="2. 查看pod的describe信息"></a>2. 查看pod的describe信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl describe pod [pending-pod-name] -n [pending-pod-namespace]</span><br></pre></td></tr></table></figure>
-<p>结果截图<br><img src="60ed41608e44a.png"><br>结果表明：该POD有Node节点亲和性（affinity）问题。</p>
+<p>结果截图<br><img src="/60ed41608e44a.png"><br>结果表明：该POD有Node节点亲和性（affinity）问题。</p>
 <h2 id="3-查看pod的yaml文件内容"><a href="#3-查看pod的yaml文件内容" class="headerlink" title="3. 查看pod的yaml文件内容"></a>3. 查看pod的yaml文件内容</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod [pending-pod-name] -n [pending-pod-namespace] -oyaml</span><br></pre></td></tr></table></figure>
 <p>进一步分析：本身POD是没有进行亲和性（affinity）配置的，那么和POD有关的额外资源，就是持久层资源（pvc、pv）</p>
 <h2 id="4-查看对应持久层资源（pvc、pv）"><a href="#4-查看对应持久层资源（pvc、pv）" class="headerlink" title="4. 查看对应持久层资源（pvc、pv）"></a>4. 查看对应持久层资源（pvc、pv）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pvc [pvc-name] -n [pending-pod-namespace] -oyaml</span><br><span class="line">kubectl get pv [pv-name] -oyaml</span><br></pre></td></tr></table></figure>
@@ -262,12 +262,12 @@ var _hmt = _hmt || [];
 <li>修改PV的节点亲和性</li>
 <li>重新部署PVC和PV</li>
 </ol>
-<h1 id="解决流程"><a href="#解决流程" class="headerlink" title="解决流程"></a>解决流程</h1><h2 id="把已移除节点中旧PV已存储的数据（目录-var-openebs-local-）迁移到Master节点上（目录：-var-openebs-local-）"><a href="#把已移除节点中旧PV已存储的数据（目录-var-openebs-local-）迁移到Master节点上（目录：-var-openebs-local-）" class="headerlink" title="把已移除节点中旧PV已存储的数据（目录/var/openebs/local/）迁移到Master节点上（目录：/var/openebs/local/）"></a>把已移除节点中旧PV已存储的数据（目录/var/openebs/local/）迁移到Master节点上（目录：/var/openebs/local/）</h2><p>过程略</p>
+<h1 id="解决流程"><a href="#解决流程" class="headerlink" title="解决流程"></a>解决流程</h1><h2 id="把已移除节点中旧PV已存储的数据（目录-var-openebs-local-）迁移到Master节点上（目录：-var-openebs-local-）"><a href="#把已移除节点中旧PV已存储的数据（目录-var-openebs-local-）迁移到Master节点上（目录：-var-openebs-local-）" class="headerlink" title="把已移除节点中旧PV已存储的数据（目录&#x2F;var&#x2F;openebs&#x2F;local&#x2F;）迁移到Master节点上（目录：&#x2F;var&#x2F;openebs&#x2F;local&#x2F;）"></a>把已移除节点中旧PV已存储的数据（目录&#x2F;var&#x2F;openebs&#x2F;local&#x2F;）迁移到Master节点上（目录：&#x2F;var&#x2F;openebs&#x2F;local&#x2F;）</h2><p>过程略</p>
 <h2 id="保存PVC、PV的yaml文件"><a href="#保存PVC、PV的yaml文件" class="headerlink" title="保存PVC、PV的yaml文件"></a>保存PVC、PV的yaml文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl get -n [namespace] pvc [pvc-name] -oyaml &gt; pvc.yaml</span><br><span class="line">kubectl get -n [namespace] pv [pv-name] -oyaml &gt; pv.yaml</span><br></pre></td></tr></table></figure>
 
 <h2 id="删除PVC和PV"><a href="#删除PVC和PV" class="headerlink" title="删除PVC和PV"></a>删除PVC和PV</h2><p>默认情况下，PVC和PV被正在使用是不能直接删除的，删除会一直使PV处于Terminating状态，所以先给PVC加一个元数据，载进行删除</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl patch -n [namespace] pvc [pvc-name] -p <span class="string">&#x27;&#123;&quot;metadata&quot;:&#123;&quot;finalizers&quot;:null&#125;&#125;&#x27;</span></span><br><span class="line">kubectl delete -n [namespace] pvc [pvc-name]</span><br><span class="line">kubectl delete -n [namespace] pv [pv-name]</span><br></pre></td></tr></table></figure>
-<p>结果截图<br><img src="60ed50ef5ea20.png"></p>
+<p>结果截图<br><img src="/60ed50ef5ea20.png"></p>
 <h2 id="修改PV的节点亲和性和删掉和PVC的关联信息"><a href="#修改PV的节点亲和性和删掉和PVC的关联信息" class="headerlink" title="修改PV的节点亲和性和删掉和PVC的关联信息"></a>修改PV的节点亲和性和删掉和PVC的关联信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改pv.yaml</span></span><br><span class="line">vi pv.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除以下内容</span></span><br><span class="line"><span class="comment">#claimRef:</span></span><br><span class="line"><span class="comment">#    apiVersion: v1</span></span><br><span class="line"><span class="comment">#    kind: PersistentVolumeClaim</span></span><br><span class="line"><span class="comment">#    name: data-elasticsearch-logging-data-0</span></span><br><span class="line"><span class="comment">#    namespace: kubesphere-logging-system</span></span><br><span class="line"><span class="comment">#    resourceVersion: &quot;13881&quot;</span></span><br><span class="line"><span class="comment">#    uid: f15f1581-f8ae-452b-9825-c28c1cf34f7b</span></span><br><span class="line">nodeAffinity:</span><br><span class="line">    required:</span><br><span class="line">      nodeSelectorTerms:</span><br><span class="line">      - matchExpressions:</span><br><span class="line">        - key: kubernetes.io/hostname</span><br><span class="line">          operator: In</span><br><span class="line">          values:</span><br><span class="line">          <span class="comment"># 修改以下内容</span></span><br><span class="line">          <span class="comment"># k8s-node3改成k8s-master1，改成集群中存在可用的节点名称</span></span><br><span class="line">          - k8s-master1</span><br></pre></td></tr></table></figure>
 
 <h2 id="重新部署PVC和PV"><a href="#重新部署PVC和PV" class="headerlink" title="重新部署PVC和PV"></a>重新部署PVC和PV</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl create -f pv.yaml</span><br><span class="line">kubectl create -f pvc.yaml</span><br></pre></td></tr></table></figure>
@@ -280,7 +280,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%B8%ADopenebs%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" data-id="cm45dlunq005rggye1h5kbscb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%B8%ADopenebs%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/" data-id="cm45dsm1e005urwye2nzieg4s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
