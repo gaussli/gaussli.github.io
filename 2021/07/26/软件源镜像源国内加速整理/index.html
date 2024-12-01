@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -247,7 +247,7 @@ var _hmt = _hmt || [];
 <h2 id="华为"><a href="#华为" class="headerlink" title="华为"></a>华为</h2><p><a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/">https://mirrors.huaweicloud.com/</a></p>
 <h2 id="网易"><a href="#网易" class="headerlink" title="网易"></a>网易</h2><p><a target="_blank" rel="noopener" href="https://mirrors.163.com/">https://mirrors.163.com/</a></p>
 <h2 id="清华大学"><a href="#清华大学" class="headerlink" title="清华大学"></a>清华大学</h2><p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/">https://mirrors.tuna.tsinghua.edu.cn/</a></p>
-<h1 id="Docker镜像源"><a href="#Docker镜像源" class="headerlink" title="Docker镜像源"></a>Docker镜像源</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line">cat &lt;&lt; <span class="string">EOF &gt; /etc/docker/daemon.json</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  &quot;registry-mirrors&quot;: [&quot;https://registry.cn-hangzhou.aliyuncs.com&quot;]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h1 id="Docker镜像源"><a href="#Docker镜像源" class="headerlink" title="Docker镜像源"></a>Docker镜像源</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line"><span class="built_in">cat</span> &lt;&lt; <span class="string">EOF &gt; /etc/docker/daemon.json</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">  &quot;registry-mirrors&quot;: [&quot;https://registry.cn-hangzhou.aliyuncs.com&quot;]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 <h2 id="网易-1"><a href="#网易-1" class="headerlink" title="网易"></a>网易</h2><p><a target="_blank" rel="noopener" href="https://hub-mirror.c.163.com/">https://hub-mirror.c.163.com</a></p>
 <h2 id="阿里-1"><a href="#阿里-1" class="headerlink" title="阿里"></a>阿里</h2><p>阿里有两种方式的镜像加速，一是个人账号能配置一个镜像加速，二是使用registry.cn-hangzhou.aliyuncs.com域名，两种方式都需要登录账号查看相关内容<br><a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/images/cn-hangzhou/google_containers/pause/detail">https://registry.cn-hangzhou.aliyuncs.com</a></p>
@@ -259,7 +259,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E8%BD%AF%E4%BB%B6%E6%BA%90%E9%95%9C%E5%83%8F%E6%BA%90%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E6%95%B4%E7%90%86/" data-id="cl26c2yq80072tcw4abmvemjr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E8%BD%AF%E4%BB%B6%E6%BA%90%E9%95%9C%E5%83%8F%E6%BA%90%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E6%95%B4%E7%90%86/" data-id="cm45dluny0079ggyedcfkbq3v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -343,7 +343,7 @@ var _hmt = _hmt || [];
 网易https://mirrors.163.com/
 清华大学https://mirrors.tuna.tsinghua.edu.cn/
 Docker镜像源配置123",
-        "wordCount": 86
+        "wordCount": 88
     }
 </script>
 
@@ -634,7 +634,7 @@ Docker镜像源配置123",
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

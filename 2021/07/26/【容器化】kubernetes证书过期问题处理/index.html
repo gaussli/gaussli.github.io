@@ -82,7 +82,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -250,11 +250,11 @@ var _hmt = _hmt || [];
 <p>查看结果例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[check-expiration] Reading configuration from the cluster...</span><br><span class="line">[check-expiration] FYI: You can look at this config file with &#x27;kubectl -n kube-system get cm kubeadm-config -oyaml&#x27;</span><br><span class="line"></span><br><span class="line">CERTIFICATE                EXPIRES                  RESIDUAL TIME   CERTIFICATE AUTHORITY   EXTERNALLY MANAGED</span><br><span class="line">admin.conf                 Jul 08, 2022 01:40 UTC   364d                                    no      </span><br><span class="line">apiserver                  Jul 08, 2022 01:40 UTC   364d            ca                      no      </span><br><span class="line">apiserver-etcd-client      Jul 08, 2022 01:40 UTC   364d            etcd-ca                 no      </span><br><span class="line">apiserver-kubelet-client   Jul 08, 2022 01:40 UTC   364d            ca                      no      </span><br><span class="line">controller-manager.conf    Jul 08, 2022 01:40 UTC   364d                                    no      </span><br><span class="line">etcd-healthcheck-client    Jul 08, 2022 01:40 UTC   364d            etcd-ca                 no      </span><br><span class="line">etcd-peer                  Jul 08, 2022 01:40 UTC   364d            etcd-ca                 no      </span><br><span class="line">etcd-server                Jul 08, 2022 01:40 UTC   364d            etcd-ca                 no      </span><br><span class="line">front-proxy-client         Jul 08, 2022 01:40 UTC   364d            front-proxy-ca          no      </span><br><span class="line">scheduler.conf             Jul 08, 2022 01:40 UTC   364d                                    no      </span><br><span class="line"></span><br><span class="line">CERTIFICATE AUTHORITY   EXPIRES                  RESIDUAL TIME   EXTERNALLY MANAGED</span><br><span class="line">ca                      Jul 05, 2030 08:16 UTC   8y              no      </span><br><span class="line">etcd-ca                 Jul 05, 2030 08:16 UTC   8y              no      </span><br><span class="line">front-proxy-ca          Jul 05, 2030 08:16 UTC   8y              no</span><br></pre></td></tr></table></figure>
 
-<h1 id="解决方案（更新证书有效期）"><a href="#解决方案（更新证书有效期）" class="headerlink" title="解决方案（更新证书有效期）"></a>解决方案（更新证书有效期）</h1><h2 id="1-备份证书"><a href="#1-备份证书" class="headerlink" title="1. 备份证书"></a>1. 备份证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -rp /etc/kubernetes /etc/kubernetes.bak.[date]</span><br></pre></td></tr></table></figure>
+<h1 id="解决方案（更新证书有效期）"><a href="#解决方案（更新证书有效期）" class="headerlink" title="解决方案（更新证书有效期）"></a>解决方案（更新证书有效期）</h1><h2 id="1-备份证书"><a href="#1-备份证书" class="headerlink" title="1. 备份证书"></a>1. 备份证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -rp /etc/kubernetes /etc/kubernetes.bak.[<span class="built_in">date</span>]</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-更新所有证书"><a href="#2-更新所有证书" class="headerlink" title="2. 更新所有证书"></a>2. 更新所有证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm alpha certs renew all</span><br></pre></td></tr></table></figure>
 <p><img src="60ed3268f3349.png"></p>
-<h2 id="3-复制admin-conf到-kube-config，kubectl需要用到该文件"><a href="#3-复制admin-conf到-kube-config，kubectl需要用到该文件" class="headerlink" title="3. 复制admin.conf到~/.kube/config，kubectl需要用到该文件"></a>3. 复制admin.conf到~/.kube/config，kubectl需要用到该文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -rp ~/.kube ~/.kube.bak.[date]</span><br><span class="line">cp /etc/kubernetes/admin.conf ~/.kube/config</span><br></pre></td></tr></table></figure>
+<h2 id="3-复制admin-conf到-kube-config，kubectl需要用到该文件"><a href="#3-复制admin-conf到-kube-config，kubectl需要用到该文件" class="headerlink" title="3. 复制admin.conf到~/.kube/config，kubectl需要用到该文件"></a>3. 复制admin.conf到~/.kube/config，kubectl需要用到该文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -rp ~/.kube ~/.kube.bak.[<span class="built_in">date</span>]</span><br><span class="line"><span class="built_in">cp</span> /etc/kubernetes/admin.conf ~/.kube/config</span><br></pre></td></tr></table></figure>
 
 <p><img src="60ed3346327db.png"></p>
 <h2 id="4-重启kube-apiserver、kube-controller-manager、kube-scheduler和etcd服务或直接重启docker"><a href="#4-重启kube-apiserver、kube-controller-manager、kube-scheduler和etcd服务或直接重启docker" class="headerlink" title="4. 重启kube-apiserver、kube-controller-manager、kube-scheduler和etcd服务或直接重启docker"></a>4. 重启kube-apiserver、kube-controller-manager、kube-scheduler和etcd服务或直接重启docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" data-id="cl26c2yq3006ptcw49a590xsf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" data-id="cm45dlunw006wggyedawq3f66" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -347,7 +347,7 @@ var _hmt = _hmt || [];
         "url": "http://gaussli.com/2021/07/26/【容器化】kubernetes证书过期问题处理/",
         "description": "问题描述Kubernetes稳定运行了一年，突然Kubesphere中任何和K8S资源相关的操作都失效了，而且发现kubectl命令也出错了，报错如下：
 12Unable to connect to the server: x509: certificate has expired or is not yet validopenssl x509 -in /etc/kubernetes/pki/ap",
-        "wordCount": 925
+        "wordCount": 930
     }
 </script>
 
@@ -638,7 +638,7 @@ var _hmt = _hmt || [];
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

@@ -84,7 +84,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
 <p>结果截图：<br><img src="60ece296c990b.png"></p>
 <h3 id="6-新节点安装kubectl、kubeadm、kubelet，版本需和Master的一致"><a href="#6-新节点安装kubectl、kubeadm、kubelet，版本需和Master的一致" class="headerlink" title="6. 新节点安装kubectl、kubeadm、kubelet，版本需和Master的一致"></a>6. 新节点安装kubectl、kubeadm、kubelet，版本需和Master的一致</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install kubelet-1.17.3 kubeadm-1.17.3 kubectl-1.17.3</span><br><span class="line">systemctl <span class="built_in">enable</span> kubelet</span><br><span class="line">systemctl start kubelet</span><br></pre></td></tr></table></figure>
 
-<h3 id="7-把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值"><a href="#7-把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值" class="headerlink" title="7. 把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值"></a>7. 把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm join &lt;master-ip&gt;:6443 --node-name [new-node-hostname] --token kklhin.swv9pvue5jncxzqs --discovery-token-ca-cert-hash sha256:7e0f436144520310a988005261894d4c82c36c99c0db9e71e4daac5546d5f159</span><br></pre></td></tr></table></figure>
+<h3 id="7-把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值"><a href="#7-把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值" class="headerlink" title="7. 把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值"></a>7. 把新节点加入到集群中，其中使用到上述获取的Token和ca证书的hash值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm <span class="built_in">join</span> &lt;master-ip&gt;:6443 --node-name [new-node-hostname] --token kklhin.swv9pvue5jncxzqs --discovery-token-ca-cert-hash sha256:7e0f436144520310a988005261894d4c82c36c99c0db9e71e4daac5546d5f159</span><br></pre></td></tr></table></figure>
 
 <h1 id="移除节点"><a href="#移除节点" class="headerlink" title="移除节点"></a>移除节点</h1><h3 id="1-进入到Master节点，驱逐待移除节点上的pod"><a href="#1-进入到Master节点，驱逐待移除节点上的pod" class="headerlink" title="1. 进入到Master节点，驱逐待移除节点上的pod"></a>1. 进入到Master节点，驱逐待移除节点上的pod</h3><p>参数说明</p>
 <ul>
@@ -281,7 +281,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BC%98%E9%9B%85%E6%96%B0%E5%A2%9E%E6%88%96%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9/" data-id="cl26c2yq2006ntcw42dvx1d6y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubernetes%E4%BC%98%E9%9B%85%E6%96%B0%E5%A2%9E%E6%88%96%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9/" data-id="cm45dlunw006tggye6ujp0jqs" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -364,7 +364,7 @@ var _hmt = _hmt || [];
 2. 进入Master节点，查看当前是否存在可用Token，没有任何输出说明当前没有可用Token1kubeadm token list
 
 3. 创建Token1kubeadm tok",
-        "wordCount": 259
+        "wordCount": 260
     }
 </script>
 
@@ -655,7 +655,7 @@ var _hmt = _hmt || [];
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

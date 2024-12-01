@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Kubernetes,脚本安装,Apollo" />
+    <meta name="keywords" content="Apollo,Kubernetes,脚本安装" />
     
     <meta name="description" content="官网github: https:&#x2F;&#x2F;github.com&#x2F;ctripcorp&#x2F;apollo&#x2F; official-website: https:&#x2F;&#x2F;www.apolloconfig.com&#x2F; 简介 官方说明：Apollo（阿波罗）是携程框架部门研发的分布式配置中心，能够集中化管理应用不同环境、不同集群的配置，配置修改后能够实时推送到应用端，并且具备规范的权限、流程治理等特性，适用于微服务配置管理场景">
 <meta property="og:type" content="article">
@@ -23,9 +23,9 @@
 <meta property="article:published_time" content="2021-07-26T08:28:16.000Z">
 <meta property="article:modified_time" content="2021-07-26T15:11:38.067Z">
 <meta property="article:author" content="gaussli">
+<meta property="article:tag" content="Apollo">
 <meta property="article:tag" content="Kubernetes">
 <meta property="article:tag" content="脚本安装">
-<meta property="article:tag" content="Apollo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://gaussli.com/placeholder.png">
     
@@ -82,7 +82,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -277,50 +277,50 @@ var _hmt = _hmt || [];
 <td><a target="_blank" rel="noopener" href="https://github.com/ctripcorp/apollo/blob/v1.8.1/scripts/sql/apolloportaldb.sql">https://github.com/ctripcorp/apollo/blob/v1.8.1/scripts/sql/apolloportaldb.sql</a></td>
 </tr>
 </tbody></table>
-<h3 id="上传应用包"><a href="#上传应用包" class="headerlink" title="上传应用包"></a>上传应用包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp apollo-configservice-1.8.1-github.zip root@xxx:/usr/<span class="built_in">local</span>/src/</span><br><span class="line">scp apollo-adminservice-1.8.1-github.zip root@xxx:/usr/<span class="built_in">local</span>/src/</span><br><span class="line">scp apollo-portal-1.8.1-github.zip root@xxx:/usr/<span class="built_in">local</span>/src/</span><br></pre></td></tr></table></figure>
+<h3 id="上传应用包"><a href="#上传应用包" class="headerlink" title="上传应用包"></a>上传应用包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scp apollo-configservice-1.8.1-github.zip root@xxx:/usr/local/src/</span><br><span class="line">scp apollo-adminservice-1.8.1-github.zip root@xxx:/usr/local/src/</span><br><span class="line">scp apollo-portal-1.8.1-github.zip root@xxx:/usr/local/src/</span><br></pre></td></tr></table></figure>
 
 <h3 id="安装zip解压工具"><a href="#安装zip解压工具" class="headerlink" title="安装zip解压工具"></a>安装zip解压工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y unzip</span><br></pre></td></tr></table></figure>
 
-<h3 id="解压应用包"><a href="#解压应用包" class="headerlink" title="解压应用包"></a>解压应用包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</span><br><span class="line">unzip -d apollo-configservice apollo-configservice-1.8.1-github.zip</span><br><span class="line">unzip -d apollo-adminservice apollo-adminservice-1.8.1-github.zip</span><br><span class="line">unzip -d apollo-portal apollo-portal-1.8.1-github.zip</span><br></pre></td></tr></table></figure>
+<h3 id="解压应用包"><a href="#解压应用包" class="headerlink" title="解压应用包"></a>解压应用包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/src</span><br><span class="line">unzip -d apollo-configservice apollo-configservice-1.8.1-github.zip</span><br><span class="line">unzip -d apollo-adminservice apollo-adminservice-1.8.1-github.zip</span><br><span class="line">unzip -d apollo-portal apollo-portal-1.8.1-github.zip</span><br></pre></td></tr></table></figure>
 
-<h3 id="移动到安装目录（-usr-local-apollo）"><a href="#移动到安装目录（-usr-local-apollo）" class="headerlink" title="移动到安装目录（/usr/local/apollo）"></a>移动到安装目录（/usr/local/apollo）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /usr/<span class="built_in">local</span>/apollo</span><br><span class="line">mv /usr/<span class="built_in">local</span>/src/apollo-configservice /usr/<span class="built_in">local</span>/apollo/apollo-configservice</span><br><span class="line">mv /usr/<span class="built_in">local</span>/src/apollo-adminservice /usr/<span class="built_in">local</span>/apollo/apollo-adminservice</span><br><span class="line">mv /usr/<span class="built_in">local</span>/src/apollo-portal /usr/<span class="built_in">local</span>/apollo/apollo-portal</span><br></pre></td></tr></table></figure>
+<h3 id="移动到安装目录（-usr-local-apollo）"><a href="#移动到安装目录（-usr-local-apollo）" class="headerlink" title="移动到安装目录（/usr/local/apollo）"></a>移动到安装目录（/usr/local/apollo）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /usr/local/apollo</span><br><span class="line"><span class="built_in">mv</span> /usr/local/src/apollo-configservice /usr/local/apollo/apollo-configservice</span><br><span class="line"><span class="built_in">mv</span> /usr/local/src/apollo-adminservice /usr/local/apollo/apollo-adminservice</span><br><span class="line"><span class="built_in">mv</span> /usr/local/src/apollo-portal /usr/local/apollo/apollo-portal</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-创建数据库"><a href="#2-创建数据库" class="headerlink" title="2. 创建数据库"></a>2. 创建数据库</h2><h3 id="创建apolloconfigdb数据库"><a href="#创建apolloconfigdb数据库" class="headerlink" title="创建apolloconfigdb数据库"></a>创建apolloconfigdb数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MySQL命令行中</span></span><br><span class="line"><span class="comment"># 注意下载的sql文件已包含创建数据库的sql语句，按需修改</span></span><br><span class="line"><span class="built_in">source</span> apolloconfigdb.sql;</span><br></pre></td></tr></table></figure>
 
 <h3 id="创建apolloportaldb数据库"><a href="#创建apolloportaldb数据库" class="headerlink" title="创建apolloportaldb数据库"></a>创建apolloportaldb数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MySQL命令行中</span></span><br><span class="line"><span class="comment"># 注意下载的sql文件已包含创建数据库的sql语句，按需修改</span></span><br><span class="line"><span class="built_in">source</span> apolloportaldb.sql;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-部署apollo-configservice服务"><a href="#3-部署apollo-configservice服务" class="headerlink" title="3. 部署apollo-configservice服务"></a>3. 部署apollo-configservice服务</h2><h3 id="配置数据库参数"><a href="#配置数据库参数" class="headerlink" title="配置数据库参数"></a>配置数据库参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改spring.datasource.url、spring.datasource.username、spring.datasource.password三个参数</span></span><br><span class="line">vi /usr/<span class="built_in">local</span>/apollo/apollo-configservice/config/application-github.properties</span><br></pre></td></tr></table></figure>
+<h2 id="3-部署apollo-configservice服务"><a href="#3-部署apollo-configservice服务" class="headerlink" title="3. 部署apollo-configservice服务"></a>3. 部署apollo-configservice服务</h2><h3 id="配置数据库参数"><a href="#配置数据库参数" class="headerlink" title="配置数据库参数"></a>配置数据库参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改spring.datasource.url、spring.datasource.username、spring.datasource.password三个参数</span></span><br><span class="line">vi /usr/local/apollo/apollo-configservice/config/application-github.properties</span><br></pre></td></tr></table></figure>
 
-<h3 id="启动apollo-configservice服务"><a href="#启动apollo-configservice服务" class="headerlink" title="启动apollo-configservice服务"></a>启动apollo-configservice服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/<span class="built_in">local</span>/apollo/apollo-configservice/scripts/startup.sh</span><br></pre></td></tr></table></figure>
+<h3 id="启动apollo-configservice服务"><a href="#启动apollo-configservice服务" class="headerlink" title="启动apollo-configservice服务"></a>启动apollo-configservice服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/local/apollo/apollo-configservice/scripts/startup.sh</span><br></pre></td></tr></table></figure>
 <p>结果截图：<br><img src="60f03e6a638cf.png"></p>
-<h3 id="查看apollo-configservice运行日志目录"><a href="#查看apollo-configservice运行日志目录" class="headerlink" title="查看apollo-configservice运行日志目录"></a>查看apollo-configservice运行日志目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /opt/logs/100003171/apollo-configservice.log</span><br></pre></td></tr></table></figure>
+<h3 id="查看apollo-configservice运行日志目录"><a href="#查看apollo-configservice运行日志目录" class="headerlink" title="查看apollo-configservice运行日志目录"></a>查看apollo-configservice运行日志目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tail</span> -f /opt/logs/100003171/apollo-configservice.log</span><br></pre></td></tr></table></figure>
 
-<h2 id="4-部署apollo-adminservice"><a href="#4-部署apollo-adminservice" class="headerlink" title="4. 部署apollo-adminservice"></a>4. 部署apollo-adminservice</h2><h3 id="配置数据库参数-1"><a href="#配置数据库参数-1" class="headerlink" title="配置数据库参数"></a>配置数据库参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改spring.datasource.url、spring.datasource.username、spring.datasource.password三个参数</span></span><br><span class="line">vi /usr/<span class="built_in">local</span>/apollo/apollo-adminservice/config/application-github.properties</span><br></pre></td></tr></table></figure>
+<h2 id="4-部署apollo-adminservice"><a href="#4-部署apollo-adminservice" class="headerlink" title="4. 部署apollo-adminservice"></a>4. 部署apollo-adminservice</h2><h3 id="配置数据库参数-1"><a href="#配置数据库参数-1" class="headerlink" title="配置数据库参数"></a>配置数据库参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改spring.datasource.url、spring.datasource.username、spring.datasource.password三个参数</span></span><br><span class="line">vi /usr/local/apollo/apollo-adminservice/config/application-github.properties</span><br></pre></td></tr></table></figure>
 
-<h3 id="启动apollo-adminservice服务"><a href="#启动apollo-adminservice服务" class="headerlink" title="启动apollo-adminservice服务"></a>启动apollo-adminservice服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/<span class="built_in">local</span>/apollo/apollo-adminservice/scripts/startup.sh</span><br></pre></td></tr></table></figure>
+<h3 id="启动apollo-adminservice服务"><a href="#启动apollo-adminservice服务" class="headerlink" title="启动apollo-adminservice服务"></a>启动apollo-adminservice服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/local/apollo/apollo-adminservice/scripts/startup.sh</span><br></pre></td></tr></table></figure>
 <p>结果截图：<br><img src="60f0d968ceb4c.png"></p>
-<h3 id="查看apollo-adminservice运行日志目录"><a href="#查看apollo-adminservice运行日志目录" class="headerlink" title="查看apollo-adminservice运行日志目录"></a>查看apollo-adminservice运行日志目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /opt/logs/100003172/apollo-adminservice.log</span><br></pre></td></tr></table></figure>
+<h3 id="查看apollo-adminservice运行日志目录"><a href="#查看apollo-adminservice运行日志目录" class="headerlink" title="查看apollo-adminservice运行日志目录"></a>查看apollo-adminservice运行日志目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tail</span> -f /opt/logs/100003172/apollo-adminservice.log</span><br></pre></td></tr></table></figure>
 
-<h2 id="5-部署apollo-portal服务"><a href="#5-部署apollo-portal服务" class="headerlink" title="5. 部署apollo-portal服务"></a>5. 部署apollo-portal服务</h2><h3 id="配置数据库参数-2"><a href="#配置数据库参数-2" class="headerlink" title="配置数据库参数"></a>配置数据库参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改spring.datasource.url、spring.datasource.username、spring.datasource.password三个参数</span></span><br><span class="line">vi /usr/<span class="built_in">local</span>/apollo/apollo-portal/config/application-github.properties</span><br></pre></td></tr></table></figure>
+<h2 id="5-部署apollo-portal服务"><a href="#5-部署apollo-portal服务" class="headerlink" title="5. 部署apollo-portal服务"></a>5. 部署apollo-portal服务</h2><h3 id="配置数据库参数-2"><a href="#配置数据库参数-2" class="headerlink" title="配置数据库参数"></a>配置数据库参数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改spring.datasource.url、spring.datasource.username、spring.datasource.password三个参数</span></span><br><span class="line">vi /usr/local/apollo/apollo-portal/config/application-github.properties</span><br></pre></td></tr></table></figure>
 
 <h3 id="配置portal服务所管理的环境"><a href="#配置portal服务所管理的环境" class="headerlink" title="配置portal服务所管理的环境"></a>配置portal服务所管理的环境</h3><p>根据Apollo官方的部署方案，portal服务是同时管理各个环境下的Apollo-Config，所以需要指定portal服务能管理的环境参数以及对应的config服务地址</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定portal服务所管理的环境参数</span></span><br><span class="line">vi /usr/<span class="built_in">local</span>/apollo/apollo-portal/config/application-github.properties</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定portal服务所管理的环境参数</span></span><br><span class="line">vi /usr/local/apollo/apollo-portal/config/application-github.properties</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## vi中添加所管理的环境参数，多个参数逗号（,）隔开。（下面参数值只是例子，按需修改）</span><br><span class="line">apollo.portal.envs = DEV,UAT</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 配置对应的config服务地址</span><br><span class="line">vi /usr/local/apollo/apollo-portal/config/apollo-env.properties</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## 修改dev.meta和uat.meta的值，此处配置的服务地址需和apollo.portal.envs参数值对应（下面参数值只是例子，按需修改）</span><br><span class="line">dev.meta=http://fill-in-dev-meta-server:8080</span><br><span class="line">uat.meta=http://fill-in-uat-meta-server:8080</span><br></pre></td></tr></table></figure>
 
-<h3 id="启动apollo-portal服务"><a href="#启动apollo-portal服务" class="headerlink" title="启动apollo-portal服务"></a>启动apollo-portal服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/<span class="built_in">local</span>/apollo/apollo-portal/scripts/startup.sh</span><br></pre></td></tr></table></figure>
+<h3 id="启动apollo-portal服务"><a href="#启动apollo-portal服务" class="headerlink" title="启动apollo-portal服务"></a>启动apollo-portal服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/local/apollo/apollo-portal/scripts/startup.sh</span><br></pre></td></tr></table></figure>
 <p>结果截图：<br><img src="60f0e21b0f691.png"></p>
-<h3 id="查看apollo-adminservice运行日志目录-1"><a href="#查看apollo-adminservice运行日志目录-1" class="headerlink" title="查看apollo-adminservice运行日志目录"></a>查看apollo-adminservice运行日志目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /opt/logs/100003173/apollo-portal.log</span><br></pre></td></tr></table></figure>
+<h3 id="查看apollo-adminservice运行日志目录-1"><a href="#查看apollo-adminservice运行日志目录-1" class="headerlink" title="查看apollo-adminservice运行日志目录"></a>查看apollo-adminservice运行日志目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tail</span> -f /opt/logs/100003173/apollo-portal.log</span><br></pre></td></tr></table></figure>
 
 <h2 id="6-开放端口"><a href="#6-开放端口" class="headerlink" title="6. 开放端口"></a>6. 开放端口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=8070/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 
-<h2 id="7-服务停止"><a href="#7-服务停止" class="headerlink" title="7. 服务停止"></a>7. 服务停止</h2><h3 id="apollo-configservice服务停止"><a href="#apollo-configservice服务停止" class="headerlink" title="apollo-configservice服务停止"></a>apollo-configservice服务停止</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/<span class="built_in">local</span>/apollo/apollo-configservice/scripts/shutdown.sh</span><br></pre></td></tr></table></figure>
+<h2 id="7-服务停止"><a href="#7-服务停止" class="headerlink" title="7. 服务停止"></a>7. 服务停止</h2><h3 id="apollo-configservice服务停止"><a href="#apollo-configservice服务停止" class="headerlink" title="apollo-configservice服务停止"></a>apollo-configservice服务停止</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/local/apollo/apollo-configservice/scripts/shutdown.sh</span><br></pre></td></tr></table></figure>
 
-<h3 id="apollo-adminservice服务停止"><a href="#apollo-adminservice服务停止" class="headerlink" title="apollo-adminservice服务停止"></a>apollo-adminservice服务停止</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/<span class="built_in">local</span>/apollo/apollo-adminservice/scripts/shutdown.sh</span><br></pre></td></tr></table></figure>
+<h3 id="apollo-adminservice服务停止"><a href="#apollo-adminservice服务停止" class="headerlink" title="apollo-adminservice服务停止"></a>apollo-adminservice服务停止</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/local/apollo/apollo-adminservice/scripts/shutdown.sh</span><br></pre></td></tr></table></figure>
 
-<h3 id="apollo-portal服务停止"><a href="#apollo-portal服务停止" class="headerlink" title="apollo-portal服务停止"></a>apollo-portal服务停止</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/<span class="built_in">local</span>/apollo/apollo-portal/scripts/shutdown.sh</span><br></pre></td></tr></table></figure>
+<h3 id="apollo-portal服务停止"><a href="#apollo-portal服务停止" class="headerlink" title="apollo-portal服务停止"></a>apollo-portal服务停止</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh /usr/local/apollo/apollo-portal/scripts/shutdown.sh</span><br></pre></td></tr></table></figure>
 
 <h1 id="Kuebrnetes方式安装"><a href="#Kuebrnetes方式安装" class="headerlink" title="Kuebrnetes方式安装"></a>Kuebrnetes方式安装</h1><h2 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1. 创建数据库"></a>1. 创建数据库</h2><p>和脚本方式安装中创建数据库步骤一致</p>
 <h2 id="2-部署apollo-configservice服务"><a href="#2-部署apollo-configservice服务" class="headerlink" title="2. 部署apollo-configservice服务"></a>2. 部署apollo-configservice服务</h2><p>修改其中<code>&lt;namespace-name&gt;</code>、<code>&lt;mysql-username&gt;</code>、<code>&lt;mysql-password&gt;</code>、<code>&lt;mysql-url&gt;</code>的内容。其中<code>&lt;mysql-username&gt;</code>、<code>&lt;mysql-password&gt;</code>的内容需要进行Base64编码。</p>
@@ -347,7 +347,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/apollo%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/" data-id="cl26c2ytm00tctcw46vjy2ret" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/apollo%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/" data-id="cm45dlumo000cggye0rsohw4v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -419,7 +419,7 @@ var _hmt = _hmt || [];
         },
         "headline": "Apollo部署及使用",
         "image": "http://gaussli.com/placeholder.png",
-        "keywords": "Kubernetes 脚本安装 Apollo",
+        "keywords": "Apollo Kubernetes 脚本安装",
         "genre": "Tech Middleware Apollo",
         "datePublished": "2021-07-26",
         "dateCreated": "2021-07-26",
@@ -429,7 +429,7 @@ var _hmt = _hmt || [];
 official-website: https://www.apolloconfig.com/
 简介
 官方说明：Apollo（阿波罗）是携程框架部门研发的分布式配置中心，能够集中化管理应用不同环境、不同集群的配置，配置修改后能够实时推送到应用端，并且具备规范的权限、流程治理等特性，适用于微服务配置管理场景",
-        "wordCount": 5556
+        "wordCount": 5542
     }
 </script>
 
@@ -720,7 +720,7 @@ official-website: https://www.apolloconfig.com/
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

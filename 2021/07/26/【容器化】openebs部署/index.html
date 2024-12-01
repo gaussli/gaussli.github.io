@@ -82,7 +82,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -247,7 +247,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <p><img src="60f78e34c5d20.png"></p>
 <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="安装iscsid服务"><a href="#安装iscsid服务" class="headerlink" title="安装iscsid服务"></a>安装iscsid服务</h2><p>官方说明：<a target="_blank" rel="noopener" href="https://docs.openebs.io/docs/next/prerequisites.html">https://docs.openebs.io/docs/next/prerequisites.html</a><br>This guide will help you to verify that your Kubernetes worker nodes have the required prerequisites to install OpenEBS and use OpenEBS Volumes to run your Kubernetes Stateful Workloads. In addition, you will learn about how to customize the installer according to your managed Kubernetes provider.<br>OpenEBS provides block volume support through the iSCSI protocol. Therefore, the iSCSI client (initiator) presence on all Kubernetes nodes is required. Choose the platform below to find the steps to verify if the iSCSI client is installed and running or to find the steps to install the iSCSI client.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有节点都需要安装</span></span><br><span class="line">yum install iscsi-initiator-utils -y</span><br><span class="line">systemctl <span class="built_in">enable</span> --now iscsid</span><br><span class="line">cat /etc/iscsi/initiatorname.iscsi</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 所有节点都需要安装</span></span><br><span class="line">yum install iscsi-initiator-utils -y</span><br><span class="line">systemctl <span class="built_in">enable</span> --now iscsid</span><br><span class="line"><span class="built_in">cat</span> /etc/iscsi/initiatorname.iscsi</span><br></pre></td></tr></table></figure>
 
 <h2 id="配置Master节点可被调度"><a href="#配置Master节点可被调度" class="headerlink" title="配置Master节点可被调度"></a>配置Master节点可被调度</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl taint nodes &lt;Master节点名称&gt; node-role.kubernetes.io/master:NoSchedule-</span><br></pre></td></tr></table></figure>
 
@@ -257,7 +257,7 @@ var _hmt = _hmt || [];
 
 <h1 id="（可选）配置默认Storage-Class"><a href="#（可选）配置默认Storage-Class" class="headerlink" title="（可选）配置默认Storage Class"></a>（可选）配置默认Storage Class</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl patch storageclass &lt;storageclass-name&gt; -p <span class="string">&#x27;&#123;&quot;metadata&quot;: &#123;&quot;annotations&quot;:&#123;&quot;storageclass.kubernetes.io/is-default-class&quot;:&quot;true&quot;&#125;&#125;&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载卸载脚本</span></span><br><span class="line">curl -o /usr/<span class="built_in">local</span>/src/openebs-uninstall.sh https://raw.githubusercontent.com/openebs/charts/gh-pages/scripts/uninstall/uninstall.sh</span><br><span class="line"><span class="comment"># Master节点中执行卸载脚本</span></span><br></pre></td></tr></table></figure>
+<h1 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载卸载脚本</span></span><br><span class="line">curl -o /usr/local/src/openebs-uninstall.sh https://raw.githubusercontent.com/openebs/charts/gh-pages/scripts/uninstall/uninstall.sh</span><br><span class="line"><span class="comment"># Master节点中执行卸载脚本</span></span><br></pre></td></tr></table></figure>
 
 <p>(•̀ᴗ•́)و ̑̑</p>
 
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91openebs%E9%83%A8%E7%BD%B2/" data-id="cl26c2yq7006ztcw4ctgje76x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91openebs%E9%83%A8%E7%BD%B2/" data-id="cm45dluny0077ggye0ri9088m" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -639,7 +639,7 @@ var _hmt = _hmt || [];
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

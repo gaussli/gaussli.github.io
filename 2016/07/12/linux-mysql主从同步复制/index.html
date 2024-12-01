@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -284,12 +284,12 @@ var _hmt = _hmt || [];
 <h2 id="步骤8–根据主数据库的binlog文件确认同步点"><a href="#步骤8–根据主数据库的binlog文件确认同步点" class="headerlink" title="步骤8–根据主数据库的binlog文件确认同步点"></a>步骤8–根据主数据库的binlog文件确认同步点</h2><p>当前主数据库的binlog文件为<code>mysql-bin.000006</code>。</p>
 <p>根据步骤4获取到的备份文件时间，现在就用上了。我们需要依靠这个备份文件时间来获取同步点，即需要查看主数据库binlog文件获取备份文件时间后第一个操作的时间节点，其对应的pos值就是我们所需的同步点。</p>
 <p>执行以下命令查看binlog文件在备份文件时间前后约半个小时内的操作记录。由于备份文件时间为<code>2016-07-08 17:15:42</code>，所以前后大概查看<code>2016-07-08 17:00:00</code>到<code>2016-07-08 17:30:00</code>这段时间。当然这段时间是任意设置的，甚至可以查看所有操作记录，慢慢一个个挨着找。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; /usr/<span class="built_in">local</span>/mysql/bin/mysqlbinlog --start-datetime=<span class="string">&quot;2016-07-08 17:00:00&quot;</span> --stop-datetime=<span class="string">&quot;2016-07-08 17:30:00 mysql-bin.000006&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; /usr/local/mysql/bin/mysqlbinlog --start-datetime=<span class="string">&quot;2016-07-08 17:00:00&quot;</span> --stop-datetime=<span class="string">&quot;2016-07-08 17:30:00 mysql-bin.000006&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>由于编码和binlog编码不一样，导致了以下的错误：</p>
 <p><img src="binlog%E6%9F%A5%E7%9C%8B%E5%A4%B1%E8%B4%A5%E9%94%99%E8%AF%AF.png" alt="binlog查看失败错误"></p>
 <p>这个时候添加参数<code>--no-defaults</code>即可：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; /usr/<span class="built_in">local</span>/mysql/bin/mysqlbinlog --no-defaults --start-datetime=<span class="string">&quot;2016-07-08 17:00:00&quot;</span> --stop-datetime=<span class="string">&quot;2016-07-08 17:30:00&quot;</span> mysql-bin.000006</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; /usr/local/mysql/bin/mysqlbinlog --no-defaults --start-datetime=<span class="string">&quot;2016-07-08 17:00:00&quot;</span> --stop-datetime=<span class="string">&quot;2016-07-08 17:30:00&quot;</span> mysql-bin.000006</span><br></pre></td></tr></table></figure>
 <p>接着在结果中慢慢找到刚小于<code>2016-07-08 17:15:42</code>和刚大于<code>2016-07-08 17:15:42</code>的位置：</p>
 <p><img src="pos%E4%BD%8D%E7%BD%AE.png" alt="pos位置"></p>
 <p>接着就得出<code>214497149</code>就是为同步点</p>
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/07/12/linux-mysql%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5%E5%A4%8D%E5%88%B6/" data-id="cl26c2yok0021tcw4g77g16gj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/07/12/linux-mysql%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5%E5%A4%8D%E5%88%B6/" data-id="cm45dlun30029ggyeanofepjp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -389,7 +389,7 @@ var _hmt = _hmt || [];
         "url": "http://gaussli.com/2016/07/12/linux-mysql主从同步复制/",
         "description": "步骤1–配置主数据库主属性修改my.cnf配置文件，修改log_bin、binlog-do-db、server_id属性，log_bin指定日志文件的命名；binlog-do-db指定需同步的数据库名，不指定的情况下同步所有数据库；server_id指定数据库唯一id。如：
 1234[mysqld]log_bin = mysql-binbinlog-do-db=ycpaidbserver_id =",
-        "wordCount": 276
+        "wordCount": 274
     }
 </script>
 
@@ -671,7 +671,7 @@ var _hmt = _hmt || [];
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

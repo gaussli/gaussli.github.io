@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -259,9 +259,9 @@ var _hmt = _hmt || [];
 <ol>
 <li>rsync</li>
 </ol>
-<h2 id="主服务器配置"><a href="#主服务器配置" class="headerlink" title="主服务器配置"></a>主服务器配置</h2><h3 id="1-lsyncd安装请看"><a href="#1-lsyncd安装请看" class="headerlink" title="1. lsyncd安装请看"></a>1. lsyncd安装请看</h3><a href="/2016/07/15/linux-lsyncd%E5%AE%89%E8%A3%85/" title="传送门:Linux中lsyncd安装">传送门:Linux中lsyncd安装</a>
+<h2 id="主服务器配置"><a href="#主服务器配置" class="headerlink" title="主服务器配置"></a>主服务器配置</h2><h3 id="1-lsyncd安装请看"><a href="#1-lsyncd安装请看" class="headerlink" title="1. lsyncd安装请看"></a>1. lsyncd安装请看</h3><a href="/2016/07/15/linux-lsyncd%E5%AE%89%E8%A3%85/" title="[Linux]lsyncd安装">传送门:Linux中lsyncd安装</a>
 
-<h3 id="2-进入lsyncd安装目录，笔者这里为／usr-lcoal-lsyncd中"><a href="#2-进入lsyncd安装目录，笔者这里为／usr-lcoal-lsyncd中" class="headerlink" title="2. 进入lsyncd安装目录，笔者这里为／usr/lcoal/lsyncd中"></a>2. 进入lsyncd安装目录，笔者这里为<code>／usr/lcoal/lsyncd</code>中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lsyncd</span><br></pre></td></tr></table></figure>
+<h3 id="2-进入lsyncd安装目录，笔者这里为／usr-lcoal-lsyncd中"><a href="#2-进入lsyncd安装目录，笔者这里为／usr-lcoal-lsyncd中" class="headerlink" title="2. 进入lsyncd安装目录，笔者这里为／usr/lcoal/lsyncd中"></a>2. 进入lsyncd安装目录，笔者这里为<code>／usr/lcoal/lsyncd</code>中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; <span class="built_in">cd</span> /usr/local/lsyncd</span><br></pre></td></tr></table></figure>
 
 <p>可看到4个文件夹，分别的作用为</p>
 <ul>
@@ -283,7 +283,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/09/08/linux-lsyncd-rsync%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E5%A4%87%E4%BB%BD/" data-id="cl26c2yoi001utcw4b9ep9st8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/09/08/linux-lsyncd-rsync%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E5%A4%87%E4%BB%BD/" data-id="cm45dlun20024ggye9sb3dp6c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -363,7 +363,7 @@ var _hmt = _hmt || [];
         "url": "http://gaussli.com/2016/09/08/linux-lsyncd-rsync实时同步备份/",
         "description": "小言网上有很多种文件同步备份策略。
 最容易想到的策略就是rsync+inotify，这个策略有个弊端，就是实时性太差了，而且rsync内部实行同步的方式是递归扫描整个文件夹并保存一个相关的目录树数据传给备份服务器，让备份服务器进行对比知道应该同步哪些数据；然而，这个目录树数据并不是很小的，如果是一个文件结构很复杂的文件夹需要同步，而一次只改了一个文件，那么目录树数据的大小可能都是改动文件大小的几倍",
-        "wordCount": 246
+        "wordCount": 245
     }
 </script>
 
@@ -645,7 +645,7 @@ var _hmt = _hmt || [];
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

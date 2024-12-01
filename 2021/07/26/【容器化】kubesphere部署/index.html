@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
 <li>确保您的机器满足最低硬件要求：CPU &gt; 1 核，内存 &gt; 2 GB。</li>
 <li>在安装之前，需要配置 Kubernetes 集群中的默认存储类型。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl patch storageclass &lt;storageclass-name&gt; -p <span class="string">&#x27;&#123;&quot;metadata&quot;: &#123;&quot;annotations&quot;:&#123;&quot;storageclass.kubernetes.io/is-default-class&quot;:&quot;true&quot;&#125;&#125;&#125;&#x27;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载部署YAML文件</span></span><br><span class="line">curl -o /usr/<span class="built_in">local</span>/src/kubesphere-installer.yaml https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml</span><br><span class="line">curl -o /usr/<span class="built_in">local</span>/src/cluster-configuration.yaml https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml</span><br><span class="line"><span class="comment"># 执行YAML文件</span></span><br><span class="line">kubectl -f /usr/<span class="built_in">local</span>/src/kubesphere-installer.yaml</span><br><span class="line">kubectl -f /usr/<span class="built_in">local</span>/src/cluster-configuration.yaml</span><br></pre></td></tr></table></figure>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载部署YAML文件</span></span><br><span class="line">curl -o /usr/local/src/kubesphere-installer.yaml https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml</span><br><span class="line">curl -o /usr/local/src/cluster-configuration.yaml https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml</span><br><span class="line"><span class="comment"># 执行YAML文件</span></span><br><span class="line">kubectl -f /usr/local/src/kubesphere-installer.yaml</span><br><span class="line">kubectl -f /usr/local/src/cluster-configuration.yaml</span><br></pre></td></tr></table></figure>
 <p>结果截图：<br><img src="60f801626b8ae.png"></p>
 <h1 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 下载卸载脚本</span><br><span class="line">curl -o /usr/local/src/kubesphere-delete.sh https://raw.githubusercontent.com/kubesphere/ks-installer/release-3.1/scripts/kubesphere-delete.sh</span><br><span class="line"># Master节点执行脚本</span><br><span class="line">sh /usr/local/src/kubesphere-delete.sh</span><br></pre></td></tr></table></figure>
 
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubesphere%E9%83%A8%E7%BD%B2/" data-id="cl26c2yq6006vtcw444pv4v0r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90%E5%AE%B9%E5%99%A8%E5%8C%96%E3%80%91kubesphere%E9%83%A8%E7%BD%B2/" data-id="cm45dlunx0074ggye8w2e8pk5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -349,7 +349,7 @@ var _hmt = _hmt || [];
 official-website：https://kubesphere.io/
 简介
 官方说明：KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes",
-        "wordCount": 138
+        "wordCount": 134
     }
 </script>
 
@@ -640,7 +640,7 @@ official-website：https://kubesphere.io/
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

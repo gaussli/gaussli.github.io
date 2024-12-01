@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -297,7 +297,7 @@ var _hmt = _hmt || [];
 <li><p>docker部署</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name zipkin \</span><br><span class="line">-e STORAGE_TYPE=mysql \</span><br><span class="line">-e MYSQL_DB=zipkindb \</span><br><span class="line">-e MYSQL_USER=root \</span><br><span class="line">-e MYSQL_PASS=root \</span><br><span class="line">-e MYSQL_HOST=192.168.56.1 \</span><br><span class="line">-e MYSQL_TCP_PORT=3306 \</span><br><span class="line">-e QUERY_PORT=9411 \</span><br><span class="line">-p 9411:9411 openzipkin/zipkin</span><br></pre></td></tr></table></figure></li>
 <li><p>Jar部署</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">STORAGE_TYPE=mysql \</span><br><span class="line">MYSQL_DB=zipkindb_jar \</span><br><span class="line">MYSQL_USER=root</span><br><span class="line">MYSQL_PASS=root \</span><br><span class="line">MYSQL_HOST=192.168.56.1 \</span><br><span class="line">MYSQL_TCP_PORT=3306 \</span><br><span class="line">QUERY_PORT=9411</span><br><span class="line">nohup java -jar zipkin.jar &gt; zipkin.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">STORAGE_TYPE=mysql \</span><br><span class="line">MYSQL_DB=zipkindb_jar \</span><br><span class="line">MYSQL_USER=root</span><br><span class="line">MYSQL_PASS=root \</span><br><span class="line">MYSQL_HOST=192.168.56.1 \</span><br><span class="line">MYSQL_TCP_PORT=3306 \</span><br><span class="line">QUERY_PORT=9411</span><br><span class="line"><span class="built_in">nohup</span> java -jar zipkin.jar &gt; zipkin.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></li>
 <li><p>Kubernetes部署</p>
 <ul>
 <li>Secret<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">kind:</span> <span class="string">Secret</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">secret-zipkin-server</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">xxx</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">	<span class="attr">app:</span> <span class="string">secret-zipkin-server</span></span><br><span class="line"><span class="attr">data:</span></span><br><span class="line">  <span class="comment"># 数据库账号</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">cm9vdA==</span></span><br><span class="line">  <span class="comment"># 数据库密码</span></span><br><span class="line">  <span class="attr">password:</span> <span class="string">QmRyTWVzQDIwMjBCWkw=</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">Opaque</span></span><br></pre></td></tr></table></figure></li>
@@ -324,7 +324,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90middleware%E3%80%91zipkin%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/" data-id="cl26c2ypl0058tcw4dfeb25gw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2021/07/26/%E3%80%90middleware%E3%80%91zipkin%E9%83%A8%E7%BD%B2%E5%8F%8A%E4%BD%BF%E7%94%A8/" data-id="cm45dluno005dggye78hqayab" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -423,7 +423,7 @@ github链接openzipkin/zipkin
 四大组件
 
 collector对链路数据进行验证、存储、建",
-        "wordCount": 2279
+        "wordCount": 2280
     }
 </script>
 
@@ -714,7 +714,7 @@ collector对链路数据进行验证、存储、建",
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

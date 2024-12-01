@@ -82,7 +82,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -305,7 +305,7 @@ var _hmt = _hmt || [];
 </tr>
 </tbody></table>
 <p>安装 MySQL 二进制发行版，所需的命令列表如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; groupadd mysql</span><br><span class="line">shell&gt; useradd -r -g mysql -s /bin/<span class="literal">false</span> mysql</span><br><span class="line">shell&gt; <span class="built_in">cd</span> /usr/<span class="built_in">local</span></span><br><span class="line">shell&gt; tar zxvf /path/to/mysql-VERSION-OS.tar.gz</span><br><span class="line">shell&gt; ln -s full-path-to-mysql-VERSION-OS mysql</span><br><span class="line">shell&gt; <span class="built_in">cd</span> mysql</span><br><span class="line">shell&gt; chown -R mysql .</span><br><span class="line">shell&gt; chgrp -R myaql .</span><br><span class="line">shell&gt; scripts/mysql_install_db --user=mysql</span><br><span class="line">shell&gt; chown -R root .</span><br><span class="line">shell&gt; chown -R mysql data</span><br><span class="line">shell&gt; bin/mysqld_safe --user=mysql &amp;</span><br><span class="line"><span class="comment"># 其他可选命令</span></span><br><span class="line">shell&gt; cp support-files/mysql.server /etc/init.d/mysql.server</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; groupadd mysql</span><br><span class="line">shell&gt; useradd -r -g mysql -s /bin/false mysql</span><br><span class="line">shell&gt; <span class="built_in">cd</span> /usr/local</span><br><span class="line">shell&gt; tar zxvf /path/to/mysql-VERSION-OS.tar.gz</span><br><span class="line">shell&gt; <span class="built_in">ln</span> -s full-path-to-mysql-VERSION-OS mysql</span><br><span class="line">shell&gt; <span class="built_in">cd</span> mysql</span><br><span class="line">shell&gt; <span class="built_in">chown</span> -R mysql .</span><br><span class="line">shell&gt; <span class="built_in">chgrp</span> -R myaql .</span><br><span class="line">shell&gt; scripts/mysql_install_db --user=mysql</span><br><span class="line">shell&gt; <span class="built_in">chown</span> -R root .</span><br><span class="line">shell&gt; <span class="built_in">chown</span> -R mysql data</span><br><span class="line">shell&gt; bin/mysqld_safe --user=mysql &amp;</span><br><span class="line"><span class="comment"># 其他可选命令</span></span><br><span class="line">shell&gt; <span class="built_in">cp</span> support-files/mysql.server /etc/init.d/mysql.server</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a><em>注意</em></h4><p>上述命令的执行是假设你已经拥有<code>root</code>（系统管理员）权限。否则，你需要在每个命令前使用前缀获取管理员权限，Linux 下使用<code>sudo</code>，OpenSolaris 下使用<code>pfexec</code>。</p>
@@ -318,17 +318,17 @@ var _hmt = _hmt || [];
 <p>从 MySQL 5.6.8开始，<code>mysql_install_db</code>脚本会在安装目录下生成一个默认的配置文件<code>my.cnf</code>。这个文件的生成是基于发行版中一个<code>my-default.cnf</code>文件。关于配置文件的更多信息，请查看 <a target="_blank" rel="noopener" href="http://dev.mysql.com/doc/refman/5.6/en/server-default-configuration-file.html">Section 5.1.2.2, “Using a Sample Default Server Configuration File”</a>。</p>
 <p>关于上述命令更多的详细描述，如下。</p>
 <h2 id="创建一个-mysql-的用户和群组"><a href="#创建一个-mysql-的用户和群组" class="headerlink" title="创建一个 mysql 的用户和群组"></a>创建一个 mysql 的用户和群组</h2><p>如果你的系统并没有<code>mysql</code>的用户和群组来运行<code>mysqld</code>服务，则需要创建一个这样的用户和群组。以下的命令的作用就是创建一个<code>mysql</code>用户和一个<code>mysql</code>群组。当然你也可以不命名为<code>mysql</code>，而是其他你所喜欢的，只需把命令中对应的名称替换了即可。<code>useradd</code>和<code>groupadd</code>语法会根据不同的 Unix 系统而有所不同，也许有些系统就是使用<code>adduser</code>和<code>groupadd</code>语法。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; groupadd mysql</span><br><span class="line">shell&gt; useradd -r -g mysql -s /bin/<span class="literal">false</span> mysql</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; groupadd mysql</span><br><span class="line">shell&gt; useradd -r -g mysql -s /bin/false mysql</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <h4 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a><em>注意</em></h4><p>因为<code>mysql</code>用户只是用来制定目录归属，而不是用来登录系统，所以<code>useradd</code>命令使用了<code>-r</code>和<code>-s /bin/false</code>选项来设置<code>mysql</code>用户没有登录系统的权限。如果你的<code>useradd</code>命令不支持这种选项，则可忽略了。</p>
 </blockquote>
 <h2 id="获得并解压发行版文件"><a href="#获得并解压发行版文件" class="headerlink" title="获得并解压发行版文件"></a>获得并解压发行版文件</h2><p>选择好解压目录并进入到目录中。本示例中解压目录是在<code>/usr/local</code>下。所以以下的操作都假设你已经拥有在<code>/usr/local</code>下创建文件和目录的权限。如果所选择的目录是受保护的，那么以下的安装过程就需要使用<code>root</code>权限.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; <span class="built_in">cd</span> /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; <span class="built_in">cd</span> /usr/local</span><br></pre></td></tr></table></figure>
 
 <p>关于如何获得发行版文件，请查看 <a target="_blank" rel="noopener" href="http://dev.mysql.com/doc/refman/5.6/en/getting-mysql.html">Section 2.1.2, “How to Get MySQL”</a>。对于所有的发布包，都是通过同一套 MySQL 源码发行版编译打包出来的。</p>
 <p>解压发行版文件后就能在安装目录下看到对应的安装文件和文件夹。接着创建一条到安装目录的软链接。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; tar zxvf /path/to/mysql-VERSION-OS.tar.gz</span><br><span class="line">shell&gt; ln -s full-path-to-mysql-VERSION-OS mysql</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; tar zxvf /path/to/mysql-VERSION-OS.tar.gz</span><br><span class="line">shell&gt; <span class="built_in">ln</span> -s full-path-to-mysql-VERSION-OS mysql</span><br></pre></td></tr></table></figure>
 
 <p><code>tar</code>命令会创建一个名为<code>mysql-VERSION-OS</code>的目录。<code>ln</code>命令创建一条到该目录的软链接，这样更容易更方便地操作目录<code>/usr/local/mysql</code></p>
 <h2 id="执行后续安装初始化配置"><a href="#执行后续安装初始化配置" class="headerlink" title="执行后续安装初始化配置"></a>执行后续安装初始化配置</h2><p>剩下的安装命令包含设置安装目录的归属以及访问权限、初始化数据目录、启动 MySQL 服务、设置 MySQL 配置文件。更多信息请查看 <a target="_blank" rel="noopener" href="http://dev.mysql.com/doc/refman/5.6/en/postinstallation.html">Section 2.10, “Postintallation Setup and Testing”</a>。</p>
@@ -340,7 +340,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/06/04/linux-%E7%BF%BB%E8%AF%91-mysql%E5%AE%89%E8%A3%85%EF%BC%88%E9%80%9A%E7%94%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8F%91%E8%A1%8C%E7%89%88%E6%96%B9%E5%BC%8F%EF%BC%89/" data-id="cl26c2yow0030tcw4djuh61xb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/06/04/linux-%E7%BF%BB%E8%AF%91-mysql%E5%AE%89%E8%A3%85%EF%BC%88%E9%80%9A%E7%94%A8%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%8F%91%E8%A1%8C%E7%89%88%E6%96%B9%E5%BC%8F%EF%BC%89/" data-id="cm45dlunb003aggye60nve5c1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -422,7 +422,7 @@ var _hmt = _hmt || [];
 本文记录的是通过源码进行MySQL的安装以及配置。
 环境操作系统：CentOS 7.0
 MySQL 版本：mysql-5.6.31-linux-glibc2.5-x8",
-        "wordCount": 357
+        "wordCount": 360
     }
 </script>
 
@@ -704,7 +704,7 @@ MySQL 版本：mysql-5.6.31-linux-glibc2.5-x8",
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

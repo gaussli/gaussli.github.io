@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
     <div id="wrap">
@@ -242,7 +242,7 @@ var _hmt = _hmt || [];
 
             
 
-            <h2 id="小言"><a href="#小言" class="headerlink" title="小言"></a>小言</h2><p>所谓的克隆机，就是说VirtualBox中可通过已有的虚拟机可不断克隆出一样的虚拟机。而克隆出来的虚拟机，选择<code>重新初始化所有网卡的MAC地址后</code>，克隆机的网卡会出现两个，一个是原本的eth0，一个是新增的eth1。那么由于之前配置的是eth0（详见<a href="/2016/07/16/virtualbox-centos%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" title="virtualbox中centos虚拟机中网络配置">virtualbox中centos虚拟机中网络配置</a>），而eth0已经没用了，eth1却没有做配置的，所以是不能上网的。以下就来解决这个问题。</p>
+            <h2 id="小言"><a href="#小言" class="headerlink" title="小言"></a>小言</h2><p>所谓的克隆机，就是说VirtualBox中可通过已有的虚拟机可不断克隆出一样的虚拟机。而克隆出来的虚拟机，选择<code>重新初始化所有网卡的MAC地址后</code>，克隆机的网卡会出现两个，一个是原本的eth0，一个是新增的eth1。那么由于之前配置的是eth0（详见<a href="/2016/07/16/virtualbox-centos%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" title="[VirtualBox]CentOS虚拟机中网络配置">virtualbox中centos虚拟机中网络配置</a>），而eth0已经没用了，eth1却没有做配置的，所以是不能上网的。以下就来解决这个问题。</p>
 <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ol>
 <li>操作系统：Window8.1</li>
 <li>VirtualBox版本：5.0.16</li>
@@ -251,10 +251,10 @@ var _hmt = _hmt || [];
 <li>虚拟机内存：2G</li>
 <li>虚拟机硬盘：15G</li>
 </ol>
-<h2 id="步骤1–问题信息查看"><a href="#步骤1–问题信息查看" class="headerlink" title="步骤1–问题信息查看"></a>步骤1–问题信息查看</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; cat /etc/udev/rules,d/70-persistent-net.rules</span><br></pre></td></tr></table></figure>
+<h2 id="步骤1–问题信息查看"><a href="#步骤1–问题信息查看" class="headerlink" title="步骤1–问题信息查看"></a>步骤1–问题信息查看</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; <span class="built_in">cat</span> /etc/udev/rules,d/70-persistent-net.rules</span><br></pre></td></tr></table></figure>
 
 <p>查看网卡信息，可见两块网卡，一个是原本的eth0，一个是新增的eth1。eth0的MAC地址是的原本虚拟机，eth1的MAC地址是通过上述的<code>重新初始化所有网卡的MAC地址后</code>重新虚拟获取的。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; ls -al /etc/sysconfig/network-script</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; <span class="built_in">ls</span> -al /etc/sysconfig/network-script</span><br></pre></td></tr></table></figure>
 
 <p>这里只能看到一个<code>ifcfg-eth0</code>文件，而没有<code>ifcfg-eht1</code>文件，说明<code>eth1</code>网卡没有配置。自然<code>ifcfg-eth0</code>文件中配置就是原本虚拟机的配置了。</p>
 <p>解决思路：</p>
@@ -295,7 +295,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://gaussli.com/2016/07/16/virtualbox-centos%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%85%8B%E9%9A%86%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" data-id="cl26c2ypd004htcw44c8ih6wn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://gaussli.com/2016/07/16/virtualbox-centos%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E5%85%8B%E9%9A%86%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" data-id="cm45dlunk004kggye5mju5sfj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -376,7 +376,7 @@ var _hmt = _hmt || [];
         "description": "小言所谓的克隆机，就是说VirtualBox中可通过已有的虚拟机可不断克隆出一样的虚拟机。而克隆出来的虚拟机，选择重新初始化所有网卡的MAC地址后，克隆机的网卡会出现两个，一个是原本的eth0，一个是新增的eth1。那么由于之前配置的是eth0（详见virtualbox中centos虚拟机中网络配置），而eth0已经没用了，eth1却没有做配置的，所以是不能上网的。以下就来解决这个问题。
 环境
 操",
-        "wordCount": 99
+        "wordCount": 101
     }
 </script>
 
@@ -658,7 +658,7 @@ var _hmt = _hmt || [];
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2022 gaussli</p>
+                <p>&copy; 2024 gaussli</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 
