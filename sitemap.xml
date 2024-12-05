@@ -936,14 +936,14 @@
   </url>
   
   <url>
-    <loc>https://gaussli.com/tags/%E6%88%90%E9%83%BD/</loc>
+    <loc>https://gaussli.com/tags/%E9%95%BF%E6%B2%99/</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gaussli.com/tags/%E9%95%BF%E6%B2%99/</loc>
+    <loc>https://gaussli.com/tags/%E6%88%90%E9%83%BD/</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1048,27 +1048,6 @@
   </url>
   
   <url>
-    <loc>https://gaussli.com/tags/subview/</loc>
-    <lastmod>2024-12-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gaussli.com/tags/uibutton/</loc>
-    <lastmod>2024-12-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gaussli.com/tags/uicontrol/</loc>
-    <lastmod>2024-12-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gaussli.com/tags/%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA/</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -1097,6 +1076,13 @@
   </url>
   
   <url>
+    <loc>https://gaussli.com/tags/uicontrol/</loc>
+    <lastmod>2024-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://gaussli.com/tags/zip%E5%8E%8B%E7%BC%A9/</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -1112,6 +1098,20 @@
   
   <url>
     <loc>https://gaussli.com/tags/afnetworking/</loc>
+    <lastmod>2024-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gaussli.com/tags/subview/</loc>
+    <lastmod>2024-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gaussli.com/tags/uibutton/</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2317,6 +2317,13 @@
   </url>
   
   <url>
+    <loc>https://gaussli.com/categories/travel/%E9%95%BF%E6%B2%99/</loc>
+    <lastmod>2024-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://gaussli.com/categories/tech/</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -2325,13 +2332,6 @@
   
   <url>
     <loc>https://gaussli.com/categories/download/</loc>
-    <lastmod>2024-12-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gaussli.com/categories/travel/%E9%95%BF%E6%B2%99/</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

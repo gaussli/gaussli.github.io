@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Subview,UIButton,UIControl" />
+    <meta name="keywords" content="UIControl,Subview,UIButton" />
     
     <meta name="description" content="如果是自己自定义的一个子view，而这个子view中存在UIButton或UIControl对象，即存在可点击控件的话。单单给UIButton或UIControl对象添加addTarget，绑定点击事件，是不能实现点击的，原因在于他们的父view，即自定义的那个子view，是不可点击的，根据响应者链，如此一来就导致点击事件传递到子view的时候就断了，不能再向下传递了，所以需要给子view添加可点">
 <meta property="og:type" content="article">
@@ -23,9 +23,9 @@
 <meta property="article:published_time" content="2017-02-28T18:05:17.000Z">
 <meta property="article:modified_time" content="2021-07-26T15:09:41.410Z">
 <meta property="article:author" content="gaussli">
+<meta property="article:tag" content="UIControl">
 <meta property="article:tag" content="Subview">
 <meta property="article:tag" content="UIButton">
-<meta property="article:tag" content="UIControl">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gaussli.com/placeholder.png">
     
@@ -252,7 +252,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://gaussli.com/2017/03/01/ios-subview%E4%B8%AD%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%9D%91/" data-id="cm4bp2csb000rsryean1fdaw3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://gaussli.com/2017/03/01/ios-subview%E4%B8%AD%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%9D%91/" data-id="cm4bp4tg5000tzayehdxw77l6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -324,7 +324,7 @@ var _hmt = _hmt || [];
         },
         "headline": "[iOS]subview中点击事件的坑",
         "image": "https://gaussli.com/placeholder.png",
-        "keywords": "Subview UIButton UIControl",
+        "keywords": "UIControl Subview UIButton",
         "genre": "Tech App iOS",
         "datePublished": "2017-03-01",
         "dateCreated": "2017-03-01",
