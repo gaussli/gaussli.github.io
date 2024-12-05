@@ -21,7 +21,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2024-12-05T17:23:27.000Z">
-<meta property="article:modified_time" content="2024-12-05T19:16:04.977Z">
+<meta property="article:modified_time" content="2024-12-05T19:23:53.180Z">
 <meta property="article:author" content="gaussli">
 <meta property="article:tag" content="Kubernetes">
 <meta property="article:tag" content="Node">
@@ -200,7 +200,7 @@ var _hmt = _hmt || [];
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E5%85%B3%E9%97%AD%E8%8A%82%E7%82%B9/" class="article-date">
-     <time datetime="2024-12-05T19:16:04.977Z" itemprop="dateModified">2024-12-06</time>
+     <time datetime="2024-12-05T19:23:53.180Z" itemprop="dateModified">2024-12-06</time>
   </a>
 </div>
 
@@ -252,7 +252,7 @@ var _hmt = _hmt || [];
 </li>
 <li><p>shutdownGracePeriodCriticalPods<br>控制优雅关闭关键<code>pod</code>的时间，该时间要比<code>shutdownGracePeriod</code>小。这里，非关键<code>pod</code>会比关键<code>pod</code>更快驱逐。</p>
 <blockquote>
-<a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" title="【Kubernetes】配置pod的重要性">如何定义关键pod</a></blockquote>
+<a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" title="【Kubernetes】pod的优先级">如何定义关键pod</a></blockquote>
 </li>
 </ul>
 <p>此外，还有一种更细粒度控制节点优雅关闭的能力，基于<code>kubelet configuration</code>文件配置<code>shutdownGracePeriodByPodPriority</code>，这个是基于<code>pod</code>优先级来控制<code>pod</code>的驱逐顺序。此能力需要打开名为<code>GracefulNodeShutdownBaseOnPodPriority</code>的<code>feature gate</code>，此<code>feature gate</code>在版本<code>v1.23</code>进入<code>Alpha</code>阶段，在版本<code>v1.31</code>进入<code>Beta</code>阶段并默认配置为<code>enabled</code>。</p>
@@ -267,7 +267,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://gaussli.com/2024/12/06/%E3%80%90kubernetes%E3%80%91%E5%85%B3%E9%97%AD%E8%8A%82%E7%82%B9/" data-id="cm4bp8k2a005193ye4bt902pv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://gaussli.com/2024/12/06/%E3%80%90kubernetes%E3%80%91%E5%85%B3%E9%97%AD%E8%8A%82%E7%82%B9/" data-id="cm4bpgudm0054qaye4yxaej6u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -429,11 +429,11 @@ kubelet会去检测os系统的关机事件，并且终结节点上的所有pod�
         
 <nav id="article-nav">
     
-        <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            【Kubernetes】配置pod的重要性
+            【Kubernetes】pod的优先级
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -473,10 +473,10 @@ kubelet会去检测os系统的关机事件，并且终结节点上的所有pod�
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="thumbnail">
+                            <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" class="thumbnail">
     
     
-        <span style="background-image:url(/placeholder.png)" alt="【Kubernetes】配置pod的重要性" class="thumbnail-image"></span>
+        <span style="background-image:url(/placeholder.png)" alt="【Kubernetes】pod的优先级" class="thumbnail-image"></span>
     
     
 </a>
@@ -485,7 +485,7 @@ kubelet会去检测os系统的关机事件，并且终结节点上的所有pod�
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/tech/">Tech</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/tech/kubernetes/">Kubernetes</a></p>
-                            <p class="item-title"><a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="title">【Kubernetes】配置pod的重要性</a></p>
+                            <p class="item-title"><a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" class="title">【Kubernetes】pod的优先级</a></p>
                             <p class="item-date"><time datetime="2024-12-05T17:51:26.000Z" itemprop="datePublished">2024-12-06</time></p>
                         </div>
                     </li>

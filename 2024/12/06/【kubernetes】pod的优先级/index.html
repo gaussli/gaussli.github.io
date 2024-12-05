@@ -6,7 +6,7 @@
     
 
     
-    <title>【Kubernetes】配置pod的重要性 | Gaussli&#39;s Blog</title>
+    <title>【Kubernetes】pod的优先级 | Gaussli&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -14,14 +14,14 @@
     
     <meta name="description" content="在Kubernetes中，支持给pod配置更高的优先级属性，使pod的重要程度提升，从而降低被驱逐的可能。特别地，可以用在一些Kubernetes关键组件的pod上，如metrics-server、DNS等服务，毕竟这些服务一旦出现异常，可能会导致Kubernetes部分功能不可用。 而配置pod的优先级，使用的是PriorityClassName资源，模版如下： 1234567apiVersio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Kubernetes】配置pod的重要性">
-<meta property="og:url" content="https://gaussli.com/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/index.html">
+<meta property="og:title" content="【Kubernetes】pod的优先级">
+<meta property="og:url" content="https://gaussli.com/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/index.html">
 <meta property="og:site_name" content="Gaussli&#39;s Blog">
 <meta property="og:description" content="在Kubernetes中，支持给pod配置更高的优先级属性，使pod的重要程度提升，从而降低被驱逐的可能。特别地，可以用在一些Kubernetes关键组件的pod上，如metrics-server、DNS等服务，毕竟这些服务一旦出现异常，可能会导致Kubernetes部分功能不可用。 而配置pod的优先级，使用的是PriorityClassName资源，模版如下： 1234567apiVersio">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gaussli.com/placeholder.png">
 <meta property="article:published_time" content="2024-12-05T17:51:26.000Z">
-<meta property="article:modified_time" content="2024-12-05T19:17:20.945Z">
+<meta property="article:modified_time" content="2024-12-05T19:22:27.871Z">
 <meta property="article:author" content="gaussli">
 <meta property="article:tag" content="Kubernetes">
 <meta property="article:tag" content="关键pod">
@@ -173,14 +173,14 @@ var _hmt = _hmt || [];
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-【kubernetes】配置pod的重要性" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-【kubernetes】pod的优先级" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        【Kubernetes】配置pod的重要性
+        【Kubernetes】pod的优先级
         </h1>
     
 
@@ -191,7 +191,7 @@ var _hmt = _hmt || [];
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="article-date">
+    <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" class="article-date">
        <time datetime="2024-12-05T17:51:26.000Z" itemprop="datePublished">2024-12-06</time>
     </a>
   </div>
@@ -199,8 +199,8 @@ var _hmt = _hmt || [];
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="article-date">
-     <time datetime="2024-12-05T19:17:20.945Z" itemprop="dateModified">2024-12-06</time>
+  <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" class="article-date">
+     <time datetime="2024-12-05T19:22:27.871Z" itemprop="dateModified">2024-12-06</time>
   </a>
 </div>
 
@@ -214,7 +214,7 @@ var _hmt = _hmt || [];
     </div>
 
                 
-   <span id="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="leancloud-visitors" data-flag-title="【Kubernetes】配置pod的重要性">
+   <span id="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" class="leancloud-visitors" data-flag-title="【Kubernetes】pod的优先级">
    <i class="fa fa-eye"></i>
    <span class="post-meta-item-text">Views: </span>
    <i class="leancloud-visitors-count">1000000</i>
@@ -264,7 +264,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://gaussli.com/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" data-id="cm4bp8k2a005493yef7u4gf6d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://gaussli.com/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" data-id="cm4bpgudl0051qayebipn8023" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -334,14 +334,14 @@ var _hmt = _hmt || [];
             "@type": "Person",
             "name": "gaussli"
         },
-        "headline": "【Kubernetes】配置pod的重要性",
+        "headline": "【Kubernetes】pod的优先级",
         "image": "https://gaussli.com/placeholder.png",
         "keywords": "Kubernetes 关键pod priorityClassName 优先级",
         "genre": "Tech Kubernetes",
         "datePublished": "2024-12-06",
         "dateCreated": "2024-12-06",
         "dateModified": "2024-12-06",
-        "url": "https://gaussli.com/2024/12/06/【kubernetes】配置pod的重要性/",
+        "url": "https://gaussli.com/2024/12/06/【kubernetes】pod的优先级/",
         "description": "在Kubernetes中，支持给pod配置更高的优先级属性，使pod的重要程度提升，从而降低被驱逐的可能。特别地，可以用在一些Kubernetes关键组件的pod上，如metrics-server、DNS等服务，毕竟这些服务一旦出现异常，可能会导致Kubernetes部分功能不可用。
 而配置pod的优先级，使用的是PriorityClassName资源，模版如下：
 1234567apiVersio",
@@ -459,10 +459,10 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="thumbnail">
+                            <a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" class="thumbnail">
     
     
-        <span style="background-image:url(/placeholder.png)" alt="【Kubernetes】配置pod的重要性" class="thumbnail-image"></span>
+        <span style="background-image:url(/placeholder.png)" alt="【Kubernetes】pod的优先级" class="thumbnail-image"></span>
     
     
 </a>
@@ -471,7 +471,7 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/tech/">Tech</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/tech/kubernetes/">Kubernetes</a></p>
-                            <p class="item-title"><a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91%E9%85%8D%E7%BD%AEpod%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/" class="title">【Kubernetes】配置pod的重要性</a></p>
+                            <p class="item-title"><a href="/2024/12/06/%E3%80%90kubernetes%E3%80%91pod%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/" class="title">【Kubernetes】pod的优先级</a></p>
                             <p class="item-date"><time datetime="2024-12-05T17:51:26.000Z" itemprop="datePublished">2024-12-06</time></p>
                         </div>
                     </li>
