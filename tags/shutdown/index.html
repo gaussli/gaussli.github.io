@@ -215,10 +215,8 @@ var _hmt = _hmt || [];
     
 
         <p class="article-excerpt">
-            在Kubernetes中，节点可以分为优雅关闭及非优雅关闭。优雅关闭可以理解为有计划的关闭节点；而非优雅关闭，一般就出现在断电或一些集群外在因素导致节点所在宿主机异常。
-kubelet会去检测os系统的关机事件，并且终结节点上的所有pod。此外，节点也不再接收新的pod创建请求。
-节点优雅关闭功能开始于v1.21版本的特性GracefulNodeShutdown，此特性默认为true。
-一旦kub
+            在Kubernetes中，节点可以分为优雅关闭（Graceful node shutdown）及非优雅关闭（Non-graceful node shutdown）。优雅关闭可以理解为有计划的关闭节点；而非优雅关闭，一般就出现在断电或一些集群外在因素导致节点所在宿主机异常。
+优雅关闭（Graceful node shutdown）kubelet会去检测os系统的关机事件，并且终结节点上的所有pod。
         </p>
     </div>
 </article>

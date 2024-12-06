@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="文件,同步,rsync,lsyncd" />
+    <meta name="keywords" content="lsyncd,文件,同步,rsync" />
     
     <meta name="description" content="小言网上有很多种文件同步备份策略。 最容易想到的策略就是rsync+inotify，这个策略有个弊端，就是实时性太差了，而且rsync内部实行同步的方式是递归扫描整个文件夹并保存一个相关的目录树数据传给备份服务器，让备份服务器进行对比知道应该同步哪些数据；然而，这个目录树数据并不是很小的，如果是一个文件结构很复杂的文件夹需要同步，而一次只改了一个文件，那么目录树数据的大小可能都是改动文件大小的几倍">
 <meta property="og:type" content="article">
@@ -23,10 +23,10 @@
 <meta property="article:published_time" content="2016-09-08T07:00:04.000Z">
 <meta property="article:modified_time" content="2021-07-26T06:01:36.000Z">
 <meta property="article:author" content="gaussli">
+<meta property="article:tag" content="lsyncd">
 <meta property="article:tag" content="文件">
 <meta property="article:tag" content="同步">
 <meta property="article:tag" content="rsync">
-<meta property="article:tag" content="lsyncd">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gaussli.com/placeholder.png">
     
@@ -283,7 +283,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="https://gaussli.com/2016/09/08/linux-lsyncd-rsync%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E5%A4%87%E4%BB%BD/" data-id="cm4bpgucx0028qayef6d0dbgq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://gaussli.com/2016/09/08/linux-lsyncd-rsync%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E5%A4%87%E4%BB%BD/" data-id="cm4c8c4q700282yyeg5ln58mq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -355,7 +355,7 @@ var _hmt = _hmt || [];
         },
         "headline": "[Linux]lsyncd+rsync实时同步备份",
         "image": "https://gaussli.com/placeholder.png",
-        "keywords": "文件 同步 rsync lsyncd",
+        "keywords": "lsyncd 文件 同步 rsync",
         "genre": "Tech Linux",
         "datePublished": "2016-09-08",
         "dateCreated": "2016-09-08",
